@@ -1,0 +1,22 @@
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\Inventory Management.exe.config
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\Inventory Management.exe
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\Inventory Management.pdb
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\System.Text.Json.dll
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\System.Memory.dll
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\System.ValueTuple.dll
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\System.Text.Encodings.Web.dll
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\System.Numerics.Vectors.dll
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\System.Buffers.dll
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory Management.csproj.AssemblyReference.cache
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory Management.csproj.SuggestedBindingRedirects.cache
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory Management.exe.config
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory_Management.Login.resources
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory_Management.Properties.Resources.resources
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory Management.csproj.GenerateResource.cache
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory Management.csproj.CoreCompileInputs.cache
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventor.CCAFEA7E.Up2Date
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory Management.exe
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory Management.pdb
