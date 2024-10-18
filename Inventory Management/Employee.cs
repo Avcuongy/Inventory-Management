@@ -25,7 +25,7 @@ namespace Inventory_Management
         public string Password { get => password; set => password = value; }
         public Employee() { }
 
-        protected Employee(SerializationInfo info, StreamingContext context)
+        public Employee(SerializationInfo info, StreamingContext context)
         {
             EmployeeId = info.GetInt32("EmployeeId");
             Name = info.GetString("Name");

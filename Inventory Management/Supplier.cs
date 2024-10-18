@@ -31,7 +31,7 @@ namespace Inventory_Management
 
         public Supplier() { }
 
-        protected Supplier(SerializationInfo info, StreamingContext context)
+        public Supplier(SerializationInfo info, StreamingContext context)
         {
             SupplierId = info.GetInt32("SupplierId");
             Name = info.GetString("Name");

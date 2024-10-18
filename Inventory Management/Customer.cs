@@ -15,7 +15,7 @@ namespace Inventory_Management
         private int customerId;
         private string name;
         private string contactInfo;
-        
+
         public int CustomerId { get => customerId; set => customerId = value; }
         public string Name { get => name; set => name = value; }
         public string ContactInfo { get => contactInfo; set => contactInfo = value; }
@@ -29,7 +29,7 @@ namespace Inventory_Management
             this.contactInfo = contactInfo;
         }
 
-        protected Customer(SerializationInfo info, StreamingContext context)
+        public Customer(SerializationInfo info, StreamingContext context)
         {
             CustomerId = info.GetInt32("CustomerId");
             Name = info.GetString("Name");
@@ -42,4 +42,5 @@ namespace Inventory_Management
             info.AddValue("Name", Name);
             info.AddValue("ContactInfo", ContactInfo);
         }
+    }
 }
