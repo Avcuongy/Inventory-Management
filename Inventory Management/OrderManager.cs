@@ -25,7 +25,6 @@ namespace Inventory_Management
         {
             info.AddValue("Orders", Orders, typeof(PurchaseOrder));
         }
-
         public OrderManager() { }
         public OrderManager(List<PurchaseOrder> orders)
         {

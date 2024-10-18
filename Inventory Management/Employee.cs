@@ -23,39 +23,28 @@ namespace Inventory_Management
         public string Role { get => role; set => role = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
-    
-        public Employee(int employeeId, string name, string role, string username, string password)
-        {
-            EmployeeId = employeeId;
-            Name = name;
-            Role = role;
-            Username = username;
-            Password = password;
-        }
-
         public Employee() { }
 
         protected Employee(SerializationInfo info, StreamingContext context)
         {
-            employeeId = info.GetInt32("employeeId");
-            name = info.GetString("name");
-            role = info.GetString("role");
-            username = info.GetString("username");
-            password = info.GetString("password");
+            EmployeeId = info.GetInt32("EmployeeId");
+            Name = info.GetString("Name");
+            Role = info.GetString("Role");
+            Username = info.GetString("Username");
+            Password = info.GetString("Password");
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("employeeId", employeeId);
-            info.AddValue("name", name);
-            info.AddValue("role", role);
-            info.AddValue("username", username);
+            info.AddValue("EmployeeId", EmployeeId);
+            info.AddValue("Name", Name);
+            info.AddValue("Role", Role);
+            info.AddValue("Username", Username);
+            info.AddValue("Password", Password);
         }
-
         public bool Validate(string inputUsername, string inputPassword)
         {
-            return username == inputUsername && password == inputPassword;
-        } Employee() 
-        { }
+            return Username == inputUsername && Password == inputPassword;
+        } 
     }
 }

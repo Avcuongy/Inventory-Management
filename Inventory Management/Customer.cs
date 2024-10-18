@@ -31,15 +31,15 @@ namespace Inventory_Management
 
         protected Customer(SerializationInfo info, StreamingContext context)
         {
-            customerId = info.GetInt32("customerId");
-            name = info.GetString("name");
-            contactInfo = info.GetString("contactInfo");
+            CustomerId = info.GetInt32("CustomerId");
+            Name = info.GetString("Name");
+            ContactInfo = info.GetString("ContactInfo");
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("customerId", customerId);
-            info.AddValue("name", name);
-            info.AddValue("contactInfo", contactInfo);
+            info.AddValue("CustomerId", CustomerId);
+            info.AddValue("Name", Name);
+            info.AddValue("ContactInfo", ContactInfo);
         }
 }

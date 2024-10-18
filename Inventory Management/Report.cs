@@ -14,15 +14,9 @@ namespace Inventory_Management
     {
         private List<Transaction> transactions;
         private List<SaleInvoice> invoices;
+        public List<Transaction> Transactions { get => transactions; set => transactions = value; }
+        public List<SaleInvoice> Invoices { get => invoices; set => invoices = value; }
 
-        internal List<Transaction> Transactions { get => transactions; set => transactions = value; }
-        internal List<SaleInvoice> Invoices { get => invoices; set => invoices = value; }
-
-        public Report(List<Transaction> transactions, List<SaleInvoice> invoices)
-        {
-            this.Transactions = transactions;
-            this.Invoices = invoices;
-        }
         public Report() { }
 
         protected Report(SerializationInfo info, StreamingContext context)
@@ -36,10 +30,10 @@ namespace Inventory_Management
             info.AddValue("Transactions", Transactions, typeof(List<Transaction>));
             info.AddValue("Invoices", Invoices, typeof(List<SaleInvoice>));
         }
-        public Report(SerializationInfo info, StreamingContext context)
+        public Report(List<Transaction> transactions, List<SaleInvoice> invoices)
         {
-            Transactions = (List<Transaction>)info.GetValue("Transactions", typeof(List<Transaction>));
-            Invoices = (List<SaleInvoice>)info.GetValue("Invoices", typeof(List<SaleInvoice>));
+            this.transactions = transactions;
+            this.invoices = invoices;
         }
     }
 }
