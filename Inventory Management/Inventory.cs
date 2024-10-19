@@ -30,17 +30,5 @@ namespace Inventory_Management
         public Inventory()
         {
         }
-        public void AddStock(int productId, int quantity)
-        {
-            
-        }
-        public void RemoveStock(int productId, int quantity)
-        {
-
-        }
-        public void CheckStock(int productId)
-        {
-
-        }
     }
 }

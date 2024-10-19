@@ -35,7 +35,6 @@ namespace Inventory_Management
             Name = info.GetString("Name");
             ContactInfo = info.GetString("ContactInfo");
         }
-
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("CustomerId", CustomerId);

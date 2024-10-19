@@ -33,7 +33,14 @@ namespace Inventory_Management
             Username = info.GetString("Username");
             Password = info.GetString("Password");
         }
-
+        public Employee(int employeeId, string name, string role, string username, string password)
+        {
+            this.employeeId = employeeId;
+            this.name = name;
+            this.role = role;
+            this.username = username;
+            this.password = password;
+        }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("EmployeeId", EmployeeId);
@@ -42,9 +49,6 @@ namespace Inventory_Management
             info.AddValue("Username", Username);
             info.AddValue("Password", Password);
         }
-        public bool Validate(string inputUsername, string inputPassword)
-        {
-            return Username == inputUsername && Password == inputPassword;
-        } 
+
     }
 }

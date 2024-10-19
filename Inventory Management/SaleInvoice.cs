@@ -23,18 +23,7 @@ namespace Inventory_Management
         public List<Product> SoldProducts { get => soldProducts; set => soldProducts = value; }
         public double TotalAmount { get => totalAmount; set => totalAmount = value; }
         public string PaymentStatus { get => paymentStatus; set => paymentStatus = value; }
-
         public SaleInvoice() { }
-
-        public SaleInvoice(int id, Customer customer, List<Product> products)
-        {
-            this.invoiceId = id;
-            this.customer = customer;
-            this.soldProducts = products;
-            this.totalAmount = CalculateTotal();
-            this.paymentStatus = "Pending"; // Mặc định là chưa thanh toán
-        }
-
         public SaleInvoice(SerializationInfo info, StreamingContext context)
         {
             InvoiceId = info.GetInt32("InvoiceId");
@@ -43,7 +32,14 @@ namespace Inventory_Management
             TotalAmount = info.GetDouble("TotalAmount");
             PaymentStatus = info.GetString("PaymentStatus");
         }
-
+        public SaleInvoice(int invoiceId, Customer customer, List<Product> soldProducts, double totalAmount, string paymentStatus)
+        {
+            this.invoiceId = invoiceId;
+            this.customer = customer;
+            this.soldProducts = soldProducts;
+            this.totalAmount = totalAmount;
+            this.paymentStatus = paymentStatus;
+        }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("InvoiceId", InvoiceId);
@@ -51,16 +47,6 @@ namespace Inventory_Management
             info.AddValue("SoldProducts", SoldProducts, typeof(List<Product>));
             info.AddValue("TotalAmount", TotalAmount);
             info.AddValue("PaymentStatus", PaymentStatus);
-        }
-
-        public double CalculateTotal()
-        {
-            double total = 0;
-            foreach (var product in soldProducts)
-            {
-                total += product.Price;
-            }
-            return total;
         }
     }
 }

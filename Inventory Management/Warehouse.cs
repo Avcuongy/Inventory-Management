@@ -21,10 +21,9 @@ namespace Inventory_Management
             this.employees = employees;
             this.inventory = inventory;
         }
-        internal List<Product> Products { get => products; set => products = value; }
-        internal List<Employee> Employees { get => employees; set => employees = value; }
-        internal Inventory Inventory { get => inventory; set => inventory = value; }
-
+        public List<Product> Products { get => products; set => products = value; }
+        public List<Employee> Employees { get => employees; set => employees = value; }
+        public Inventory Inventory { get => inventory; set => inventory = value; }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("Products", Products, typeof(List<Product>));
@@ -38,15 +37,7 @@ namespace Inventory_Management
             Inventory = (Inventory)info.GetValue("Inventory", typeof(Inventory));
         }
         public Warehouse()
-        { }
-        public void AddProduct(Product product)
-        {
-            products.Add(product);
+        { 
         }
-        public void RemoveProduct(Product product)
-        {
-            products.Remove(product);
-        }
-
     }
 }

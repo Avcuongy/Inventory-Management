@@ -30,17 +30,6 @@ namespace Inventory_Management
             CategoryName = info.GetString("CategoryName");
             Products = (List<Product>)info.GetValue("Products", typeof(List<Product>));
         }
-
-        public void AddProductToCategory(Product product)
-        {
-            products.Add(product);
-        }
-
-        public List<Product> GetProductsByCategory()
-        {
-            return products;
-        }
-
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("CategoryName", CategoryName);
