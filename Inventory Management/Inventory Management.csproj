@@ -74,6 +74,12 @@
     <Compile Include="Tablet.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Warehouse.cs" />
+    <Compile Include="Warehouse_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_Menu.Designer.cs">
+      <DependentUpon>Warehouse_Menu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +92,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Warehouse_Menu.resx">
+      <DependentUpon>Warehouse_Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

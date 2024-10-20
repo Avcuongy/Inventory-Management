@@ -20,7 +20,7 @@ namespace Inventory_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Warehouse warehouse;
+           /* Warehouse warehouse;
 
 
             string path = "Inventory_Management_data.dat";
@@ -37,9 +37,12 @@ namespace Inventory_Management
                 warehouse = JsonSerializer.Deserialize<Warehouse>(fileContent);
             }
 
-            Login login = new Login(warehouse);
+            Login login = new Login(warehouse);*/
 
-            Application.Run(login);
+
+            Warehouse_Menu menu = new Warehouse_Menu();
+
+            Application.Run(menu);
         }
     }
 }
