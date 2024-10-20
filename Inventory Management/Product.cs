@@ -22,7 +22,7 @@ namespace Inventory_Management
         public string Name { get => name; set => name = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public double Price { get => price; set => price = value; }
-        Category Category { get => category; set => category = value; }
+        public Category Category { get => category; set => category = value; }
 
         public abstract void AddProduct();
         public abstract void UpdateProduct();
