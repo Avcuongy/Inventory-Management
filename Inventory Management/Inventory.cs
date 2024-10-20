@@ -10,9 +10,9 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class Inventory:ISerializable
+    public class Inventory:ISerializable
     {
-        private Dictionary<int, int> productStock;
+        private Dictionary<int, int> productStock = new Dictionary<int, int>();
         public Inventory(Dictionary<int, int> productStock)
         {
             this.productStock = productStock;
@@ -29,6 +29,7 @@ namespace Inventory_Management
         }
         public Inventory()
         {
+
         }
     }
 }

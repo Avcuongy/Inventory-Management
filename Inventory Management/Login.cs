@@ -12,9 +12,22 @@ namespace Inventory_Management
 {
     public partial class Login : Form
     {
-        public Login()
+        private Warehouse _warehouse;
+        public Login(Warehouse warehouse)
         {
             InitializeComponent();
+            _warehouse = warehouse;
+        }
+        private void Login_Button_Click(object sender, EventArgs e)
+        {
+            string username = Username.Text;
+            string password = Password.Text;
+            if (_warehouse.CheckUser(username, password))
+            {
+                MessageBox.Show("Login Successful!");
+                this.Hide();
+                // Xử lí profile
+            }    
         }
     }
 }

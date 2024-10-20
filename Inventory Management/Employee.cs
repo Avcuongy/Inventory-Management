@@ -11,7 +11,7 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class Employee : ISerializable
+    public class Employee : ISerializable
     {
         private int employeeId;
         private string name;
@@ -49,6 +49,5 @@ namespace Inventory_Management
             info.AddValue("Username", Username);
             info.AddValue("Password", Password);
         }
-
     }
 }

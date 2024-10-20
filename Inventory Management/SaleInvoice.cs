@@ -10,11 +10,11 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class SaleInvoice : ISerializable
+    public class SaleInvoice : ISerializable
     {
         private int invoiceId;
         private Customer customer;
-        private List<Product> soldProducts;
+        private List<Product> soldProducts = new List<Product>();
         private double totalAmount;
         private string paymentStatus;
 

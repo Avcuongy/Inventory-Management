@@ -10,10 +10,10 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class Category : ISerializable
+    public class Category : ISerializable
     {
         private string categoryName;
-        private List<Product> products;
+        private List<Product> products = new List<Product>();
         public string CategoryName { get => categoryName; set => categoryName = value; }
         public List<Product> Products { get => products; set => products = value; }
 

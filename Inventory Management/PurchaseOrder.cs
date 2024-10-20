@@ -11,12 +11,12 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class PurchaseOrder : ISerializable
+    public class PurchaseOrder : ISerializable
     {
         private int orderId;
         private Supplier supplier;
         private string status;
-        private List<Product> orderedProducts;
+        private List<Product> orderedProducts = new List<Product>();
 
         public int OrderId { get => orderId; set => orderId = value; }
         public string Status { get => status; set => status = value; }

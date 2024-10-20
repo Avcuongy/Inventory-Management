@@ -34,9 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Username = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Password = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Login_Button = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
@@ -87,48 +87,48 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.Username);
             this.panel3.ForeColor = System.Drawing.Color.Transparent;
             this.panel3.Location = new System.Drawing.Point(200, 240);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(320, 88);
             this.panel3.TabIndex = 4;
             // 
-            // textBox1
+            // Username
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.textBox1.Location = new System.Drawing.Point(16, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 40);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "Username";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Username.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Username.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.Username.Location = new System.Drawing.Point(16, 24);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(288, 40);
+            this.Username.TabIndex = 6;
+            this.Username.TabStop = false;
+            this.Username.Text = "Username";
+            this.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.textBox2);
+            this.panel4.Controls.Add(this.Password);
             this.panel4.ForeColor = System.Drawing.Color.Transparent;
             this.panel4.Location = new System.Drawing.Point(200, 360);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(320, 88);
             this.panel4.TabIndex = 5;
             // 
-            // textBox2
+            // Password
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.textBox2.Location = new System.Drawing.Point(16, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(288, 40);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TabStop = false;
-            this.textBox2.Text = "Password";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Password.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.Password.Location = new System.Drawing.Point(16, 24);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(288, 40);
+            this.Password.TabIndex = 7;
+            this.Password.TabStop = false;
+            this.Password.Text = "Password";
+            this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox1
             // 
@@ -152,6 +152,7 @@
             this.Login_Button.TabIndex = 7;
             this.Login_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Login_Button.UseVisualStyleBackColor = true;
+            this.Login_Button.Click += new System.EventHandler(this.Login_Button_Click);
             // 
             // Login
             // 
@@ -191,8 +192,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Username;
+        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Login_Button;
     }

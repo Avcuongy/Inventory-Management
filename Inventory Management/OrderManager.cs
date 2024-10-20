@@ -13,7 +13,7 @@ namespace Inventory_Management
 {
     internal class OrderManager : ISerializable
     {
-        private List<PurchaseOrder> orders;
+        private List<PurchaseOrder> orders = new List<PurchaseOrder>();
         public List<PurchaseOrder> Orders { get => orders; set => orders = value; }
 
         public void CreateOrder(SerializationInfo info, StreamingContext context)

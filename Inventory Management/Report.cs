@@ -10,10 +10,10 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class Report : ISerializable
+    public class Report : ISerializable
     {
-        private List<Transaction> transactions;
-        private List<SaleInvoice> invoices;
+        private List<Transaction> transactions = new List<Transaction>();
+        private List<SaleInvoice> invoices = new List<SaleInvoice>();
         public List<Transaction> Transactions { get => transactions; set => transactions = value; }
         public List<SaleInvoice> Invoices { get => invoices; set => invoices = value; }
 

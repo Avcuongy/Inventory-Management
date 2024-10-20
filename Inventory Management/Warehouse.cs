@@ -10,11 +10,11 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class Warehouse:ISerializable
+    public class Warehouse:ISerializable
     {
-        private List<Product> products;
-        private List<Employee> employees;
-        Inventory inventory;
+        private List<Product> products = new List<Product>();
+        private List<Employee> employees = new List<Employee>();
+        private Inventory inventory = new Inventory();
         public Warehouse(List<Product> products, List<Employee> employees, Inventory inventory)
         {
             this.products = products;
@@ -38,6 +38,17 @@ namespace Inventory_Management
         }
         public Warehouse()
         { 
+        }
+        public bool CheckUser(string  username, string password)
+        {
+            foreach (Employee employee in employees)
+            {
+                if (employee.Username.Equals(username) && employee.Password.Equals(password))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

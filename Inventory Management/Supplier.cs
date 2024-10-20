@@ -10,12 +10,12 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class Supplier : ISerializable
+    public class Supplier : ISerializable
     {
         private int supplierId;
         private string name;
         private string contactInfo;
-        private List<Product> suppliedProducts;
+        private List<Product> suppliedProducts = new List<Product>();
         public int SupplierId { get => supplierId; set => supplierId = value; }
         public string Name { get => name; set => name = value; }
         public string ContactInfo { get => contactInfo; set => contactInfo = value; }

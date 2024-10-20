@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class ReturnOrder : ISerializable
+    public class ReturnOrder : ISerializable
     {
         private int returnOrderId;
         private Product product;

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json;
 using System.IO;
+using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
@@ -19,13 +20,26 @@ namespace Inventory_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Warehouse warehouse;
 
-            /*
-            Thực hiện Deserialize
-            Thực hiện triển khai khởi tạo lớp
-            */
 
-            Application.Run(new Login());
+            string path = "Inventory_Management_data.dat";
+            
+            if (!File.Exists(path))
+            {
+                //Khởi tạo các giá trị
+                warehouse = new Warehouse();
+                
+            }
+            else
+            {
+                string fileContent = File.ReadAllText(path);
+                warehouse = JsonSerializer.Deserialize<Warehouse>(fileContent);
+            }
+
+            Login login = new Login(warehouse);
+
+            Application.Run(login);
         }
     }
 }
