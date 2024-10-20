@@ -24,7 +24,7 @@ namespace Inventory_Management
         public string Name { get => name; set => name = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public double Price { get => price; set => price = value; }
-        Category Category { get => category; set => category = value; }
+        public Category Category { get => category; set => category = value; }
         public Bitmap ProductImage { get => productImage; set => productImage = value; }
 
         public abstract void AddProduct();
@@ -47,7 +47,7 @@ namespace Inventory_Management
             info.AddValue("Category", Category, typeof(Category));
             info.AddValue("Quantity", Quantity);
             info.AddValue("Price", Price);
-            info.AddValue("ProductImgage",typeof(Bitmap));
+            info.AddValue("ProductImgage",ProductImage,typeof(Bitmap));
         }
     }
 }
