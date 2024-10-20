@@ -11,7 +11,7 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    internal class OrderManager : ISerializable
+    public class OrderManager : ISerializable
     {
         private List<PurchaseOrder> orders = new List<PurchaseOrder>();
         public List<PurchaseOrder> Orders { get => orders; set => orders = value; }
