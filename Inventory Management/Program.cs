@@ -38,11 +38,10 @@ namespace Inventory_Management
             }
 
             Login login = new Login(warehouse);*/
+      
+            Warehouse_Menu warehouse = new Warehouse_Menu();
 
-
-            Warehouse_Menu menu = new Warehouse_Menu();
-
-            Application.Run(menu);
+            Application.Run(warehouse);
         }
     }
 }

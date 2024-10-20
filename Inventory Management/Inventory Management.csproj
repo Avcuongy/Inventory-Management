@@ -74,6 +74,24 @@
     <Compile Include="Tablet.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Warehouse.cs" />
+    <Compile Include="Warehouse_CheckStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_CheckStock.Designer.cs">
+      <DependentUpon>Warehouse_CheckStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_Export.Designer.cs">
+      <DependentUpon>Warehouse_Export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse_Import.Designer.cs">
+      <DependentUpon>Warehouse_Import.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +110,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Warehouse_CheckStock.resx">
+      <DependentUpon>Warehouse_CheckStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_Export.resx">
+      <DependentUpon>Warehouse_Export.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse_Import.resx">
+      <DependentUpon>Warehouse_Import.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Warehouse_Menu.resx">
       <DependentUpon>Warehouse_Menu.cs</DependentUpon>
     </EmbeddedResource>
