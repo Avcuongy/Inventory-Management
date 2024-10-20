@@ -51,14 +51,18 @@
     <Compile Include="Category.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Headphone.cs" />
     <Compile Include="Inventory.cs" />
+    <Compile Include="Keyboard.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mouse.cs" />
     <Compile Include="OrderManager.cs" />
+    <Compile Include="Phone.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +71,7 @@
     <Compile Include="ReturnOrder.cs" />
     <Compile Include="SaleInvoice.cs" />
     <Compile Include="Supplier.cs" />
+    <Compile Include="Tablet.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Warehouse.cs" />
     <EmbeddedResource Include="Login.resx">
