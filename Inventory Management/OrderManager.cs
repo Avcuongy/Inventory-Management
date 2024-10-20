@@ -20,7 +20,6 @@ namespace Inventory_Management
         {
             Orders = (List<PurchaseOrder>)info.GetValue("Orders", typeof(List<PurchaseOrder>));
         }
-
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("Orders", Orders, typeof(PurchaseOrder));
