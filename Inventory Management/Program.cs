@@ -39,9 +39,9 @@ namespace Inventory_Management
 
             Login login = new Login(warehouse);*/
       
-            Warehouse_Menu warehouse = new Warehouse_Menu();
+          Profile profile = new Profile();
 
-            Application.Run(warehouse);
+            Application.Run(profile);
         }
     }
 }
