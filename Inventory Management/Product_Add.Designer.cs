@@ -52,7 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,14 +93,13 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.label2.Location = new System.Drawing.Point(32, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 41);
+            this.label2.Size = new System.Drawing.Size(274, 39);
             this.label2.TabIndex = 6;
             this.label2.Text = "Add New Product";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Location = new System.Drawing.Point(840, 128);
             this.panel4.Name = "panel4";
@@ -320,17 +318,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Products";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label11.Location = new System.Drawing.Point(184, 1);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(154, 28);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Upload Image";
-            // 
             // Product_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,7 +332,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -380,6 +366,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label11;
     }
 }

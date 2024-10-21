@@ -20,24 +20,7 @@ namespace Inventory_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-           /* Warehouse warehouse;
-
-
-            string path = "Inventory_Management_data.dat";
-            
-            if (!File.Exists(path))
-            {
-                //Khởi tạo các giá trị
-                warehouse = new Warehouse();
-                
-            }
-            else
-            {
-                string fileContent = File.ReadAllText(path);
-                warehouse = JsonSerializer.Deserialize<Warehouse>(fileContent);
-            }
-
-            Login login = new Login(warehouse);*/
+           
       
             Warehouse_Menu warehouse = new Warehouse_Menu();
 
