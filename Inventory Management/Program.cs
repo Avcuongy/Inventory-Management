@@ -20,28 +20,36 @@ namespace Inventory_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-           /* Warehouse warehouse;
+            Warehouse warehouse = new Warehouse();
+            Inventory inventory = new Inventory();
+            Category category = new Category();
+            PurchaseOrder purchaseOrder = new PurchaseOrder();
+            OrderManager orderManager = new OrderManager();
+            Supplier supplier = new Supplier();
+            SaleInvoice saleInvoice = new SaleInvoice();
+            Report report = new Report();
+            Transaction transaction = new Transaction();
+
+            /*
+                Warehouse
+                Inventory
+                Category
+                PurchaseOrder
+                OrderManager
+                Supplier
+                SaleInvoice
+                Report
+                Transaction
+             */
 
 
-            string path = "Inventory_Management_data.dat";
-            
-            if (!File.Exists(path))
-            {
-                //Khởi tạo các giá trị
-                warehouse = new Warehouse();
-                
-            }
-            else
-            {
-                string fileContent = File.ReadAllText(path);
-                warehouse = JsonSerializer.Deserialize<Warehouse>(fileContent);
-            }
 
-            Login login = new Login(warehouse);*/
-      
-          Profile profile = new Profile();
 
-            Application.Run(profile);
+
+
+            Login login = new Login(warehouse);
+
+            Application.Run(login);
         }
     }
 }

@@ -26,8 +26,8 @@ namespace Inventory_Management
             {
                 MessageBox.Show("Login Successful!");
                 this.Hide();
-                /*Profile profile = new Profile();
-                profile.Show();*/
+                Profile profile = new Profile();
+                profile.Show();
             }    
         }
     }

@@ -13,6 +13,7 @@ namespace Inventory_Management
     public class Report : ISerializable
     {
         private List<Transaction> transactions = new List<Transaction>();
+
         private List<SaleInvoice> invoices = new List<SaleInvoice>();
         public List<Transaction> Transactions { get => transactions; set => transactions = value; }
         public List<SaleInvoice> Invoices { get => invoices; set => invoices = value; }

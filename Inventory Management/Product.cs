@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
+using System.IO;
 
 namespace Inventory_Management
 {
@@ -19,7 +20,6 @@ namespace Inventory_Management
         private int quantity;
         private double price;
         private Bitmap productImage;
-
         public int ProductId { get => productId; set => productId = value; }
         public string Name { get => name; set => name = value; }
         public int Quantity { get => quantity; set => quantity = value; }
@@ -47,7 +47,14 @@ namespace Inventory_Management
             info.AddValue("Category", Category, typeof(Category));
             info.AddValue("Quantity", Quantity);
             info.AddValue("Price", Price);
-            info.AddValue("ProductImgage",ProductImage,typeof(Bitmap));
+            info.AddValue("ProductImage",ProductImage,typeof(Bitmap));
+        }
+        public void LoadImage(string filePath)
+        {
+            if(File.Exists(filePath))
+            {
+                productImage = new Bitmap(filePath);
+            }
         }
     }
 }
