@@ -20,11 +20,6 @@ namespace Inventory_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-<<<<<<< HEAD
-           
-      
-            Warehouse_Menu warehouse = new Warehouse_Menu();
-=======
             Warehouse warehouse = new Warehouse();
             Inventory inventory = new Inventory();
             Category category = new Category();
@@ -46,11 +41,6 @@ namespace Inventory_Management
                 Report
                 Transaction
              */
-
-
-
->>>>>>> Cuong
-
 
 
             Login login = new Login(warehouse);
