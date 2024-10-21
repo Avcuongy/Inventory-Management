@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
@@ -64,6 +65,7 @@
     <Compile Include="OrderManager.cs" />
     <Compile Include="Phone.cs" />
     <Compile Include="Product.cs" />
+<<<<<<< HEAD
     <Compile Include="Product_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +83,13 @@
     </Compile>
     <Compile Include="Product_Update.Designer.cs">
       <DependentUpon>Product_Update.cs</DependentUpon>
+=======
+    <Compile Include="Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+>>>>>>> Cuong
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,6 +128,7 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Product_Add.resx">
       <DependentUpon>Product_Add.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +137,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Product_Update.resx">
       <DependentUpon>Product_Update.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+>>>>>>> Cuong
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -20,11 +20,42 @@ namespace Inventory_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+<<<<<<< HEAD
            
       
             Warehouse_Menu warehouse = new Warehouse_Menu();
+=======
+            Warehouse warehouse = new Warehouse();
+            Inventory inventory = new Inventory();
+            Category category = new Category();
+            PurchaseOrder purchaseOrder = new PurchaseOrder();
+            OrderManager orderManager = new OrderManager();
+            Supplier supplier = new Supplier();
+            SaleInvoice saleInvoice = new SaleInvoice();
+            Report report = new Report();
+            Transaction transaction = new Transaction();
 
-            Application.Run(warehouse);
+            /*
+                Warehouse
+                Inventory
+                Category
+                PurchaseOrder
+                OrderManager
+                Supplier
+                SaleInvoice
+                Report
+                Transaction
+             */
+
+
+
+>>>>>>> Cuong
+
+
+
+            Login login = new Login(warehouse);
+
+            Application.Run(login);
         }
     }
 }
