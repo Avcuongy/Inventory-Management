@@ -21,3 +21,6 @@ D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\In
 D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory Management.exe
 D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory Management.pdb
 D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory_Management.Warehouse_Menu.resources
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory_Management.Warehouse_Import.resources
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory_Management.Warehouse_Export.resources
+D:\_Dev\C#\_Group Project\Inventory Management\Inventory Management\obj\Debug\Inventory_Management.Warehouse_CheckStock.resources

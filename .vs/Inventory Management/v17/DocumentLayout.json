@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\tablet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\tablet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\headphone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\headphone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\keyboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\keyboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\mouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\mouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|D:\\_Dev\\C#\\_Group Project\\Inventory Management\\inventory management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,67 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Mouse.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Mouse.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Mouse.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Mouse.cs",
-              "RelativeToolTip": "Inventory Management\\Mouse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Product.cs",
+              "RelativeDocumentMoniker": "Inventory Management\\Product.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Product.cs",
+              "RelativeToolTip": "Inventory Management\\Product.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACoAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T08:01:59.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Keyboard.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Keyboard.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Keyboard.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Keyboard.cs",
-              "RelativeToolTip": "Inventory Management\\Keyboard.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T08:01:54.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Headphone.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Headphone.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Headphone.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Headphone.cs",
-              "RelativeToolTip": "Inventory Management\\Headphone.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T08:01:48.944Z",
+              "WhenOpened": "2024-10-20T16:39:04.368Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Tablet.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Tablet.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Tablet.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Tablet.cs",
-              "RelativeToolTip": "Inventory Management\\Tablet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Program.cs",
+              "RelativeDocumentMoniker": "Inventory Management\\Program.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Program.cs",
+              "RelativeToolTip": "Inventory Management\\Program.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA3wCsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T08:01:38.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Phone.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Phone.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Phone.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Phone.cs",
-              "RelativeToolTip": "Inventory Management\\Phone.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T08:01:29.044Z",
+              "WhenOpened": "2024-10-20T16:21:48.671Z",
               "EditorCaption": ""
             }
           ]
