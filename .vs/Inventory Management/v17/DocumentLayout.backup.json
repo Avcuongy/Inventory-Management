@@ -3,30 +3,8 @@
   "WorkspaceRootPath": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\",
   "Documents": [
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\warehouse_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\warehouse_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\warehouse_import.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\warehouse_import.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\warehouse_export.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\warehouse_export.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory management\\inventory management\\warehouse_checkstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\warehouse_checkstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-=======
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Cuong
-=======
       "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
->>>>>>> Cuong
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\inventory management\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -52,17 +30,6 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "DocumentIndex": 0,
-              "Title": "Warehouse_Menu.cs [Design]",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Warehouse_Menu.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Warehouse_Menu.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Warehouse_Menu.cs [Design]",
-              "RelativeToolTip": "Inventory Management\\Warehouse_Menu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T11:35:30.815Z",
-=======
               "DocumentIndex": 0,
               "Title": "Profile.cs [Design]",
               "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Profile.cs",
@@ -71,52 +38,10 @@
               "RelativeToolTip": "Inventory Management\\Profile.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T14:12:22.116Z",
->>>>>>> Cuong
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 1,
-              "Title": "Warehouse_Import.cs [Design]",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Warehouse_Import.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Warehouse_Import.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Warehouse_Import.cs [Design]",
-              "RelativeToolTip": "Inventory Management\\Warehouse_Import.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T11:35:30.227Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Warehouse_Export.cs [Design]",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Warehouse_Export.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Warehouse_Export.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Warehouse_Export.cs [Design]",
-              "RelativeToolTip": "Inventory Management\\Warehouse_Export.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T11:35:29.648Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Warehouse_CheckStock.cs [Design]",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Warehouse_CheckStock.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Warehouse_CheckStock.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory Management\\Inventory Management\\Warehouse_CheckStock.cs [Design]",
-              "RelativeToolTip": "Inventory Management\\Warehouse_CheckStock.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T11:35:28.896Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-=======
-=======
->>>>>>> Cuong
               "DocumentIndex": 1,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Product.cs",
@@ -130,26 +55,13 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 0,
->>>>>>> Cuong
-=======
               "DocumentIndex": 2,
->>>>>>> Cuong
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Program.cs",
               "RelativeDocumentMoniker": "Inventory Management\\Program.cs",
               "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Program.cs",
               "RelativeToolTip": "Inventory Management\\Program.cs",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBYAAAALAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDUAAAAAAAAAAAAAAA==",
->>>>>>> Cuong
-=======
               "ViewState": "AgIAABEAAAAAAAAAAAAxwCsAAAAAAAAAAAAAAA==",
->>>>>>> Cuong
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T13:02:40.347Z",
               "EditorCaption": ""

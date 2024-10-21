@@ -216,7 +216,7 @@
             // 
             this.textBox5.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.textBox5.Location = new System.Drawing.Point(16, 60);
+            this.textBox5.Location = new System.Drawing.Point(16, 64);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(168, 28);
             this.textBox5.TabIndex = 24;
@@ -226,7 +226,7 @@
             // 
             this.textBox6.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.textBox6.Location = new System.Drawing.Point(216, 60);
+            this.textBox6.Location = new System.Drawing.Point(216, 64);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(168, 28);
             this.textBox6.TabIndex = 23;
@@ -237,7 +237,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Righteous", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label11.Location = new System.Drawing.Point(416, 30);
+            this.label11.Location = new System.Drawing.Point(416, 24);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(167, 22);
             this.label11.TabIndex = 22;
@@ -259,7 +259,7 @@
             // 
             this.textBox7.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.textBox7.Location = new System.Drawing.Point(416, 60);
+            this.textBox7.Location = new System.Drawing.Point(416, 64);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(168, 28);
             this.textBox7.TabIndex = 20;
@@ -270,7 +270,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Righteous", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label9.Location = new System.Drawing.Point(256, 30);
+            this.label9.Location = new System.Drawing.Point(256, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 22);
             this.label9.TabIndex = 19;
@@ -282,7 +282,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Righteous", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label8.Location = new System.Drawing.Point(72, 30);
+            this.label8.Location = new System.Drawing.Point(72, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 22);
             this.label8.TabIndex = 17;
@@ -309,18 +309,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Righteous", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.label2.Location = new System.Drawing.Point(32, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 41);
+            this.label2.Size = new System.Drawing.Size(125, 42);
             this.label2.TabIndex = 6;
             this.label2.Text = "Import";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.button1.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Roboto", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(1008, 496);
             this.button1.Name = "button1";
