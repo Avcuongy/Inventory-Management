@@ -65,6 +65,24 @@
     <Compile Include="OrderManager.cs" />
     <Compile Include="Phone.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="Product_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product_Add.Designer.cs">
+      <DependentUpon>Product_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product_Menu.Designer.cs">
+      <DependentUpon>Product_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product_Update.Designer.cs">
+      <DependentUpon>Product_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +125,15 @@
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product_Add.resx">
+      <DependentUpon>Product_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product_Menu.resx">
+      <DependentUpon>Product_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product_Update.resx">
+      <DependentUpon>Product_Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
