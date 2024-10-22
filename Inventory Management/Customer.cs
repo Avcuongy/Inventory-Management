@@ -12,17 +12,17 @@ namespace Inventory_Management
 {
     public class Customer : ISerializable
     {
-        private int customerId;
+        private string customerId;
         private string name;
         private string contactInfo;
 
-        public int CustomerId { get => customerId; set => customerId = value; }
+        public string CustomerId { get => customerId; set => customerId = value; }
         public string Name { get => name; set => name = value; }
         public string ContactInfo { get => contactInfo; set => contactInfo = value; }
 
         public Customer() { }
 
-        public Customer(int customerId, string name, string contactInfo)
+        public Customer(string customerId, string name, string contactInfo)
         {
             this.customerId = customerId;
             this.name = name;
@@ -31,10 +31,11 @@ namespace Inventory_Management
 
         public Customer(SerializationInfo info, StreamingContext context)
         {
-            CustomerId = info.GetInt32("CustomerId");
+            CustomerId = info.GetString("CustomerId");
             Name = info.GetString("Name");
             ContactInfo = info.GetString("ContactInfo");
         }
+
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("CustomerId", CustomerId);

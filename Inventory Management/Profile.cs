@@ -12,16 +12,28 @@ namespace Inventory_Management
 {
     public partial class Profile : Form
     {
-        public Profile()
+        private Warehouse _warehouse;
+        private string _username;
+        public Profile(string username,Warehouse warehouse)
         {
             InitializeComponent();
-        }
+            _warehouse = warehouse;
+            _username = username;
+            ShowInfoInProfile();
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        }     
+        public void ShowInfoInProfile()
         {
-            this.Hide();
-            Warehouse_Menu menu = new Warehouse_Menu();
-            menu.Show(this);
+            foreach (Employee employ in _warehouse.Employees)
+            {
+                if (employ.Username == _username)
+                {
+                    NameLabel.Text = employ.Name;
+                    RoleText.Text = employ.Role;
+                    EmployeeIDText.Text = employ.EmployeeId;
+                    break;
+                }
+            }
         }
     }
 }

@@ -12,11 +12,11 @@ namespace Inventory_Management
 {
     public class Transaction : ISerializable
     {
-        private int transactionId;
+        private string transactionId;
         private Product product;
         private int quantity;
         private DateTime transactionDate;
-        public Transaction(int transactionId, Product product, int quantity, DateTime transactionDate)
+        public Transaction(string transactionId, Product product, int quantity, DateTime transactionDate)
         {
             this.transactionId = transactionId;
             this.product = product;
@@ -24,7 +24,7 @@ namespace Inventory_Management
             this.transactionDate = transactionDate;
 
         }
-        public int TransactionId { get => transactionId; set => transactionId = value; }
+        public string TransactionId { get => transactionId; set => transactionId = value; }
         public Product Product { get => product; set => product = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public DateTime TransactionDate { get => transactionDate; set => transactionDate = value; }
@@ -37,7 +37,7 @@ namespace Inventory_Management
         }
         public Transaction(SerializationInfo info, StreamingContext context)
         {
-            TransactionId = info.GetInt32("TransactionDate");
+            TransactionId = info.GetString("TransactionDate");
             Product = (Product)info.GetValue("Product", typeof(Product));
             Quantity = info.GetInt32("Quantity");
             TransactionDate = (DateTime)info.GetValue("TransactionId", typeof(DateTime));

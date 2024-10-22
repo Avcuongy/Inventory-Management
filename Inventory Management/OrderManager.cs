@@ -15,7 +15,6 @@ namespace Inventory_Management
     {
         private List<PurchaseOrder> orders = new List<PurchaseOrder>();
         public List<PurchaseOrder> Orders { get => orders; set => orders = value; }
-
         public void CreateOrder(SerializationInfo info, StreamingContext context)
         {
             Orders = (List<PurchaseOrder>)info.GetValue("Orders", typeof(List<PurchaseOrder>));

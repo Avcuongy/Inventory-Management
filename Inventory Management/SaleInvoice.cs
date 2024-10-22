@@ -12,13 +12,13 @@ namespace Inventory_Management
 {
     public class SaleInvoice : ISerializable
     {
-        private int invoiceId;
+        private string invoiceId;
         private Customer customer;
         private List<Product> soldProducts = new List<Product>();
         private double totalAmount;
         private string paymentStatus;
 
-        public int InvoiceId { get => invoiceId; set => invoiceId = value; }
+        public string InvoiceId { get => invoiceId; set => invoiceId = value; }
         public Customer Customer { get => customer; set => customer = value; }
         public List<Product> SoldProducts { get => soldProducts; set => soldProducts = value; }
         public double TotalAmount { get => totalAmount; set => totalAmount = value; }
@@ -26,13 +26,13 @@ namespace Inventory_Management
         public SaleInvoice() { }
         public SaleInvoice(SerializationInfo info, StreamingContext context)
         {
-            InvoiceId = info.GetInt32("InvoiceId");
+            InvoiceId = info.GetString("InvoiceId");
             Customer = (Customer)info.GetValue("Customer", typeof(Customer));
             SoldProducts = (List<Product>)info.GetValue("SoldProducts", typeof(List<Product>));
             TotalAmount = info.GetDouble("TotalAmount");
             PaymentStatus = info.GetString("PaymentStatus");
         }
-        public SaleInvoice(int invoiceId, Customer customer, List<Product> soldProducts, double totalAmount, string paymentStatus)
+        public SaleInvoice(string invoiceId, Customer customer, List<Product> soldProducts, double totalAmount, string paymentStatus)
         {
             this.invoiceId = invoiceId;
             this.customer = customer;

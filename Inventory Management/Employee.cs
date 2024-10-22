@@ -13,12 +13,12 @@ namespace Inventory_Management
 {
     public class Employee : ISerializable
     {
-        private int employeeId;
+        private string employeeId;
         private string name;
         private string role;
         private string username;
         private string password;
-        public int EmployeeId { get => employeeId; set => employeeId = value; }
+        public string EmployeeId { get => employeeId; set => employeeId = value; }
         public string Name { get => name; set => name = value; }
         public string Role { get => role; set => role = value; }
         public string Username { get => username; set => username = value; }
@@ -27,13 +27,13 @@ namespace Inventory_Management
 
         public Employee(SerializationInfo info, StreamingContext context)
         {
-            EmployeeId = info.GetInt32("EmployeeId");
+            EmployeeId = info.GetString("EmployeeId");
             Name = info.GetString("Name");
             Role = info.GetString("Role");
             Username = info.GetString("Username");
             Password = info.GetString("Password");
         }
-        public Employee(int employeeId, string name, string role, string username, string password)
+        public Employee(string employeeId, string name, string role, string username, string password)
         {
             this.employeeId = employeeId;
             this.name = name;

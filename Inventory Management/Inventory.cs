@@ -12,24 +12,25 @@ namespace Inventory_Management
 {
     public class Inventory:ISerializable
     {
-        private Dictionary<int, int> productStock = new Dictionary<int, int>();
-        public Inventory(Dictionary<int, int> productStock)
-        {
-            this.productStock = productStock;
-        }
-        public Dictionary<int, int> ProductStock { get => productStock; set => productStock = value; }
+        private Dictionary<string, int> productStock = new Dictionary<string, int>();
+        
+        public Dictionary<string, int> ProductStock { get => productStock; set => productStock = value; }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("ProductStock", ProductStock, typeof(Dictionary<int, int>));
+            info.AddValue("ProductStock", ProductStock, typeof(Dictionary<string, int>));
         }
         public Inventory(SerializationInfo info, StreamingContext context)
         {
-            ProductStock = (Dictionary<int, int>)info.GetValue("ProductStock", typeof(Dictionary<int, int>));
+            ProductStock = (Dictionary<string, int>)info.GetValue("ProductStock", typeof(Dictionary<string, int>));
         }
         public Inventory()
         {
 
+        }
+        public Inventory(Dictionary<string, int> productStock)
+        {
+            this.productStock = productStock;
         }
     }
 }

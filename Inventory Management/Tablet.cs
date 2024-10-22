@@ -9,14 +9,8 @@ namespace Inventory_Management
 {
     public class Tablet : Product
     {
-        public Tablet(int productId, string name, string category, int quantity, double price, Bitmap productImage) : base()
+        public Tablet(string productId, string name, string category, int quantity, double price) : base(productId, name, category, quantity, price)
         {
-            ProductId = productId;
-            Name = name;
-            Category = category;
-            Quantity = quantity;
-            Price = price;
-            ProductImage = productImage;
         }
     }
 }

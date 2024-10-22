@@ -12,11 +12,11 @@ namespace Inventory_Management
 {
     public class Supplier : ISerializable
     {
-        private int supplierId;
+        private string supplierId;
         private string name;
         private string contactInfo;
         private List<Product> suppliedProducts = new List<Product>();
-        public int SupplierId { get => supplierId; set => supplierId = value; }
+        public string SupplierId { get => supplierId; set => supplierId = value; }
         public string Name { get => name; set => name = value; }
         public string ContactInfo { get => contactInfo; set => contactInfo = value; }
         public List<Product> SuppliedProducts { get => suppliedProducts; set => suppliedProducts = value; }
@@ -25,13 +25,13 @@ namespace Inventory_Management
 
         public Supplier(SerializationInfo info, StreamingContext context)
         {
-            SupplierId = info.GetInt32("SupplierId");
+            SupplierId = info.GetString("SupplierId");
             Name = info.GetString("Name");
             ContactInfo = info.GetString("ContactInfo");
             SuppliedProducts = (List<Product>)info.GetValue("SuppliedProducts", typeof(List<Product>));
         }
 
-        public Supplier(int supplierId, string name, string contactInfo, List<Product> suppliedProducts)
+        public Supplier(string supplierId, string name, string contactInfo, List<Product> suppliedProducts)
         {
             this.supplierId = supplierId;
             this.name = name;

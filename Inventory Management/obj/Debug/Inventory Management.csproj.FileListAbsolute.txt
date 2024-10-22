@@ -51,3 +51,6 @@ D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\In
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventor.CCAFEA7E.Up2Date
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.exe
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.pdb
+D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Product_Add.resources
+D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Product_Menu.resources
+D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Product_Update.resources
