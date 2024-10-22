@@ -69,7 +69,7 @@
             this.panel_Update_Product.Controls.Add(this.panel1);
             this.panel_Update_Product.Controls.Add(this.panel3);
             this.panel_Update_Product.Controls.Add(this.label1);
-            this.panel_Update_Product.Location = new System.Drawing.Point(28, 6);
+            this.panel_Update_Product.Location = new System.Drawing.Point(24, 8);
             this.panel_Update_Product.Name = "panel_Update_Product";
             this.panel_Update_Product.Size = new System.Drawing.Size(1376, 640);
             this.panel_Update_Product.TabIndex = 11;
