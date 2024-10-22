@@ -16,7 +16,7 @@ namespace Inventory_Management
     {
         private int productId;
         private string name;
-        private Category category;
+        private string category;
         private int quantity;
         private double price;
         private Bitmap productImage;
@@ -24,18 +24,15 @@ namespace Inventory_Management
         public string Name { get => name; set => name = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public double Price { get => price; set => price = value; }
-        public Category Category { get => category; set => category = value; }
+        public string Category { get => category; set => category = value; }
         public Bitmap ProductImage { get => productImage; set => productImage = value; }
-
-        public abstract void AddProduct();
-        public abstract void UpdateProduct();
 
         public Product() { }
         public Product(SerializationInfo info, StreamingContext context)
         {
             ProductId = info.GetInt32("ID");
             Name = info.GetString("Name");
-            Category = (Category)info.GetValue("Category", typeof(Category));
+            Category = (string)info.GetValue("Category", typeof(string));
             Quantity = info.GetInt32("Quantity");
             Price = info.GetDouble("Price");
             ProductImage = (Bitmap)info.GetValue("ProductImage", typeof(Bitmap));
@@ -44,17 +41,10 @@ namespace Inventory_Management
         {
             info.AddValue("ID", ProductId);
             info.AddValue("Name", Name);
-            info.AddValue("Category", Category, typeof(Category));
+            info.AddValue("Category", Category, typeof(string));
             info.AddValue("Quantity", Quantity);
             info.AddValue("Price", Price);
             info.AddValue("ProductImage",ProductImage,typeof(Bitmap));
-        }
-        public void LoadImage(string filePath)
-        {
-            if(File.Exists(filePath))
-            {
-                productImage = new Bitmap(filePath);
-            }
         }
     }
 }

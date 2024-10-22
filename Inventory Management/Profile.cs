@@ -16,5 +16,12 @@ namespace Inventory_Management
         {
             InitializeComponent();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Warehouse_Menu menu = new Warehouse_Menu();
+            menu.Show(this);
+        }
     }
 }

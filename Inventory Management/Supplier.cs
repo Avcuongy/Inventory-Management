@@ -21,14 +21,6 @@ namespace Inventory_Management
         public string ContactInfo { get => contactInfo; set => contactInfo = value; }
         public List<Product> SuppliedProducts { get => suppliedProducts; set => suppliedProducts = value; }
 
-        public Supplier(int id, string name, string contactInfo)
-        {
-            this.supplierId = id;
-            this.name = name;
-            this.contactInfo = contactInfo;
-            this.suppliedProducts = new List<Product>();
-        }
-
         public Supplier() { }
 
         public Supplier(SerializationInfo info, StreamingContext context)
@@ -37,6 +29,14 @@ namespace Inventory_Management
             Name = info.GetString("Name");
             ContactInfo = info.GetString("ContactInfo");
             SuppliedProducts = (List<Product>)info.GetValue("SuppliedProducts", typeof(List<Product>));
+        }
+
+        public Supplier(int supplierId, string name, string contactInfo, List<Product> suppliedProducts)
+        {
+            this.supplierId = supplierId;
+            this.name = name;
+            this.contactInfo = contactInfo;
+            this.suppliedProducts = suppliedProducts;
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
