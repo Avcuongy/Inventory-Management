@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\_Dev\\C#\\_Group Project - Copy\\Inventory-Management\\",
+  "WorkspaceRootPath": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project - copy\\inventory-management\\inventory management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project - Copy\\Inventory-Management\\Inventory Management\\Program.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Program.cs",
               "RelativeDocumentMoniker": "Inventory Management\\Program.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project - Copy\\Inventory-Management\\Inventory Management\\Program.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Program.cs",
               "RelativeToolTip": "Inventory Management\\Program.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAmwFEAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T15:31:03.742Z",
               "EditorCaption": ""
