@@ -25,16 +25,16 @@ namespace Inventory_Management
             Warehouse warehouse = new Warehouse();
 
             /*
-                        warehouse.Products.Add(new Phone(1,"MX001","IPhone 13 pro",40,199, new Bitmap("link")));
-                        warehouse.Products.Add(new Phone(2, "MX002", "Smartphone", 50, 299, new Bitmap("link")));
-                        warehouse.Products.Add(new Tablet(3, "MX003", "Tablet Pro", 30, 399, new Bitmap("link")));
-                        warehouse.Products.Add(new Keyboard(4, "MX004", "Mechanical Keyboard", 100, 89, new Bitmap("link")));
-                        warehouse.Products.Add(new Headphone(5, "MX005", "Wireless Headphones", 70, 199, new Bitmap("link")));
-                        warehouse.Products.Add(new Mouse(6, "MX006", "Gaming Mouse", 80, 49, new Bitmap("link")));
-                        warehouse.Products.Add(new Phone(7, "MX007", "Basic Phone", 200, 39, new Bitmap("link")));
-                        warehouse.Products.Add(new Tablet(8, "MX008", "Budget Tablet", 60, 149, new Bitmap("link")));
-                        warehouse.Products.Add(new Keyboard(9, "MX009", "Wireless Keyboard", 120, 69, new Bitmap("link")));
-                        warehouse.Products.Add(new Headphone(10, "MX010", "Noise Cancelling Headphones", 40, 299, new Bitmap("link")));*/
+                        warehouse.Products.Add(new Phone(1,"MX001","IPhone 13 pro",40,199000, new Bitmap("link")));
+                        warehouse.Products.Add(new Phone(2, "MX002", "Smartphone", 50, 299000, new Bitmap("link")));
+                        warehouse.Products.Add(new Tablet(3, "MX003", "Tablet Pro", 30, 399000, new Bitmap("link")));
+                        warehouse.Products.Add(new Keyboard(4, "MX004", "Mechanical Keyboard", 100, 89000, new Bitmap("link")));
+                        warehouse.Products.Add(new Headphone(5, "MX005", "Wireless Headphones", 70, 199000, new Bitmap("link")));
+                        warehouse.Products.Add(new Mouse(6, "MX006", "Gaming Mouse", 80, 49000, new Bitmap("link")));
+                        warehouse.Products.Add(new Phone(7, "MX007", "Basic Phone", 200, 39000, new Bitmap("link")));
+                        warehouse.Products.Add(new Tablet(8, "MX008", "Budget Tablet", 60, 149000, new Bitmap("link")));
+                        warehouse.Products.Add(new Keyboard(9, "MX009", "Wireless Keyboard", 120, 69000, new Bitmap("link")));
+                        warehouse.Products.Add(new Headphone(10, "MX010", "Noise Cancelling Headphones", 40, 299000, new Bitmap("link")));*/
 
            
 
@@ -60,8 +60,8 @@ namespace Inventory_Management
                     { 6, 30 },
                     { 7, 12 },
                     { 8, 8 },
-                    { 9, 22 },
-                    { 10, 18 }
+                    { 9, 20 },
+                    { 10, 15 }
             }));
 
 

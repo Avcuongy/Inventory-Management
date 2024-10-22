@@ -24,11 +24,15 @@ namespace Inventory_Management
             string password = Password.Text;
             if (_warehouse.CheckUser(username, password))
             {
-                MessageBox.Show("Login Successful!");
+                MessageBox.Show("Login Successful !");
                 this.Hide();
                 Profile profile = new Profile();
                 profile.Show();
-            }    
+            }
+            else
+            {
+                MessageBox.Show("Wrong Username or Password !");
+            }
         }
     }
 }
