@@ -21,32 +21,59 @@ namespace Inventory_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Warehouse
+            // Khởi tạo các đối tượng
             Warehouse warehouse = new Warehouse();
+            List<Supplier> suppliers = new List<Supplier>();
+            List<PurchaseOrder> purchaseOrders = new List<PurchaseOrder>();
+            List<ReturnOrder> returnOrders = new List<ReturnOrder>();
+            List<Customer> customers = new List<Customer>();
+            OrderManager orderManager = new OrderManager(purchaseOrders);
+            List<SalesInvoice> salesInvoices = new List<SalesInvoice>();
+            Report report = new Report(salesInvoices);
 
-            warehouse.Products.Add(new Phone("P1", "Iphone 16 Pro", "Phone", 40, 199000));
-            warehouse.Products.Add(new Phone("P2", "One Plus Ace 3v", "Phone", 50, 299000));
-            warehouse.Products.Add(new Tablet("P3", "Xiaomi pad 6", "Tablet", 30, 399000));
-            warehouse.Products.Add(new Keyboard("P4", "Cidoo", "Keyboard", 100, 890000));
-            warehouse.Products.Add(new Headphone("P5", "Tanjim Zero", "Headphone", 70, 199000));
-            warehouse.Products.Add(new Mouse("P6", "G304", "Mouse", 80, 490000));
-            warehouse.Products.Add(new Phone("P7", "Iphone 16 Pro Plus", "Phone", 50, 390000));
-            warehouse.Products.Add(new Tablet("P8", "Ipad Gen 6", "Tablet", 60, 149000));
-            warehouse.Products.Add(new Keyboard("P9", "Logitech K102", "Keyboard", 120, 690000));
-            warehouse.Products.Add(new Headphone("P10", "Moondrop Jiu", "Headphone", 40, 299000));
+            string filePath = "Inventory_Management.dat";
 
-            warehouse.Employees.Add(new Employee("E1", "Tommy James", "Employee", "U1", "P1"));
-            warehouse.Employees.Add(new Employee("E2", "Ethan Nick", "Employee", "U2", "P2"));
-            warehouse.Employees.Add(new Employee("E3", "Sofia Briam", "Employee", "U3", "P3"));
-            warehouse.Employees.Add(new Employee("E4", "Liam Philip", "Employee", "U4", "P4"));
-            warehouse.Employees.Add(new Employee("E5", "Micas Sa", "Employee", "U5", "P5"));
-            warehouse.Employees.Add(new Employee("E6", "Luke Hamilton", "Employee", "U6", "P6"));
-            warehouse.Employees.Add(new Employee("E7", "Mason Green", "Employee", "U7", "P7"));
-            warehouse.Employees.Add(new Employee("E8", "Ohio Loto", "Employee", "U8", "P8"));
-            warehouse.Employees.Add(new Employee("E9", "Mia James", "Employee", "U9", "P9"));
-            warehouse.Employees.Add(new Employee("E10", "Mi chot So", "Employee", "U10", "P10"));
+            if (File.Exists(filePath))
+            {
+                string fileContent = File.ReadAllText(filePath);
 
-            warehouse.Inventory.Add(new Inventory(new Dictionary<String, int>() {
+                warehouse = JsonSerializer.Deserialize<Warehouse>(fileContent);
+                suppliers = JsonSerializer.Deserialize<List<Supplier>>(fileContent);
+                purchaseOrders = JsonSerializer.Deserialize<List<PurchaseOrder>>(fileContent);
+                returnOrders = JsonSerializer.Deserialize<List<ReturnOrder>>(fileContent);
+                customers = JsonSerializer.Deserialize<List<Customer>>(fileContent);
+                orderManager = JsonSerializer.Deserialize<OrderManager>(fileContent);
+                salesInvoices = JsonSerializer.Deserialize<List<SalesInvoice>>(fileContent);
+                report = JsonSerializer.Deserialize<Report>(fileContent);
+            }
+            else
+            {
+                // Warehouse
+                warehouse = new Warehouse();
+
+                warehouse.Products.Add(new Phone("P1", "Iphone 16 Pro", "Phone", 40, 199000));
+                warehouse.Products.Add(new Phone("P2", "One Plus Ace 3v", "Phone", 50, 299000));
+                warehouse.Products.Add(new Tablet("P3", "Xiaomi pad 6", "Tablet", 30, 399000));
+                warehouse.Products.Add(new Keyboard("P4", "Cidoo", "Keyboard", 100, 890000));
+                warehouse.Products.Add(new Headphone("P5", "Tanjim Zero", "Headphone", 70, 199000));
+                warehouse.Products.Add(new Mouse("P6", "G304", "Mouse", 80, 490000));
+                warehouse.Products.Add(new Phone("P7", "Iphone 16 Pro Plus", "Phone", 50, 390000));
+                warehouse.Products.Add(new Tablet("P8", "Ipad Gen 6", "Tablet", 60, 149000));
+                warehouse.Products.Add(new Keyboard("P9", "Logitech K102", "Keyboard", 120, 690000));
+                warehouse.Products.Add(new Headphone("P10", "Moondrop Jiu", "Headphone", 40, 299000));
+
+                warehouse.Employees.Add(new Employee("E1", "Tommy James", "Employee", "U1", "P1"));
+                warehouse.Employees.Add(new Employee("E2", "Ethan Nick", "Employee", "U2", "P2"));
+                warehouse.Employees.Add(new Employee("E3", "Sofia Briam", "Employee", "U3", "P3"));
+                warehouse.Employees.Add(new Employee("E4", "Liam Philip", "Employee", "U4", "P4"));
+                warehouse.Employees.Add(new Employee("E5", "Micas Sa", "Employee", "U5", "P5"));
+                warehouse.Employees.Add(new Employee("E6", "Luke Hamilton", "Employee", "U6", "P6"));
+                warehouse.Employees.Add(new Employee("E7", "Mason Green", "Employee", "U7", "P7"));
+                warehouse.Employees.Add(new Employee("E8", "Ohio Loto", "Employee", "U8", "P8"));
+                warehouse.Employees.Add(new Employee("E9", "Mia James", "Employee", "U9", "P9"));
+                warehouse.Employees.Add(new Employee("E10", "Mi chot So", "Employee", "U10", "P10"));
+
+                warehouse.Inventory.Add(new Inventory(new Dictionary<String, int>() {
                     { "P1", 10 },
                     { "P2", 15 },
                     { "P3", 20 },
@@ -59,8 +86,8 @@ namespace Inventory_Management
                     { "P10", 25 }
             }));
 
-            // Supplier
-            List<Supplier> suppliers = new List<Supplier>()
+                // Supplier
+                suppliers = new List<Supplier>()
             {
                 new Supplier("S1", "Cellphones", "0912345671",
                 new List<Product>()
@@ -90,8 +117,8 @@ namespace Inventory_Management
                 })
             };
 
-            // PurchaseOrder
-            List<PurchaseOrder> purchaseOrders = new List<PurchaseOrder>()
+                // PurchaseOrder
+                purchaseOrders = new List<PurchaseOrder>()
             {
                 new PurchaseOrder("PD1",suppliers[0],"Pending",new List<Product>()
                 {
@@ -112,8 +139,8 @@ namespace Inventory_Management
                 })
             };
 
-            // ReturnOrder
-            List<ReturnOrder> returnOrders = new List<ReturnOrder>()
+                // ReturnOrder
+                returnOrders = new List<ReturnOrder>()
             {
                 new ReturnOrder("R1",
                 new Phone("P1", "Iphone 16 Pro", "Phone", 3, 199000),"Broken During Transportation", new DateTime(2024,10,23),"Done"
@@ -126,21 +153,19 @@ namespace Inventory_Management
                 )
             };
 
-            //Customer
-            List<Customer> customers = new List<Customer>()
+                //Customer
+                customers = new List<Customer>()
             {
                 new Customer("C1","Viet","00000012345"),
                 new Customer("C2","Huy","00234981233"),
                 new Customer("C3","Cuong","0334901239")
             };
 
+                // OrderManager
+                orderManager = new OrderManager(purchaseOrders);
 
-            // OrderManager
-            OrderManager orderManager = new OrderManager(purchaseOrders);
-
-
-            // SaleInvoice
-            List<SalesInvoice> salesInvoices = new List<SalesInvoice>()
+                // SaleInvoice
+                salesInvoices = new List<SalesInvoice>()
             {
                 new SalesInvoice("SI01",customers[0],new List<Product>
                 {
@@ -154,29 +179,19 @@ namespace Inventory_Management
                 ,149000,"Done")
             };
 
-
-            // Report
-            Report report = new Report(salesInvoices);
-
-
-            /*
-                Warehouse
-                PurchaseOrder
-                OrderManager
-                Supplier
-                SaleInvoice
-                Report
-             */
+                // Report
+                report = new Report(salesInvoices);
+            }
 
             Login login = new Login(warehouse,
                                     suppliers,
-                                    purchaseOrders, 
-                                    returnOrders, 
+                                    purchaseOrders,
+                                    returnOrders,
                                     customers,
                                     orderManager,
                                     salesInvoices,
                                     report);
-           
+
             Application.Run(login);
         }
     }
