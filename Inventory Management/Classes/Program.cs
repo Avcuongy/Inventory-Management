@@ -148,15 +148,10 @@ namespace Inventory_Management
                 ,199000,"Done")
             };
 
-            // Transaction
-            List<Transaction> transactions = new List<Transaction>
-            {
-                new Transaction("T1",new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199000),new DateTime(2024,10,20))
-            };
-
 
             // Report
-            Report report = new Report(transactions,salesInvoices);
+            Report report = new Report(salesInvoices);
+
 
             /*
                 Warehouse

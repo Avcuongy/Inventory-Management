@@ -49,132 +49,131 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="Headphone.cs" />
-    <Compile Include="Inventory.cs" />
-    <Compile Include="Keyboard.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Classes\Category.cs" />
+    <Compile Include="Classes\Customer.cs" />
+    <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Classes\Headphone.cs" />
+    <Compile Include="Classes\Inventory.cs" />
+    <Compile Include="Classes\Keyboard.cs" />
+    <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mouse.cs" />
-    <Compile Include="OrderManager.cs" />
-    <Compile Include="Order_Add.cs">
+    <Compile Include="Classes\Mouse.cs" />
+    <Compile Include="Classes\OrderManager.cs" />
+    <Compile Include="GUI\Order_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order_Add.Designer.cs">
+    <Compile Include="GUI\Order_Add.Designer.cs">
       <DependentUpon>Order_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order_Menu.cs">
+    <Compile Include="GUI\Order_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order_Menu.Designer.cs">
+    <Compile Include="GUI\Order_Menu.Designer.cs">
       <DependentUpon>Order_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order_Subtract.cs">
+    <Compile Include="GUI\Order_Subtract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order_Subtract.Designer.cs">
+    <Compile Include="GUI\Order_Subtract.Designer.cs">
       <DependentUpon>Order_Subtract.cs</DependentUpon>
     </Compile>
-    <Compile Include="Phone.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="Product_Add.cs">
+    <Compile Include="Classes\Phone.cs" />
+    <Compile Include="Classes\Product.cs" />
+    <Compile Include="GUI\Product_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product_Add.Designer.cs">
+    <Compile Include="GUI\Product_Add.Designer.cs">
       <DependentUpon>Product_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product_Menu.cs">
+    <Compile Include="GUI\Product_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product_Menu.Designer.cs">
+    <Compile Include="GUI\Product_Menu.Designer.cs">
       <DependentUpon>Product_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product_Update.cs">
+    <Compile Include="GUI\Product_Update.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product_Update.Designer.cs">
+    <Compile Include="GUI\Product_Update.Designer.cs">
       <DependentUpon>Product_Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profile.cs">
+    <Compile Include="GUI\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profile.Designer.cs">
+    <Compile Include="GUI\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurchaseOrder.cs" />
-    <Compile Include="Report.cs" />
-    <Compile Include="ReturnOrder.cs" />
-    <Compile Include="SaleInvoice.cs" />
-    <Compile Include="Supplier.cs" />
-    <Compile Include="Tablet.cs" />
-    <Compile Include="Transaction.cs" />
-    <Compile Include="Transaction_Add.cs">
+    <Compile Include="Classes\PurchaseOrder.cs" />
+    <Compile Include="Classes\Report.cs" />
+    <Compile Include="Classes\ReturnOrder.cs" />
+    <Compile Include="Classes\SaleInvoice.cs" />
+    <Compile Include="Classes\Supplier.cs" />
+    <Compile Include="Classes\Tablet.cs" />
+    <Compile Include="GUI\Transaction_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaction_Add.Designer.cs">
+    <Compile Include="GUI\Transaction_Add.Designer.cs">
       <DependentUpon>Transaction_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transaction_Menu.cs">
+    <Compile Include="GUI\Transaction_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaction_Menu.Designer.cs">
+    <Compile Include="GUI\Transaction_Menu.Designer.cs">
       <DependentUpon>Transaction_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Warehouse.cs" />
-    <Compile Include="Warehouse_CheckStock.cs">
+    <Compile Include="Classes\Warehouse.cs" />
+    <Compile Include="GUI\Warehouse_CheckStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Warehouse_CheckStock.Designer.cs">
+    <Compile Include="GUI\Warehouse_CheckStock.Designer.cs">
       <DependentUpon>Warehouse_CheckStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Warehouse_Export.cs">
+    <Compile Include="GUI\Warehouse_Export.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Warehouse_Export.Designer.cs">
+    <Compile Include="GUI\Warehouse_Export.Designer.cs">
       <DependentUpon>Warehouse_Export.cs</DependentUpon>
     </Compile>
-    <Compile Include="Warehouse_Import.cs">
+    <Compile Include="GUI\Warehouse_Import.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Warehouse_Import.Designer.cs">
+    <Compile Include="GUI\Warehouse_Import.Designer.cs">
       <DependentUpon>Warehouse_Import.cs</DependentUpon>
     </Compile>
-    <Compile Include="Warehouse_Menu.cs">
+    <Compile Include="GUI\Warehouse_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Warehouse_Menu.Designer.cs">
+    <Compile Include="GUI\Warehouse_Menu.Designer.cs">
       <DependentUpon>Warehouse_Menu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order_Add.resx">
+    <EmbeddedResource Include="GUI\Order_Add.resx">
       <DependentUpon>Order_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order_Menu.resx">
+    <EmbeddedResource Include="GUI\Order_Menu.resx">
       <DependentUpon>Order_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order_Subtract.resx">
+    <EmbeddedResource Include="GUI\Order_Subtract.resx">
       <DependentUpon>Order_Subtract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product_Add.resx">
+    <EmbeddedResource Include="GUI\Product_Add.resx">
       <DependentUpon>Product_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product_Menu.resx">
+    <EmbeddedResource Include="GUI\Product_Menu.resx">
       <DependentUpon>Product_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product_Update.resx">
+    <EmbeddedResource Include="GUI\Product_Update.resx">
       <DependentUpon>Product_Update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profile.resx">
+    <EmbeddedResource Include="GUI\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -186,22 +185,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Transaction_Add.resx">
+    <EmbeddedResource Include="GUI\Transaction_Add.resx">
       <DependentUpon>Transaction_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transaction_Menu.resx">
+    <EmbeddedResource Include="GUI\Transaction_Menu.resx">
       <DependentUpon>Transaction_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Warehouse_CheckStock.resx">
+    <EmbeddedResource Include="GUI\Warehouse_CheckStock.resx">
       <DependentUpon>Warehouse_CheckStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Warehouse_Export.resx">
+    <EmbeddedResource Include="GUI\Warehouse_Export.resx">
       <DependentUpon>Warehouse_Export.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Warehouse_Import.resx">
+    <EmbeddedResource Include="GUI\Warehouse_Import.resx">
       <DependentUpon>Warehouse_Import.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Warehouse_Menu.resx">
+    <EmbeddedResource Include="GUI\Warehouse_Menu.resx">
       <DependentUpon>Warehouse_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -217,5 +216,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
