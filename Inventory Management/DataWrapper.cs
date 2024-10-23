@@ -12,15 +12,6 @@ namespace Inventory_Management
 {
     public class DataWrapper
     {
-        private Warehouse _warehouse;
-        private List<Supplier> _suppliers;
-        private List<PurchaseOrder> _purchaseOrders;
-        private List<ReturnOrder> _returnOrders;
-        private List<Customer> _customers;
-        private OrderManager _orderManager;
-        private List<SalesInvoice> _salesInvoices;
-        private Report _report;
-
         public Warehouse Warehouse { get; set; }
         public List<Supplier> Suppliers { get; set; }
         public List<PurchaseOrder> PurchaseOrders { get; set; }

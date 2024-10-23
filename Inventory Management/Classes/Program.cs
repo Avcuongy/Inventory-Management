@@ -39,6 +39,7 @@ namespace Inventory_Management
 
                 DataWrapper dataWrapper = JsonSerializer.Deserialize<DataWrapper>(fileContent);
 
+                // Gán dữ liệu từ dataWrapper vào các biến tương ứng
                 warehouse = dataWrapper.Warehouse;
                 suppliers = dataWrapper.Suppliers;
                 purchaseOrders = dataWrapper.PurchaseOrders;

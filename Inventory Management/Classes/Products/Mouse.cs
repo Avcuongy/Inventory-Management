@@ -14,10 +14,15 @@ namespace Inventory_Management
 {
     public class Mouse:Product
     {
+        [JsonConstructor]
         public Mouse(string productId, string name, string category, int quantity, double price) : base(productId, name, category, quantity, price)
         {
         }
         public Mouse():base() { }
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
         public override double PriceQuantity()
         {
             return Price * Quantity;

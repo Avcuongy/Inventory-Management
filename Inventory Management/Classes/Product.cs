@@ -12,6 +12,11 @@ using System.IO;
 
 namespace Inventory_Management
 {
+    [JsonDerivedType(typeof(Phone), typeDiscriminator: "Phone")]
+    [JsonDerivedType(typeof(Tablet), typeDiscriminator: "Tablet")]
+    [JsonDerivedType(typeof(Keyboard), typeDiscriminator: "Keyboard")]
+    [JsonDerivedType(typeof(Headphone), typeDiscriminator: "Headphone")]
+    [JsonDerivedType(typeof(Mouse), typeDiscriminator: "Mouse")]
     public abstract class Product : ISerializable
     {
         private string productId;
@@ -21,16 +26,15 @@ namespace Inventory_Management
         private double price;
         public string ProductId { get => productId; set => productId = value; }
         public string Name { get => name; set => name = value; }
+        public string Category { get => category; set => category = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public double Price { get => price; set => price = value; }
-        public string Category { get => category; set => category = value; }
-
         public Product() { }
         public Product(SerializationInfo info, StreamingContext context)
         {
             ProductId = info.GetString("ID");
             Name = info.GetString("Name");
-            Category = (string)info.GetValue("Category", typeof(string));
+            Category = info.GetString("Category");
             Quantity = info.GetInt32("Quantity");
             Price = info.GetDouble("Price");
         }  
@@ -38,10 +42,11 @@ namespace Inventory_Management
         {
             info.AddValue("ID", ProductId);
             info.AddValue("Name", Name);
-            info.AddValue("Category", Category, typeof(string));
+            info.AddValue("Category", Category);
             info.AddValue("Quantity", Quantity);
             info.AddValue("Price", Price);
         }
+        [JsonConstructor]
         public Product(string productId, string name, string category, int quantity, double price)
         {
             this.productId = productId;

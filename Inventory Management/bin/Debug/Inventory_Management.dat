@@ -2,80 +2,90 @@
   "Warehouse": {
     "Products": [
       {
+        "$type": "Phone",
         "ProductId": "P1",
         "Name": "Iphone 16 Pro",
+        "Category": "Phone",
         "Quantity": 40,
-        "Price": 199000,
-        "Category": "Phone"
+        "Price": 199000
       },
       {
+        "$type": "Phone",
         "ProductId": "P2",
         "Name": "One Plus Ace 3v",
+        "Category": "Phone",
         "Quantity": 50,
-        "Price": 299000,
-        "Category": "Phone"
+        "Price": 299000
       },
       {
+        "$type": "Tablet",
         "ProductId": "P3",
         "Name": "Xiaomi pad 6",
+        "Category": "Tablet",
         "Quantity": 30,
-        "Price": 399000,
-        "Category": "Tablet"
+        "Price": 399000
       },
       {
+        "$type": "Keyboard",
         "ProductId": "P4",
         "Name": "Cidoo",
+        "Category": "Keyboard",
         "Quantity": 100,
-        "Price": 890000,
-        "Category": "Keyboard"
+        "Price": 890000
       },
       {
+        "$type": "Headphone",
         "ProductId": "P5",
         "Name": "Tanjim Zero",
+        "Category": "Headphone",
         "Quantity": 70,
-        "Price": 199000,
-        "Category": "Headphone"
+        "Price": 199000
       },
       {
+        "$type": "Mouse",
         "ProductId": "P6",
         "Name": "G304",
+        "Category": "Mouse",
         "Quantity": 80,
-        "Price": 490000,
-        "Category": "Mouse"
+        "Price": 490000
       },
       {
+        "$type": "Phone",
         "ProductId": "P7",
         "Name": "Iphone 16 Pro Plus",
+        "Category": "Phone",
         "Quantity": 50,
-        "Price": 390000,
-        "Category": "Phone"
+        "Price": 390000
       },
       {
+        "$type": "Tablet",
         "ProductId": "P8",
         "Name": "Ipad Gen 6",
+        "Category": "Tablet",
         "Quantity": 60,
-        "Price": 149000,
-        "Category": "Tablet"
+        "Price": 149000
       },
       {
+        "$type": "Keyboard",
         "ProductId": "P9",
         "Name": "Logitech K102",
+        "Category": "Keyboard",
         "Quantity": 120,
-        "Price": 690000,
-        "Category": "Keyboard"
+        "Price": 690000
       },
       {
+        "$type": "Headphone",
         "ProductId": "P10",
         "Name": "Moondrop Jiu",
+        "Category": "Headphone",
         "Quantity": 40,
-        "Price": 299000,
-        "Category": "Headphone"
+        "Price": 299000
       }
     ],
     "Employees": [
       {
         "EmployeeId": "E1",
-        "Name": "Tommy James",
+        "Name": "Tommy James Hybird",
         "Role": "Employee",
         "Username": "U1",
         "Password": "P1"
@@ -168,53 +178,60 @@
       "ContactInfo": "0912345671",
       "SuppliedProducts": [
         {
+          "$type": "Phone",
           "ProductId": "P1",
           "Name": "Iphone 16 Pro",
+          "Category": "Phone",
           "Quantity": 100,
-          "Price": 199000,
-          "Category": "Phone"
+          "Price": 199000
         },
         {
+          "$type": "Phone",
           "ProductId": "P2",
           "Name": "One Plus Ace 3v",
+          "Category": "Phone",
           "Quantity": 100,
-          "Price": 299000,
-          "Category": "Phone"
+          "Price": 299000
         },
         {
+          "$type": "Phone",
           "ProductId": "P7",
           "Name": "Iphone 16 Pro Plus",
+          "Category": "Phone",
           "Quantity": 100,
-          "Price": 390000,
-          "Category": "Phone"
+          "Price": 390000
         },
         {
+          "$type": "Keyboard",
           "ProductId": "P4",
           "Name": "Cidoo",
+          "Category": "Keyboard",
           "Quantity": 100,
-          "Price": 890000,
-          "Category": "Keyboard"
+          "Price": 890000
         },
         {
+          "$type": "Mouse",
           "ProductId": "P6",
           "Name": "G304",
+          "Category": "Mouse",
           "Quantity": 100,
-          "Price": 490000,
-          "Category": "Mouse"
+          "Price": 490000
         },
         {
+          "$type": "Tablet",
           "ProductId": "P8",
           "Name": "Ipad Gen 6",
+          "Category": "Tablet",
           "Quantity": 100,
-          "Price": 149000,
-          "Category": "Tablet"
+          "Price": 149000
         },
         {
+          "$type": "Keyboard",
           "ProductId": "P9",
           "Name": "Logitech K102",
+          "Category": "Keyboard",
           "Quantity": 100,
-          "Price": 690000,
-          "Category": "Keyboard"
+          "Price": 690000
         }
       ]
     },
@@ -224,11 +241,12 @@
       "ContactInfo": "0987655555",
       "SuppliedProducts": [
         {
+          "$type": "Tablet",
           "ProductId": "P3",
           "Name": "Xiaomi pad 6",
+          "Category": "Tablet",
           "Quantity": 100,
-          "Price": 399000,
-          "Category": "Tablet"
+          "Price": 399000
         }
       ]
     },
@@ -238,18 +256,20 @@
       "ContactInfo": "1230098006",
       "SuppliedProducts": [
         {
+          "$type": "Headphone",
           "ProductId": "P5",
           "Name": "Tanjim Zero",
+          "Category": "Headphone",
           "Quantity": 100,
-          "Price": 199000,
-          "Category": "Headphone"
+          "Price": 199000
         },
         {
+          "$type": "Headphone",
           "ProductId": "P10",
           "Name": "Moondrop Jiu",
+          "Category": "Headphone",
           "Quantity": 100,
-          "Price": 299000,
-          "Category": "Headphone"
+          "Price": 299000
         }
       ]
     }
@@ -263,78 +283,88 @@
         "ContactInfo": "0912345671",
         "SuppliedProducts": [
           {
+            "$type": "Phone",
             "ProductId": "P1",
             "Name": "Iphone 16 Pro",
+            "Category": "Phone",
             "Quantity": 100,
-            "Price": 199000,
-            "Category": "Phone"
+            "Price": 199000
           },
           {
+            "$type": "Phone",
             "ProductId": "P2",
             "Name": "One Plus Ace 3v",
+            "Category": "Phone",
             "Quantity": 100,
-            "Price": 299000,
-            "Category": "Phone"
+            "Price": 299000
           },
           {
+            "$type": "Phone",
             "ProductId": "P7",
             "Name": "Iphone 16 Pro Plus",
+            "Category": "Phone",
             "Quantity": 100,
-            "Price": 390000,
-            "Category": "Phone"
+            "Price": 390000
           },
           {
+            "$type": "Keyboard",
             "ProductId": "P4",
             "Name": "Cidoo",
+            "Category": "Keyboard",
             "Quantity": 100,
-            "Price": 890000,
-            "Category": "Keyboard"
+            "Price": 890000
           },
           {
+            "$type": "Mouse",
             "ProductId": "P6",
             "Name": "G304",
+            "Category": "Mouse",
             "Quantity": 100,
-            "Price": 490000,
-            "Category": "Mouse"
+            "Price": 490000
           },
           {
+            "$type": "Tablet",
             "ProductId": "P8",
             "Name": "Ipad Gen 6",
+            "Category": "Tablet",
             "Quantity": 100,
-            "Price": 149000,
-            "Category": "Tablet"
+            "Price": 149000
           },
           {
+            "$type": "Keyboard",
             "ProductId": "P9",
             "Name": "Logitech K102",
+            "Category": "Keyboard",
             "Quantity": 100,
-            "Price": 690000,
-            "Category": "Keyboard"
+            "Price": 690000
           }
         ]
       },
       "Status": "Pending",
       "OrderedProducts": [
         {
+          "$type": "Phone",
           "ProductId": "P1",
           "Name": "Iphone 16 Pro",
+          "Category": "Phone",
           "Quantity": 40,
-          "Price": 199000,
-          "Category": "Phone"
+          "Price": 199000
         },
         {
+          "$type": "Tablet",
           "ProductId": "P8",
           "Name": "Ipad Gen 6",
+          "Category": "Tablet",
           "Quantity": 5,
-          "Price": 149000,
-          "Category": "Tablet"
+          "Price": 149000
         },
         {
+          "$type": "Keyboard",
           "ProductId": "P9",
           "Name": "Logitech K102",
+          "Category": "Keyboard",
           "Quantity": 100,
-          "Price": 690000,
-          "Category": "Keyboard"
+          "Price": 690000
         }
       ]
     },
@@ -346,22 +376,24 @@
         "ContactInfo": "0987655555",
         "SuppliedProducts": [
           {
+            "$type": "Tablet",
             "ProductId": "P3",
             "Name": "Xiaomi pad 6",
+            "Category": "Tablet",
             "Quantity": 100,
-            "Price": 399000,
-            "Category": "Tablet"
+            "Price": 399000
           }
         ]
       },
       "Status": "Pending",
       "OrderedProducts": [
         {
+          "$type": "Tablet",
           "ProductId": "P3",
           "Name": "Xiaomi pad 6",
+          "Category": "Tablet",
           "Quantity": 10,
-          "Price": 399000,
-          "Category": "Tablet"
+          "Price": 399000
         }
       ]
     },
@@ -373,36 +405,40 @@
         "ContactInfo": "1230098006",
         "SuppliedProducts": [
           {
+            "$type": "Headphone",
             "ProductId": "P5",
             "Name": "Tanjim Zero",
+            "Category": "Headphone",
             "Quantity": 100,
-            "Price": 199000,
-            "Category": "Headphone"
+            "Price": 199000
           },
           {
+            "$type": "Headphone",
             "ProductId": "P10",
             "Name": "Moondrop Jiu",
+            "Category": "Headphone",
             "Quantity": 100,
-            "Price": 299000,
-            "Category": "Headphone"
+            "Price": 299000
           }
         ]
       },
       "Status": "Pending",
       "OrderedProducts": [
         {
+          "$type": "Headphone",
           "ProductId": "P5",
           "Name": "Tanjim Zero",
+          "Category": "Headphone",
           "Quantity": 10,
-          "Price": 199000,
-          "Category": "Headphone"
+          "Price": 199000
         },
         {
+          "$type": "Headphone",
           "ProductId": "P10",
           "Name": "Moondrop Jiu",
+          "Category": "Headphone",
           "Quantity": 5,
-          "Price": 299000,
-          "Category": "Headphone"
+          "Price": 299000
         }
       ]
     }
@@ -411,11 +447,12 @@
     {
       "ReturnOrderId": "R1",
       "Product": {
+        "$type": "Phone",
         "ProductId": "P1",
         "Name": "Iphone 16 Pro",
+        "Category": "Phone",
         "Quantity": 3,
-        "Price": 199000,
-        "Category": "Phone"
+        "Price": 199000
       },
       "Reason": "Broken During Transportation",
       "ReturnDate": "2024-10-23T00:00:00",
@@ -424,11 +461,12 @@
     {
       "ReturnOrderId": "R2",
       "Product": {
+        "$type": "Headphone",
         "ProductId": "P5",
         "Name": "Tanjim Zero",
+        "Category": "Headphone",
         "Quantity": 2,
-        "Price": 199000,
-        "Category": "Headphone"
+        "Price": 199000
       },
       "Reason": "Broken During Transportation",
       "ReturnDate": "2024-10-24T00:00:00",
@@ -437,11 +475,12 @@
     {
       "ReturnOrderId": "R3",
       "Product": {
+        "$type": "Keyboard",
         "ProductId": "P4",
         "Name": "Cidoo",
+        "Category": "Keyboard",
         "Quantity": 5,
-        "Price": 890000,
-        "Category": "Keyboard"
+        "Price": 890000
       },
       "Reason": "Fix",
       "ReturnDate": "2024-10-25T00:00:00",
@@ -475,78 +514,88 @@
           "ContactInfo": "0912345671",
           "SuppliedProducts": [
             {
+              "$type": "Phone",
               "ProductId": "P1",
               "Name": "Iphone 16 Pro",
+              "Category": "Phone",
               "Quantity": 100,
-              "Price": 199000,
-              "Category": "Phone"
+              "Price": 199000
             },
             {
+              "$type": "Phone",
               "ProductId": "P2",
               "Name": "One Plus Ace 3v",
+              "Category": "Phone",
               "Quantity": 100,
-              "Price": 299000,
-              "Category": "Phone"
+              "Price": 299000
             },
             {
+              "$type": "Phone",
               "ProductId": "P7",
               "Name": "Iphone 16 Pro Plus",
+              "Category": "Phone",
               "Quantity": 100,
-              "Price": 390000,
-              "Category": "Phone"
+              "Price": 390000
             },
             {
+              "$type": "Keyboard",
               "ProductId": "P4",
               "Name": "Cidoo",
+              "Category": "Keyboard",
               "Quantity": 100,
-              "Price": 890000,
-              "Category": "Keyboard"
+              "Price": 890000
             },
             {
+              "$type": "Mouse",
               "ProductId": "P6",
               "Name": "G304",
+              "Category": "Mouse",
               "Quantity": 100,
-              "Price": 490000,
-              "Category": "Mouse"
+              "Price": 490000
             },
             {
+              "$type": "Tablet",
               "ProductId": "P8",
               "Name": "Ipad Gen 6",
+              "Category": "Tablet",
               "Quantity": 100,
-              "Price": 149000,
-              "Category": "Tablet"
+              "Price": 149000
             },
             {
+              "$type": "Keyboard",
               "ProductId": "P9",
               "Name": "Logitech K102",
+              "Category": "Keyboard",
               "Quantity": 100,
-              "Price": 690000,
-              "Category": "Keyboard"
+              "Price": 690000
             }
           ]
         },
         "Status": "Pending",
         "OrderedProducts": [
           {
+            "$type": "Phone",
             "ProductId": "P1",
             "Name": "Iphone 16 Pro",
+            "Category": "Phone",
             "Quantity": 40,
-            "Price": 199000,
-            "Category": "Phone"
+            "Price": 199000
           },
           {
+            "$type": "Tablet",
             "ProductId": "P8",
             "Name": "Ipad Gen 6",
+            "Category": "Tablet",
             "Quantity": 5,
-            "Price": 149000,
-            "Category": "Tablet"
+            "Price": 149000
           },
           {
+            "$type": "Keyboard",
             "ProductId": "P9",
             "Name": "Logitech K102",
+            "Category": "Keyboard",
             "Quantity": 100,
-            "Price": 690000,
-            "Category": "Keyboard"
+            "Price": 690000
           }
         ]
       },
@@ -558,22 +607,24 @@
           "ContactInfo": "0987655555",
           "SuppliedProducts": [
             {
+              "$type": "Tablet",
               "ProductId": "P3",
               "Name": "Xiaomi pad 6",
+              "Category": "Tablet",
               "Quantity": 100,
-              "Price": 399000,
-              "Category": "Tablet"
+              "Price": 399000
             }
           ]
         },
         "Status": "Pending",
         "OrderedProducts": [
           {
+            "$type": "Tablet",
             "ProductId": "P3",
             "Name": "Xiaomi pad 6",
+            "Category": "Tablet",
             "Quantity": 10,
-            "Price": 399000,
-            "Category": "Tablet"
+            "Price": 399000
           }
         ]
       },
@@ -585,36 +636,40 @@
           "ContactInfo": "1230098006",
           "SuppliedProducts": [
             {
+              "$type": "Headphone",
               "ProductId": "P5",
               "Name": "Tanjim Zero",
+              "Category": "Headphone",
               "Quantity": 100,
-              "Price": 199000,
-              "Category": "Headphone"
+              "Price": 199000
             },
             {
+              "$type": "Headphone",
               "ProductId": "P10",
               "Name": "Moondrop Jiu",
+              "Category": "Headphone",
               "Quantity": 100,
-              "Price": 299000,
-              "Category": "Headphone"
+              "Price": 299000
             }
           ]
         },
         "Status": "Pending",
         "OrderedProducts": [
           {
+            "$type": "Headphone",
             "ProductId": "P5",
             "Name": "Tanjim Zero",
+            "Category": "Headphone",
             "Quantity": 10,
-            "Price": 199000,
-            "Category": "Headphone"
+            "Price": 199000
           },
           {
+            "$type": "Headphone",
             "ProductId": "P10",
             "Name": "Moondrop Jiu",
+            "Category": "Headphone",
             "Quantity": 5,
-            "Price": 299000,
-            "Category": "Headphone"
+            "Price": 299000
           }
         ]
       }
@@ -630,11 +685,12 @@
       },
       "SoldProducts": [
         {
+          "$type": "Phone",
           "ProductId": "P1",
           "Name": "Iphone 16 Pro",
+          "Category": "Phone",
           "Quantity": 1,
-          "Price": 199000,
-          "Category": "Phone"
+          "Price": 199000
         }
       ],
       "TotalAmount": 199000,
@@ -649,11 +705,12 @@
       },
       "SoldProducts": [
         {
+          "$type": "Tablet",
           "ProductId": "P8",
           "Name": "Ipad Gen 6",
+          "Category": "Tablet",
           "Quantity": 1,
-          "Price": 149000,
-          "Category": "Tablet"
+          "Price": 149000
         }
       ],
       "TotalAmount": 149000,
@@ -671,11 +728,12 @@
         },
         "SoldProducts": [
           {
+            "$type": "Phone",
             "ProductId": "P1",
             "Name": "Iphone 16 Pro",
+            "Category": "Phone",
             "Quantity": 1,
-            "Price": 199000,
-            "Category": "Phone"
+            "Price": 199000
           }
         ],
         "TotalAmount": 199000,
@@ -690,11 +748,12 @@
         },
         "SoldProducts": [
           {
+            "$type": "Tablet",
             "ProductId": "P8",
             "Name": "Ipad Gen 6",
+            "Category": "Tablet",
             "Quantity": 1,
-            "Price": 149000,
-            "Category": "Tablet"
+            "Price": 149000
           }
         ],
         "TotalAmount": 149000,

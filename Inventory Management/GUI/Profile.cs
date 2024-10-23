@@ -62,7 +62,7 @@ namespace Inventory_Management
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
-        {
+        {           
             DataWrapper dataWrapper = new DataWrapper
             {
                 Warehouse = _warehouse,
@@ -75,9 +75,11 @@ namespace Inventory_Management
                 Report = _report
             };
 
+            string filePath = "Inventory_Management.dat";
+
             string fileJson = JsonSerializer.Serialize(dataWrapper, new JsonSerializerOptions { WriteIndented = true });
 
-            File.WriteAllText("Inventory_Management.dat", fileJson);
+            File.WriteAllText(filePath, fileJson);
 
             Environment.Exit(0);
         }
