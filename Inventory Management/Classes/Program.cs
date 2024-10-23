@@ -37,14 +37,16 @@ namespace Inventory_Management
             {
                 string fileContent = File.ReadAllText(filePath);
 
-                warehouse = JsonSerializer.Deserialize<Warehouse>(fileContent);
-                suppliers = JsonSerializer.Deserialize<List<Supplier>>(fileContent);
-                purchaseOrders = JsonSerializer.Deserialize<List<PurchaseOrder>>(fileContent);
-                returnOrders = JsonSerializer.Deserialize<List<ReturnOrder>>(fileContent);
-                customers = JsonSerializer.Deserialize<List<Customer>>(fileContent);
-                orderManager = JsonSerializer.Deserialize<OrderManager>(fileContent);
-                salesInvoices = JsonSerializer.Deserialize<List<SalesInvoice>>(fileContent);
-                report = JsonSerializer.Deserialize<Report>(fileContent);
+                var allData = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(fileContent);
+
+                warehouse = JsonSerializer.Deserialize<Warehouse>(allData["Warehouse"].ToString());
+                suppliers = JsonSerializer.Deserialize<List<Supplier>>(allData["Supplier"].ToString());
+                purchaseOrders = JsonSerializer.Deserialize<List<PurchaseOrder>>(allData["PurchaseOrder"].ToString());
+                returnOrders = JsonSerializer.Deserialize<List<ReturnOrder>>(allData["ReturnOrder"].ToString());
+                customers = JsonSerializer.Deserialize<List<Customer>>(allData["Customer"].ToString());
+                orderManager = JsonSerializer.Deserialize<OrderManager>(allData["OrderManager"].ToString());
+                salesInvoices = JsonSerializer.Deserialize<List<SalesInvoice>>(allData["SalesInvoice"].ToString());
+                report = JsonSerializer.Deserialize<Report>(allData["Report"].ToString());
             }
             else
             {

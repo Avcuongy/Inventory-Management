@@ -59,3 +59,38 @@ D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\In
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Order_Subtract.resources
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Transaction_Add.resources
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Transaction_Menu.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\Inventory Management.exe.config
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\Inventory Management.exe
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\Inventory Management.pdb
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\System.Memory.dll
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\System.Text.Json.dll
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\System.Numerics.Vectors.dll
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\System.Buffers.dll
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\System.ValueTuple.dll
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\System.Text.Encodings.Web.dll
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory Management.csproj.AssemblyReference.cache
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory Management.csproj.SuggestedBindingRedirects.cache
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory Management.exe.config
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Login.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Order_Add.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Order_Menu.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Order_Subtract.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Product_Add.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Product_Menu.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Product_Update.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Profile.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Properties.Resources.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Transaction_Add.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Transaction_Menu.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Warehouse_CheckStock.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Warehouse_Export.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Warehouse_Import.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory_Management.Warehouse_Menu.resources
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory Management.csproj.GenerateResource.cache
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory Management.csproj.CoreCompileInputs.cache
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventor.CCAFEA7E.Up2Date
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory Management.exe
+D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory Management.pdb
