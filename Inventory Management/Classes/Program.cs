@@ -126,6 +126,7 @@ namespace Inventory_Management
                 )
             };
 
+            //Customer
             List<Customer> customers = new List<Customer>()
             {
                 new Customer("C1","Viet","00000012345"),
@@ -139,14 +140,14 @@ namespace Inventory_Management
 
 
             // SaleInvoice
-            List<SaleInvoice> salesInvoices = new List<SaleInvoice>()
+            List<SalesInvoice> salesInvoices = new List<SalesInvoice>()
             {
-                new SaleInvoice("SI01",customers[0],new List<Product>
+                new SalesInvoice("SI01",customers[0],new List<Product>
                 {
                      new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199000)
                 }
                 ,199000,"Done"),
-                new SaleInvoice("SI02",customers[1],new List<Product>
+                new SalesInvoice("SI02",customers[1],new List<Product>
 {
                      new Tablet("P8", "Ipad Gen 6", "Tablet", 1, 149000)
                 }
@@ -167,11 +168,16 @@ namespace Inventory_Management
                 Report
              */
 
-            Login login = new Login(warehouse);
-
-            Order_Menu order_Menu = new Order_Menu();
-
-            Application.Run(order_Menu);
+            Login login = new Login(warehouse,
+                                    suppliers,
+                                    purchaseOrders, 
+                                    returnOrders, 
+                                    customers,
+                                    orderManager,
+                                    salesInvoices,
+                                    report);
+           
+            Application.Run(login);
         }
     }
 }

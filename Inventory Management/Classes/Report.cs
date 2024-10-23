@@ -12,21 +12,21 @@ namespace Inventory_Management
 {
     public class Report : ISerializable
     {
-        private List<SaleInvoice> invoices = new List<SaleInvoice>();
-        public List<SaleInvoice> Invoices { get => invoices; set => invoices = value; }
+        private List<SalesInvoice> invoices = new List<SalesInvoice>();
+        public List<SalesInvoice> Invoices { get => invoices; set => invoices = value; }
 
         public Report() { }
 
         protected Report(SerializationInfo info, StreamingContext context)
         {
-            Invoices = (List<SaleInvoice>)info.GetValue("Invoices", typeof(List<SaleInvoice>));
+            Invoices = (List<SalesInvoice>)info.GetValue("Invoices", typeof(List<SalesInvoice>));
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("Invoices", Invoices, typeof(List<SaleInvoice>));
+            info.AddValue("Invoices", Invoices, typeof(List<SalesInvoice>));
         }
-        public Report(List<SaleInvoice> invoices)
+        public Report(List<SalesInvoice> invoices)
         {
             this.invoices = invoices;
         }
