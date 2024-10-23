@@ -126,22 +126,37 @@ namespace Inventory_Management
                 )
             };
 
+            List<Customer> customers = new List<Customer>()
+            {
+                new Customer("C1","Viet","00000012345"),
+                new Customer("C2","Huy","00234981233"),
+                new Customer("C3","Cuong","0334901239")
+            };
+
 
             // OrderManager
             OrderManager orderManager = new OrderManager(purchaseOrders);
 
 
             // SaleInvoice
-            SaleInvoice saleInvoice = new SaleInvoice();
+            List<SaleInvoice> salesInvoices = new List<SaleInvoice>()
+            {
+                new SaleInvoice("SI01",customers[0],new List<Product>
+                {
+                     new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199000)
+                }
+                ,199000,"Done")
+            };
+
+            // Transaction
+            List<Transaction> transactions = new List<Transaction>
+            {
+                new Transaction("T1",new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199000),new DateTime(2024,10,20))
+            };
 
 
             // Report
-            Report report = new Report();
-
-
-            // Transaction
-            Transaction transaction = new Transaction();
-
+            Report report = new Report(transactions,salesInvoices);
 
             /*
                 Warehouse
