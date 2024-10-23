@@ -98,6 +98,18 @@
     <Compile Include="Supplier.cs" />
     <Compile Include="Tablet.cs" />
     <Compile Include="Transaction.cs" />
+    <Compile Include="Transaction_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction_Add.Designer.cs">
+      <DependentUpon>Transaction_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction_Menu.Designer.cs">
+      <DependentUpon>Transaction_Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse.cs" />
     <Compile Include="Warehouse_CheckStock.cs">
       <SubType>Form</SubType>
@@ -147,6 +159,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transaction_Add.resx">
+      <DependentUpon>Transaction_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction_Menu.resx">
+      <DependentUpon>Transaction_Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Warehouse_CheckStock.resx">
       <DependentUpon>Warehouse_CheckStock.cs</DependentUpon>
     </EmbeddedResource>
