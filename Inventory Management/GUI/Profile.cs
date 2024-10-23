@@ -63,24 +63,22 @@ namespace Inventory_Management
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-          /*  string filePath = "Inventory_Management.dat";
-
-            Dictionary<string, object> allData = new Dictionary<string, object>
-            { 
-                { "Warehouse", _warehouse },
-                { "Supplier", _supplier },
-                { "PurchaseOrder", _purchaseOrder },
-                { "ReturnOrder", _returnOrder },
-                { "Customer", _customer },
-                { "OrderManager", _orderManager },
-                { "SalesInvoice", _salesInvoice },
-                { "Report", _report }
+            DataWrapper dataWrapper = new DataWrapper
+            {
+                Warehouse = _warehouse,
+                Suppliers = _supplier,
+                PurchaseOrders = _purchaseOrder,
+                ReturnOrders = _returnOrder,
+                Customers = _customer,
+                OrderManager = _orderManager,
+                SalesInvoices = _salesInvoice,
+                Report = _report
             };
 
-            string fileContent = JsonSerializer.Serialize(allData, new JsonSerializerOptions {WriteIndented = true});
+            string fileJson = JsonSerializer.Serialize(dataWrapper, new JsonSerializerOptions { WriteIndented = true });
 
-            File.WriteAllText(filePath, fileContent);
-            */
+            File.WriteAllText("Inventory_Management.dat", fileJson);
+
             Environment.Exit(0);
         }
     }

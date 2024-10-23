@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Drawing;
+using System.IO;
 
 namespace Inventory_Management
 {
@@ -12,7 +17,7 @@ namespace Inventory_Management
         public Phone(string productId, string name, string category, int quantity, double price) : base(productId, name, category, quantity, price)
         {
         }
-        public Phone() { }
+        public Phone():base() { }
         public override double PriceQuantity()
         {
             return Price * Quantity;

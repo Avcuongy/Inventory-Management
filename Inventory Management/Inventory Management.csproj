@@ -55,6 +55,7 @@
     <Compile Include="Classes\Products\Headphone.cs" />
     <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Classes\Products\Keyboard.cs" />
+    <Compile Include="DataWrapper.cs" />
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -35,20 +35,18 @@ namespace Inventory_Management
 
             if (File.Exists(filePath))
             {
+                string fileContent = File.ReadAllText(filePath);
 
-               /* string fileContent = File.ReadAllText(filePath);
+                DataWrapper dataWrapper = JsonSerializer.Deserialize<DataWrapper>(fileContent);
 
-                Dictionary<string,JsonElement> allData = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(fileContent);
-
-                warehouse = JsonSerializer.Deserialize<Warehouse>(allData["Warehouse"].ToString());
-                suppliers = JsonSerializer.Deserialize<List<Supplier>>(allData["Supplier"].ToString());
-                purchaseOrders = JsonSerializer.Deserialize<List<PurchaseOrder>>(allData["PurchaseOrder"].ToString());
-                returnOrders = JsonSerializer.Deserialize<List<ReturnOrder>>(allData["ReturnOrder"].ToString());
-                customers = JsonSerializer.Deserialize<List<Customer>>(allData["Customer"].ToString());
-                orderManager = JsonSerializer.Deserialize<OrderManager>(allData["OrderManager"].ToString());
-                salesInvoices = JsonSerializer.Deserialize<List<SalesInvoice>>(allData["SalesInvoice"].ToString());
-                report = JsonSerializer.Deserialize<Report>(allData["Report"].ToString());*/
-
+                warehouse = dataWrapper.Warehouse;
+                suppliers = dataWrapper.Suppliers;
+                purchaseOrders = dataWrapper.PurchaseOrders;
+                returnOrders = dataWrapper.ReturnOrders;
+                customers = dataWrapper.Customers;
+                orderManager = dataWrapper.OrderManager;
+                salesInvoices = dataWrapper.SalesInvoices;
+                report = dataWrapper.Report;
             }
             else
             {

@@ -1,22 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\",
+  "WorkspaceRootPath": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\inventory management\\gui\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management - copy\\inventory management\\classes\\products\\tablet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\classes\\products\\tablet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management - copy\\inventory management\\classes\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\classes\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management - copy\\inventory management\\gui\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\gui\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\inventory management\\classes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\inventory management\\classes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\classes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\classes\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\classes\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management - copy\\inventory management\\classes\\products\\headphone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\classes\\products\\headphone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\gui\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\gui\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management - copy\\inventory management\\classes\\products\\keyboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\classes\\products\\keyboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management - copy\\inventory management\\classes\\products\\mouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\classes\\products\\mouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management - copy\\inventory management\\classes\\products\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\classes\\products\\phone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management - copy\\inventory management\\datawrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\datawrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,51 +54,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Warehouse.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Classes\\Warehouse.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Classes\\Warehouse.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Classes\\Warehouse.cs",
-              "RelativeToolTip": "Inventory Management\\Classes\\Warehouse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABCAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Product.cs",
+              "RelativeDocumentMoniker": "Inventory Management\\Classes\\Product.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Product.cs",
+              "RelativeToolTip": "Inventory Management\\Classes\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T12:55:19.796Z",
+              "WhenOpened": "2024-10-23T13:18:00.095Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Profile.cs [Design]",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\GUI\\Profile.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\GUI\\Profile.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\GUI\\Profile.cs [Design]",
-              "RelativeToolTip": "Inventory Management\\GUI\\Profile.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "Tablet.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Tablet.cs",
+              "RelativeDocumentMoniker": "Inventory Management\\Classes\\Products\\Tablet.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Tablet.cs",
+              "RelativeToolTip": "Inventory Management\\Classes\\Products\\Tablet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T12:34:12.8Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-23T13:15:44.639Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "Phone.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Phone.cs",
+              "RelativeDocumentMoniker": "Inventory Management\\Classes\\Products\\Phone.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Phone.cs",
+              "RelativeToolTip": "Inventory Management\\Classes\\Products\\Phone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T13:15:44.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Mouse.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Mouse.cs",
+              "RelativeDocumentMoniker": "Inventory Management\\Classes\\Products\\Mouse.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Mouse.cs",
+              "RelativeToolTip": "Inventory Management\\Classes\\Products\\Mouse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T13:15:43.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Keyboard.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Keyboard.cs",
+              "RelativeDocumentMoniker": "Inventory Management\\Classes\\Products\\Keyboard.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Keyboard.cs",
+              "RelativeToolTip": "Inventory Management\\Classes\\Products\\Keyboard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T13:15:43.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Headphone.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Headphone.cs",
+              "RelativeDocumentMoniker": "Inventory Management\\Classes\\Products\\Headphone.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Products\\Headphone.cs",
+              "RelativeToolTip": "Inventory Management\\Classes\\Products\\Headphone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T13:15:42.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataWrapper.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\DataWrapper.cs",
+              "RelativeDocumentMoniker": "Inventory Management\\DataWrapper.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\DataWrapper.cs",
+              "RelativeToolTip": "Inventory Management\\DataWrapper.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T13:09:50.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Profile.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\GUI\\Profile.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\GUI\\Profile.cs",
               "RelativeDocumentMoniker": "Inventory Management\\GUI\\Profile.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\GUI\\Profile.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\GUI\\Profile.cs",
               "RelativeToolTip": "Inventory Management\\GUI\\Profile.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAgwFIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAgwEcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T11:40:14.958Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Classes\\Program.cs",
+              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Program.cs",
               "RelativeDocumentMoniker": "Inventory Management\\Classes\\Program.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Classes\\Program.cs",
+              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management - Copy\\Inventory Management\\Classes\\Program.cs",
               "RelativeToolTip": "Inventory Management\\Classes\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAwwDEAAABcAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAwwCEAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T09:50:04.673Z",
               "EditorCaption": ""
