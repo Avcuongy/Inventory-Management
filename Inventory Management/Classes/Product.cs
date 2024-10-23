@@ -50,5 +50,6 @@ namespace Inventory_Management
             this.quantity = quantity;
             this.price = price;
         }
+        public abstract double PriceQuantity();
     }
 }

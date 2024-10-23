@@ -52,16 +52,16 @@
     <Compile Include="Classes\Category.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Employee.cs" />
-    <Compile Include="Classes\Headphone.cs" />
+    <Compile Include="Classes\Products\Headphone.cs" />
     <Compile Include="Classes\Inventory.cs" />
-    <Compile Include="Classes\Keyboard.cs" />
+    <Compile Include="Classes\Products\Keyboard.cs" />
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Mouse.cs" />
+    <Compile Include="Classes\Products\Mouse.cs" />
     <Compile Include="Classes\OrderManager.cs" />
     <Compile Include="GUI\Order_Add.cs">
       <SubType>Form</SubType>
@@ -81,7 +81,7 @@
     <Compile Include="GUI\Order_Subtract.Designer.cs">
       <DependentUpon>Order_Subtract.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Phone.cs" />
+    <Compile Include="Classes\Products\Phone.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="GUI\Product_Add.cs">
       <SubType>Form</SubType>
@@ -114,7 +114,7 @@
     <Compile Include="Classes\ReturnOrder.cs" />
     <Compile Include="Classes\SaleInvoice.cs" />
     <Compile Include="Classes\Supplier.cs" />
-    <Compile Include="Classes\Tablet.cs" />
+    <Compile Include="Classes\Products\Tablet.cs" />
     <Compile Include="GUI\Transaction_Add.cs">
       <SubType>Form</SubType>
     </Compile>
