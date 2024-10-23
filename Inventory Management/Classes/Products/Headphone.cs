@@ -11,7 +11,7 @@ namespace Inventory_Management
     {
         public Headphone(string productId, string name, string category, int quantity, double price) : base(productId, name, category, quantity, price)
         {
-        }
+        }public Headphone() { }
         public override double PriceQuantity()
         {
             return Price * Quantity;

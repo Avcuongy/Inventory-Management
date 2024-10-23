@@ -63,7 +63,7 @@ namespace Inventory_Management
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            string filePath = "Inventory_Management.dat";
+          /*  string filePath = "Inventory_Management.dat";
 
             Dictionary<string, object> allData = new Dictionary<string, object>
             { 
@@ -77,9 +77,11 @@ namespace Inventory_Management
                 { "Report", _report }
             };
 
-            string fileContent = JsonSerializer.Serialize(allData);
+            string fileContent = JsonSerializer.Serialize(allData, new JsonSerializerOptions {WriteIndented = true});
 
             File.WriteAllText(filePath, fileContent);
+            */
+            Environment.Exit(0);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Inventory_Management
             info.AddValue("Category", Category, typeof(string));
             info.AddValue("Quantity", Quantity);
             info.AddValue("Price", Price);
-        } 
+        }
         public Product(string productId, string name, string category, int quantity, double price)
         {
             this.productId = productId;

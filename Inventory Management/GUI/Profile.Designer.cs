@@ -189,9 +189,8 @@
             this.NameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.NameLabel.Location = new System.Drawing.Point(224, 16);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(41, 42);
+            this.NameLabel.Size = new System.Drawing.Size(0, 42);
             this.NameLabel.TabIndex = 24;
-            this.NameLabel.Text = "A";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox9
@@ -340,9 +339,9 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(104, 112);
+            this.pictureBox11.Location = new System.Drawing.Point(96, 120);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(296, 272);
+            this.pictureBox11.Size = new System.Drawing.Size(304, 272);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 31;
             this.pictureBox11.TabStop = false;

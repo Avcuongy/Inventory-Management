@@ -12,6 +12,7 @@ namespace Inventory_Management
         public Keyboard(string productId, string name, string category, int quantity, double price) : base(productId, name, category, quantity, price)
         {
         }
+        public Keyboard() { }
         public override double PriceQuantity()
         {
             return Price * Quantity;
