@@ -101,5 +101,22 @@ namespace Inventory_Management
             this.Hide();
             warehouse_Menu.Show();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Order_Menu order_Menu = new Order_Menu(
+                                    _username,
+                                    _warehouse,
+                                    _supplier,
+                                    _purchaseOrder,
+                                    _returnOrder,
+                                    _customer,
+                                    _orderManager,
+                                    _salesInvoice,
+                                    _report
+                );
+            order_Menu.Show();
+            this.Hide();
+        }
     }
 }

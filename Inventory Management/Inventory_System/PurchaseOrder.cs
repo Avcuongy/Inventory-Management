@@ -25,7 +25,7 @@ namespace Inventory_Management
             OrderId = info.GetString("OrderId");
             Supplier = (Supplier)info.GetValue("Supplier", typeof(Supplier));
             Status = info.GetString("Status");
-            OrderedProducts = (List<Product>)info.GetValue("OrderProducts", typeof(List<Product>));
+            OrderedProducts = (List<Product>)info.GetValue("OrderedProducts", typeof(List<Product>));
         }
         public PurchaseOrder(string orderId, Supplier supplier, string status, List<Product> orderedProducts)
         {
@@ -45,7 +45,7 @@ namespace Inventory_Management
             info.AddValue("OrderId", OrderId);
             info.AddValue("Supplier", Supplier, typeof(Supplier));
             info.AddValue("Status", Status);
-            info.AddValue("OrderProducts", OrderedProducts, typeof(List<Product>));
+            info.AddValue("OrderedProducts", OrderedProducts, typeof(List<Product>));
 
         }
     }
