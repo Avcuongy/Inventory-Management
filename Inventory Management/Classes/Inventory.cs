@@ -10,10 +10,9 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    public class Inventory:ISerializable
+    public class Inventory : ISerializable
     {
         private Dictionary<string, int> productStock = new Dictionary<string, int>();
-        
         public Dictionary<string, int> ProductStock { get => productStock; set => productStock = value; }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -31,6 +30,29 @@ namespace Inventory_Management
         public Inventory(Dictionary<string, int> productStock)
         {
             this.productStock = productStock;
+        }
+        public void RemoveStock(string productId, int quantity)
+        {
+            foreach (string key in ProductStock.Keys)
+            {
+                if (key == productId)
+                {
+                    ProductStock[key] -= quantity;
+                    break;
+                }
+            }
+        }
+        public void AddStock(string productId, int quantity)
+        {
+
+            foreach (string key in ProductStock.Keys)
+            {
+                if (key == productId)
+                {
+                    ProductStock[key] += quantity;
+                    break;
+                }
+            }
         }
     }
 }

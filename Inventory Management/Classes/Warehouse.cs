@@ -10,6 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
+    public delegate void StockLevelChangedHandler();
     public class Warehouse : ISerializable
     {
         private List<Product> products = new List<Product>();
@@ -45,6 +46,17 @@ namespace Inventory_Management
             foreach (Employee employee in employees)
             {
                 if (employee.Username.Equals(username) && employee.Password.Equals(password))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool CheckProductId(string productId)
+        {
+            foreach (Product product in Products)
+            {
+                if (productId == product.ProductId)
                 {
                     return true;
                 }

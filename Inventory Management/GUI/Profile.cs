@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Inventory_Management
 {
@@ -45,8 +46,8 @@ namespace Inventory_Management
             _salesInvoice = salesInvoice;
             _report = report;
             ShowInfoInProfile();
-
         }
+
         public void ShowInfoInProfile()
         {
             foreach (Employee employ in _warehouse.Employees)
@@ -82,6 +83,23 @@ namespace Inventory_Management
             File.WriteAllText(filePath, fileJson);
 
             Environment.Exit(0);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Warehouse_Menu warehouse_Menu = new Warehouse_Menu(
+                                    _username,
+                                    _warehouse,
+                                    _supplier,
+                                    _purchaseOrder,
+                                    _returnOrder,
+                                    _customer,
+                                    _orderManager,
+                                    _salesInvoice,
+                                    _report
+                );
+            this.Hide();
+            warehouse_Menu.Show();
         }
     }
 }

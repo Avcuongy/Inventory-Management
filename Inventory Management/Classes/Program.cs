@@ -84,16 +84,16 @@ namespace Inventory_Management
                 warehouse.Inventory = new List<Inventory>
                 {
                     new Inventory(new Dictionary<String, int>() {
-                        { "P1", 20 },
+                        { "P1", 0 },
                         { "P2", 20 },
-                        { "P3", 20 },
-                        { "P4", 10 },
-                        { "P5", 30 },
-                        { "P6", 20 },
-                        { "P7", 40 },
-                        { "P8", 10 },
-                        { "P9", 20 },
-                        { "P10", 30 }
+                        { "P3", 21 },
+                        { "P4", 11 },
+                        { "P5", 31 },
+                        { "P6", 21 },
+                        { "P7", 41 },
+                        { "P8", 15 },
+                        { "P9", 29 },
+                        { "P10", 34 }
                 })};
 
                 // Supplier
@@ -159,7 +159,7 @@ namespace Inventory_Management
                 new Headphone("P5", "Tanjim Zero", "Headphone", 2, 398),"Broken During Transportation", new DateTime(2024,10,24),"Done"
                     ),
                 new ReturnOrder("R3",
-                new Keyboard("P4", "Cidoo", "Keyboard", 5, 4450),"Fix", new DateTime(2024,10,25),"Done"
+                new Keyboard("P4", "Cidoo", "Keyboard", 5, 4450),"Broken During Transportation", new DateTime(2024,10,25),"Done"
                 )
             };
 

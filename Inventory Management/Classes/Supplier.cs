@@ -38,7 +38,6 @@ namespace Inventory_Management
             this.contactInfo = contactInfo;
             this.suppliedProducts = suppliedProducts;
         }
-
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("SupplierId", SupplierId);

@@ -37,7 +37,7 @@ namespace Inventory_Management
             Category = info.GetString("Category");
             Quantity = info.GetInt32("Quantity");
             Price = info.GetDouble("Price");
-        }  
+        }
         public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("ID", ProductId);
