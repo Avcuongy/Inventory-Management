@@ -54,16 +54,17 @@ namespace Inventory_Management
                 // Warehouse
                 warehouse.Products = new List<Product>
                 {
-                    new Phone("P1", "Iphone 16 Pro", "Phone", 40, 199000),
-                    new Phone("P2", "One Plus Ace 3v", "Phone", 50, 299000),
-                    new Tablet("P3", "Xiaomi pad 6", "Tablet", 30, 399000),
-                    new Keyboard("P4", "Cidoo", "Keyboard", 100, 890000),
-                    new Headphone("P5", "Tanjim Zero", "Headphone", 70, 199000),
-                    new Mouse("P6", "G304", "Mouse", 80, 490000),
-                    new Phone("P7", "Iphone 16 Pro Plus", "Phone", 50, 390000),
-                    new Tablet("P8", "Ipad Gen 6", "Tablet", 60, 149000),
-                    new Keyboard("P9", "Logitech K102", "Keyboard", 120, 690000),
-                    new Headphone("P10", "Moondrop Jiu", "Headphone", 40, 299000)
+                    new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199),
+                    new Phone("P2", "One Plus Ace 3v", "Phone", 1, 299),
+                    new Tablet("P3", "Xiaomi pad 6", "Tablet", 1, 399),
+                    new Keyboard("P4", "Cidoo", "Keyboard", 1, 890),
+                    new Headphone("P5", "Tanjim Zero", "Headphone", 1, 199),
+
+                    new Mouse("P6", "G304", "Mouse", 1, 490),
+                    new Phone("P7", "Iphone 16 Pro Plus", "Phone", 1, 390),
+                    new Tablet("P8", "Ipad Gen 6", "Tablet", 1, 149),
+                    new Keyboard("P9", "Logitech K102", "Keyboard", 1, 690),
+                    new Headphone("P10", "Moondrop Jiu", "Headphone", 1, 299)
                 };
 
                 warehouse.Employees = new List<Employee>
@@ -83,16 +84,16 @@ namespace Inventory_Management
                 warehouse.Inventory = new List<Inventory>
                 {
                     new Inventory(new Dictionary<String, int>() {
-                        { "P1", 10 },
-                        { "P2", 15 },
+                        { "P1", 20 },
+                        { "P2", 20 },
                         { "P3", 20 },
                         { "P4", 10 },
                         { "P5", 30 },
-                        { "P6", 25 },
-                        { "P7", 15 },
-                        { "P8", 12 },
-                        { "P9", 8 },
-                        { "P10", 18 }
+                        { "P6", 20 },
+                        { "P7", 40 },
+                        { "P8", 10 },
+                        { "P9", 20 },
+                        { "P10", 30 }
                 })};
 
                 // Supplier
@@ -101,28 +102,28 @@ namespace Inventory_Management
                 new Supplier("S1", "Cellphones", "0912345671",
                 new List<Product>()
                 {
-                    new Phone("P1", "Iphone 16 Pro", "Phone", 100, 199000),
-                    new Phone("P2", "One Plus Ace 3v", "Phone", 100, 299000),
-                    new Phone("P7", "Iphone 16 Pro Plus", "Phone", 100, 390000),
-                    new Keyboard("P4", "Cidoo", "Keyboard", 100, 890000),
-                    new Mouse("P6", "G304", "Mouse", 100, 490000),
-                    new Tablet("P8", "Ipad Gen 6", "Tablet", 100, 149000),
-                    new Keyboard("P9", "Logitech K102", "Keyboard", 100, 690000)
+                    new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199),
+                    new Phone("P2", "One Plus Ace 3v", "Phone", 1, 299),
+                    new Phone("P7", "Iphone 16 Pro Plus", "Phone", 1, 399),
+                    new Keyboard("P4", "Cidoo", "Keyboard", 1, 890),
+                    new Mouse("P6", "G304", "Mouse", 1, 490),
+                    new Tablet("P8", "Ipad Gen 6", "Tablet", 1, 149),
+                    new Keyboard("P9", "Logitech K102", "Keyboard", 1, 690)
                 }
                 ),
 
                 new Supplier("S2", "Xiaomi", "0987655555",
                 new List<Product>()
                 {
-                    new Tablet("P3", "Xiaomi pad 6", "Tablet", 100, 399000)
+                    new Tablet("P3", "Xiaomi pad 6", "Tablet", 1, 399)
                 }
                 ),
 
                 new Supplier("S3", "XuanVuAudio", "1230098006",
                 new List<Product>()
                 {
-                    new Headphone("P5", "Tanjim Zero", "Headphone", 100, 199000),
-                    new Headphone("P10", "Moondrop Jiu", "Headphone", 100, 299000)
+                    new Headphone("P5", "Tanjim Zero", "Headphone", 1, 199),
+                    new Headphone("P10", "Moondrop Jiu", "Headphone", 1, 299)
                 })
             };
 
@@ -131,20 +132,20 @@ namespace Inventory_Management
             {
                 new PurchaseOrder("PD1",suppliers[0],"Pending",new List<Product>()
                 {
-                     new Phone("P1", "Iphone 16 Pro", "Phone", 40, 199000),
-                     new Tablet("P8", "Ipad Gen 6", "Tablet", 5, 149000),
-                     new Keyboard("P9", "Logitech K102", "Keyboard", 100, 690000)
+                     new Phone("P1", "Iphone 16 Pro", "Phone", 40, 7960),
+                     new Tablet("P8", "Ipad Gen 6", "Tablet", 5, 745),
+                     new Keyboard("P9", "Logitech K102", "Keyboard", 100, 69000)
                 })
                 ,
                 new PurchaseOrder("PD2",suppliers[1],"Pending",new List<Product>()
                 {
-                    new Tablet("P3", "Xiaomi pad 6", "Tablet", 10, 399000)
+                    new Tablet("P3", "Xiaomi pad 6", "Tablet", 10, 3990)
                 })
                 ,
                 new PurchaseOrder("PD3",suppliers[2],"Pending",new List<Product>()
                 {
-                    new Headphone("P5", "Tanjim Zero", "Headphone", 10, 199000),
-                    new Headphone("P10", "Moondrop Jiu", "Headphone", 5, 299000)
+                    new Headphone("P5", "Tanjim Zero", "Headphone", 10, 1990),
+                    new Headphone("P10", "Moondrop Jiu", "Headphone", 5, 1495)
                 })
             };
 
@@ -152,13 +153,13 @@ namespace Inventory_Management
                 returnOrders = new List<ReturnOrder>()
             {
                 new ReturnOrder("R1",
-                new Phone("P1", "Iphone 16 Pro", "Phone", 3, 199000),"Broken During Transportation", new DateTime(2024,10,23),"Done"
+                new Phone("P1", "Iphone 16 Pro", "Phone", 3, 597),"Broken During Transportation", new DateTime(2024,10,23),"Done"
                     ),
                 new ReturnOrder("R2",
-                new Headphone("P5", "Tanjim Zero", "Headphone", 2, 199000),"Broken During Transportation", new DateTime(2024,10,24),"Done"
+                new Headphone("P5", "Tanjim Zero", "Headphone", 2, 398),"Broken During Transportation", new DateTime(2024,10,24),"Done"
                     ),
                 new ReturnOrder("R3",
-                new Keyboard("P4", "Cidoo", "Keyboard", 5, 890000),"Fix", new DateTime(2024,10,25),"Done"
+                new Keyboard("P4", "Cidoo", "Keyboard", 5, 4450),"Fix", new DateTime(2024,10,25),"Done"
                 )
             };
 
@@ -178,14 +179,14 @@ namespace Inventory_Management
             {
                 new SalesInvoice("SI01",customers[0],new List<Product>
                 {
-                     new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199000)
+                     new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199)
                 }
-                ,199000,"Done"),
+                ,"Done"),
                 new SalesInvoice("SI02",customers[1],new List<Product>
 {
-                     new Tablet("P8", "Ipad Gen 6", "Tablet", 1, 149000)
+                     new Tablet("P8", "Ipad Gen 6", "Tablet", 2, 298)
                 }
-                ,149000,"Done")
+                ,"Done")
             };
 
                 // Report

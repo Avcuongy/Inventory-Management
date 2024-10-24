@@ -15,13 +15,11 @@ namespace Inventory_Management
         private string invoiceId;
         private Customer customer;
         private List<Product> soldProducts = new List<Product>();
-        private double totalAmount;
         private string paymentStatus;
 
         public string InvoiceId { get => invoiceId; set => invoiceId = value; }
         public Customer Customer { get => customer; set => customer = value; }
         public List<Product> SoldProducts { get => soldProducts; set => soldProducts = value; }
-        public double TotalAmount { get => totalAmount; set => totalAmount = value; }
         public string PaymentStatus { get => paymentStatus; set => paymentStatus = value; }
         public SalesInvoice() { }
         public SalesInvoice(SerializationInfo info, StreamingContext context)
@@ -29,15 +27,13 @@ namespace Inventory_Management
             InvoiceId = info.GetString("InvoiceId");
             Customer = (Customer)info.GetValue("Customer", typeof(Customer));
             SoldProducts = (List<Product>)info.GetValue("SoldProducts", typeof(List<Product>));
-            TotalAmount = info.GetDouble("TotalAmount");
             PaymentStatus = info.GetString("PaymentStatus");
         }
-        public SalesInvoice(string invoiceId, Customer customer, List<Product> soldProducts, double totalAmount, string paymentStatus)
+        public SalesInvoice(string invoiceId, Customer customer, List<Product> soldProducts, string paymentStatus)
         {
             this.invoiceId = invoiceId;
             this.customer = customer;
             this.soldProducts = soldProducts;
-            this.totalAmount = totalAmount;
             this.paymentStatus = paymentStatus;
         }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -45,7 +41,6 @@ namespace Inventory_Management
             info.AddValue("InvoiceId", InvoiceId);
             info.AddValue("Customer", Customer, typeof(Customer));
             info.AddValue("SoldProducts", SoldProducts, typeof(List<Product>));
-            info.AddValue("TotalAmount", TotalAmount);
             info.AddValue("PaymentStatus", PaymentStatus);
         }
     }
