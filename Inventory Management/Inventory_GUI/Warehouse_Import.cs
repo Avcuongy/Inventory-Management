@@ -103,7 +103,7 @@ namespace Inventory_Management
 
             int quantity_Import = 0;
 
-            if (int.TryParse(textBox3.Text, out int quantity))
+            if (int.TryParse(textBox3.Text.Trim(), out int quantity))
             {
                 quantity_Import = quantity;
             }    
@@ -133,7 +133,7 @@ namespace Inventory_Management
 
             int quantity_Import = 0;
 
-            if (int.TryParse(textBox3.Text, out int quantity))
+            if (int.TryParse(textBox3.Text.Trim(), out int quantity))
             {
                 quantity_Import = quantity;
             }
