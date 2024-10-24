@@ -142,6 +142,7 @@ namespace Inventory_Management
             {
                 inventory[0].AddStock(selectedProductId, quantity_Import);
                 StockLevelChanged?.Invoke();
+                this.Hide();
             }
             else
             {

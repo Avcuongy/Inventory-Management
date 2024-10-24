@@ -188,6 +188,8 @@ namespace Inventory_Management
                 inventory[0].RemoveStock(selectedProductId, quantity_Export);
 
                 StockLevelChanged?.Invoke();
+
+                this.Hide();
             }
             else if (quantity_Selected_Product <= 0 || quantity_Selected_Product < quantity_Export || quantity_Export == 0)
             {
