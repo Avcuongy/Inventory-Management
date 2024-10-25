@@ -130,13 +130,18 @@ namespace Inventory_Management
             if (DateTime.TryParse(textBox8.Text.Trim(), out DateTime dateNow))
             {
                 returnDate = dateNow;
-            }    
+            }
 
-            int quantity_Export = int.Parse(textBox7.Text.Trim());
+            int quantity_Export = 0;
+
+            if (int.TryParse(textBox7.Text.Trim(), out int quantity))
+            {
+                quantity_Export = quantity;
+            }
 
             DialogResult dialogResult = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
 
-            if (dialogResult == DialogResult.Yes && quantity_Selected_Product > 0 && quantity_Export > 0)
+            if (dialogResult == DialogResult.Yes && quantity_Selected_Product > 0 && quantity_Export > 0 && quantity_Selected_Product >= quantity_Export)
             {
 
                 Product product_In_ReturnOrder = null;
@@ -191,7 +196,7 @@ namespace Inventory_Management
 
                 this.Hide();
             }
-            else if (quantity_Selected_Product <= 0 || quantity_Selected_Product < quantity_Export || quantity_Export == 0)
+            else if (quantity_Selected_Product <= 0 || quantity_Selected_Product < quantity_Export || quantity_Export <= 0)
             {
                 MessageBox.Show("There may not be enough stock available");
             }
@@ -213,7 +218,14 @@ namespace Inventory_Management
             {
                 if (product.ProductId == selectedProductId)
                 {
-                    textBox1.Text = (product.Price * quantity_Export).ToString(); 
+                    if (quantity_Export > 0)
+                    {
+                        textBox1.Text = (quantity_Export * product.Price).ToString();
+                    }
+                    else
+                    {
+                        textBox1.Text = "0";
+                    }
                     break;
                 }
             }        

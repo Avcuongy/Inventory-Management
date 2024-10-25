@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBoxSupplier = new System.Windows.Forms.TextBox();
             this.ShowOrder = new System.Windows.Forms.DataGridView();
@@ -40,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,6 +62,20 @@
             this.panel1.Size = new System.Drawing.Size(1336, 624);
             this.panel1.TabIndex = 16;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.button4.Location = new System.Drawing.Point(1016, 80);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(296, 48);
+            this.button4.TabIndex = 8;
+            this.button4.TabStop = false;
+            this.button4.Text = "Order";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
@@ -82,7 +96,7 @@
             this.textBoxSupplier.Size = new System.Drawing.Size(280, 47);
             this.textBoxSupplier.TabIndex = 6;
             this.textBoxSupplier.TabStop = false;
-            this.textBoxSupplier.Text = "ID or Name";
+            this.textBoxSupplier.Text = "ID";
             this.textBoxSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ShowOrder
@@ -171,19 +185,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.button4.Location = new System.Drawing.Point(976, 80);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(336, 48);
-            this.button4.TabIndex = 8;
-            this.button4.TabStop = false;
-            this.button4.Text = "Change Status";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // Order_Menu
             // 

@@ -106,24 +106,32 @@ namespace Inventory_Management
             if (int.TryParse(textBox3.Text.Trim(), out int quantity))
             {
                 quantity_Import = quantity;
-            }    
-            
+            }
+
             string selectedProductId = comboBox1.SelectedItem.ToString();
 
             foreach (Product product in products)
             {
                 if (_warehouse.CheckProductId(selectedProductId))
                 {
-                    textBox1.Text = (quantity_Import* product.Price).ToString();
+                    if (quantity_Import > 0)
+                    {
+                        textBox1.Text = (quantity_Import * product.Price).ToString();
+                    }
+                    else
+                    {
+                        textBox1.Text = "0";
+                    }
                     break;
-                }    
-            }    
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             List<Product> products = _warehouse.Products;
             List<Inventory> inventory = _warehouse.Inventory;
+            List<ReturnOrder> returnOrder = _returnOrder;
 
             Dictionary<string, int> productStock = inventory[0].ProductStock;
 
@@ -141,6 +149,7 @@ namespace Inventory_Management
             if (dialogResult == DialogResult.Yes && quantity_Import > 0)
             {
                 inventory[0].AddStock(selectedProductId, quantity_Import);
+
                 StockLevelChanged?.Invoke();
                 this.Hide();
             }

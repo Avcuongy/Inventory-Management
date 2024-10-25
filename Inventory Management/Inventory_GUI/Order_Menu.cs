@@ -197,5 +197,86 @@ namespace Inventory_Management
 
             ShowOrder.DataSource = dt;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<Supplier> suppliers = _supplier;
+            OrderManager orderManager = _orderManager;
+            List<PurchaseOrder> purchaseOrders = _orderManager.Orders;
+            List<Product> products = _warehouse.Products;
+
+            bool ChangeDataView = false;
+
+            if (ChangeDataView)
+            {
+                DataTable dt = new DataTable();
+
+                dt.Columns.Add("Order ID");
+                dt.Columns.Add("Supplier Name");
+                dt.Columns.Add("Product ID");
+                dt.Columns.Add("Product Name");
+                dt.Columns.Add("Quantity Order");
+                dt.Columns.Add("Total");
+                dt.Columns.Add("Status");
+
+                foreach (PurchaseOrder order in purchaseOrders)
+                {
+                    string supplierName = order.Supplier.Name;
+
+                    foreach (Product product in order.OrderedProducts)
+                    {
+                        DataRow row = dt.NewRow();
+                        row["Order ID"] = order.OrderId;
+                        row["Supplier Name"] = supplierName;
+                        row["Product ID"] = product.ProductId;
+                        row["Product Name"] = product.Name;
+                        row["Quantity Order"] = product.Quantity;
+                        foreach (Product product2 in products)
+                        {
+                            if (product.ProductId == product2.ProductId)
+                            {
+                                row["Total"] = product2.Price * product.Quantity;
+                                break;
+                            }
+                        }
+                        row["Status"] = order.Status;
+
+                        dt.Rows.Add(row);
+                    }
+                }
+
+                ShowOrder.DataSource = dt;
+                ChangeDataView = true;
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+
+                dt.Columns.Add("Supplier ID");
+                dt.Columns.Add("Supplier Name");
+                dt.Columns.Add("Contact Info");
+                dt.Columns.Add("Product Supply");
+                dt.Columns.Add("Category");
+                dt.Columns.Add("Base Price");
+
+                foreach (Supplier sup in suppliers)
+                {
+                    foreach (Product suppliedProduct in sup.SuppliedProducts)
+                    {
+                        DataRow row = dt.NewRow();
+                        row["Supplier ID"] = sup.SupplierId;
+                        row["Supplier Name"] = sup.Name;
+                        row["Contact Info"] = sup.ContactInfo;
+                        row["Product Supply"] = suppliedProduct.Name;
+                        row["Category"] = suppliedProduct.Category;
+                        row["Base Price"] = suppliedProduct.Price;
+                        dt.Rows.Add(row);
+                    }
+                    ChangeDataView = false;
+                }
+
+                ShowOrder.DataSource = dt;
+            }
+        }
     }
 }
