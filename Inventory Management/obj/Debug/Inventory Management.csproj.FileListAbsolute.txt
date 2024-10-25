@@ -56,7 +56,6 @@ D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\In
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Product_Update.resources
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Order_Add.resources
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Order_Menu.resources
-D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Order_Subtract.resources
 D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Transaction_Menu.resources
 D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\Inventory Management.exe.config
 D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\bin\Debug\Inventory Management.exe

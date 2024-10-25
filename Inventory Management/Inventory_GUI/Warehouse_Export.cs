@@ -24,6 +24,15 @@ namespace Inventory_Management
         private OrderManager _orderManager;
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
+        public string Username { get => _username; set => _username = value; }
+        public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report { get => _report; set => _report = value; }
 
         public Warehouse_Export(string username,
                         Warehouse warehouse,
@@ -36,15 +45,15 @@ namespace Inventory_Management
                         Report report)
         {
             InitializeComponent();
-            _username = username;
-            _warehouse = warehouse;
-            _supplier = supplier;
-            _purchaseOrder = purchaseOrder;
-            _returnOrder = returnOrder;
-            _customer = customer;
-            _orderManager = orderManager;
-            _salesInvoice = salesInvoice;
-            _report = report;
+            Username = username;
+            Warehouse = warehouse;
+            Supplier = supplier;
+            PurchaseOrder = purchaseOrder;
+            ReturnOrder = returnOrder;
+            Customer = customer;
+            OrderManager = orderManager;
+            SalesInvoice = salesInvoice;
+            Report = report;
             ShowComboBox();
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             textBox7.TextChanged += textBox1_TextChanged;
@@ -55,7 +64,7 @@ namespace Inventory_Management
 
         public void ShowComboBox()
         {
-            List<Product> products = _warehouse.Products;
+            List<Product> products = Warehouse.Products;
             List<string> productsId = new List<string>();
             foreach (Product product in products)
             {
@@ -65,11 +74,11 @@ namespace Inventory_Management
         }
         public void ShowInfo()
         {
-            List<Product> products = _warehouse.Products;
-            List<Inventory> inventory = _warehouse.Inventory;
-            List<Supplier> suppliers = _supplier;
+            List<Product> products = Warehouse.Products;
+            List<Inventory> inventory = Warehouse.Inventory;
+            List<Supplier> suppliers = Supplier;
 
-            string selectedProductId = comboBox1.SelectedItem.ToString();
+            string selectedProductId = comboBox1.SelectedItem.ToString().Trim();
 
             foreach (Product product in products)
             {
@@ -104,10 +113,10 @@ namespace Inventory_Management
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            List<Product> products = _warehouse.Products;
-            List<Inventory> inventory = _warehouse.Inventory;
-            List<Supplier> suppliers = _supplier;
-            List<ReturnOrder> returnOrders = _returnOrder;
+            List<Product> products = Warehouse.Products;
+            List<Inventory> inventory = Warehouse.Inventory;
+            List<Supplier> suppliers = Supplier;
+            List<ReturnOrder> returnOrders = ReturnOrder;
 
             string selectedProductId = comboBox1.SelectedItem.ToString();
 
@@ -194,6 +203,8 @@ namespace Inventory_Management
 
                 StockLevelChanged?.Invoke();
 
+                MessageBox.Show("successful");
+
                 this.Hide();
             }
             else if (quantity_Selected_Product <= 0 || quantity_Selected_Product < quantity_Export || quantity_Export <= 0)
@@ -203,7 +214,7 @@ namespace Inventory_Management
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            List<Product> products = _warehouse.Products;
+            List<Product> products = Warehouse.Products;
 
             string selectedProductId = comboBox1.SelectedItem.ToString();
 

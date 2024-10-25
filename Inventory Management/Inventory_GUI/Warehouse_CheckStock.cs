@@ -21,7 +21,6 @@ namespace Inventory_Management
         private OrderManager _orderManager;
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
-
         public Warehouse_CheckStock(string username,
                         Warehouse warehouse,
                         List<Supplier> supplier,
@@ -33,20 +32,31 @@ namespace Inventory_Management
                         Report report)
         {
             InitializeComponent();
-            _username = username;
-            _warehouse = warehouse;
-            _supplier = supplier;
-            _purchaseOrder = purchaseOrder;
-            _returnOrder = returnOrder;
-            _customer = customer;
-            _orderManager = orderManager;
-            _salesInvoice = salesInvoice;
-            _report = report;
+            Username = username;
+            Warehouse = warehouse;
+            Supplier = supplier;
+            PurchaseOrder = purchaseOrder;
+            ReturnOrder = returnOrder;
+            Customer = customer;
+            OrderManager = orderManager;
+            SalesInvoice = salesInvoice;
+            Report = report;
             ShowCombobox();
         }
+
+        public string Username { get => _username; set => _username = value; }
+        public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report { get => _report; set => _report = value; }
+
         public void ShowCombobox()
         {
-            List<Product> products = _warehouse.Products;
+            List<Product> products = Warehouse.Products;
             List<string> productsID = new List<string>();
             foreach (Product product in products)
             {
@@ -56,8 +66,8 @@ namespace Inventory_Management
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            List<Product> products = _warehouse.Products;
-            List<Inventory> inventory = _warehouse.Inventory;
+            List<Product> products = Warehouse.Products;
+            List<Inventory> inventory = Warehouse.Inventory;
 
             Dictionary<string, int> productStock = inventory[0].ProductStock;
 

@@ -11,6 +11,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace Inventory_Management
 {
+    public delegate void OrderChangeInformation();
     public partial class Order_Menu : Form
     {
         private string _username;
@@ -22,7 +23,6 @@ namespace Inventory_Management
         private OrderManager _orderManager;
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
-
         public Order_Menu(string username,
                         Warehouse warehouse,
                         List<Supplier> supplier,
@@ -34,24 +34,35 @@ namespace Inventory_Management
                         Report report)
         {
             InitializeComponent();
-            _username = username;
-            _warehouse = warehouse;
-            _supplier = supplier;
-            _purchaseOrder = purchaseOrder;
-            _returnOrder = returnOrder;
-            _customer = customer;
-            _orderManager = orderManager;
-            _salesInvoice = salesInvoice;
-            _report = report;
+            Username = username;
+            Warehouse = warehouse;
+            Supplier = supplier;
+            PurchaseOrder = purchaseOrder;
+            ReturnOrder = returnOrder;
+            Customer = customer;
+            OrderManager = orderManager;
+            SalesInvoice = salesInvoice;
+            Report = report;
             ShowOrders();
         }
-
+        private bool ChangeDataView = false;
+        public string Username { get => _username; set => _username = value; }
+        public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report { get => _report; set => _report = value; }
         public void ShowOrders()
         {
-            List<Supplier> suppliers = _supplier;
-            OrderManager orderManager = _orderManager;
-            List<PurchaseOrder> purchaseOrders = _orderManager.Orders;
-            List<Product> products = _warehouse.Products;
+            ShowOrder.CurrentCell = null;
+
+            List<Supplier> suppliers = Supplier;
+            OrderManager orderManager = OrderManager;
+            List<PurchaseOrder> purchaseOrders = OrderManager.Orders;
+            List<Product> products = Warehouse.Products;
 
             DataTable dt = new DataTable();
 
@@ -95,15 +106,15 @@ namespace Inventory_Management
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Profile profile = new Profile(
-                                   _username,
-                                   _warehouse,
-                                   _supplier,
-                                   _purchaseOrder,
-                                   _returnOrder,
-                                   _customer,
-                                   _orderManager,
-                                   _salesInvoice,
-                                   _report
+                                   Username,
+                                   Warehouse,
+                                   Supplier,
+                                   PurchaseOrder,
+                                   ReturnOrder,
+                                   Customer,
+                                   OrderManager,
+                                   SalesInvoice,
+                                   Report
                );
             profile.Show();
             this.Hide();
@@ -113,10 +124,10 @@ namespace Inventory_Management
         {
             ShowOrder.CurrentCell = null;
 
-            List<Supplier> suppliers = _supplier;
-            OrderManager orderManager = _orderManager;
-            List<PurchaseOrder> purchaseOrders = _orderManager.Orders;
-            List<Product> products = _warehouse.Products;
+            List<Supplier> suppliers = Supplier;
+            OrderManager orderManager = OrderManager;
+            List<PurchaseOrder> purchaseOrders = OrderManager.Orders;
+            List<Product> products = Warehouse.Products;
 
             string id = textBoxSupplier.Text.Trim();
 
@@ -198,18 +209,22 @@ namespace Inventory_Management
             ShowOrder.DataSource = dt;
         }
 
+
+
         private void button4_Click(object sender, EventArgs e)
         {
-            List<Supplier> suppliers = _supplier;
-            OrderManager orderManager = _orderManager;
-            List<PurchaseOrder> purchaseOrders = _orderManager.Orders;
-            List<Product> products = _warehouse.Products;
+            List<Supplier> suppliers = Supplier;
+            OrderManager orderManager = OrderManager;
+            List<PurchaseOrder> purchaseOrders = OrderManager.Orders;
+            List<Product> products = Warehouse.Products;
 
-            bool ChangeDataView = false;
+            DataTable dt = new DataTable();
 
             if (ChangeDataView)
             {
-                DataTable dt = new DataTable();
+                ShowOrder.CurrentCell = null;
+
+                button4.Text = "Supplier";
 
                 dt.Columns.Add("Order ID");
                 dt.Columns.Add("Supplier Name");
@@ -231,6 +246,7 @@ namespace Inventory_Management
                         row["Product ID"] = product.ProductId;
                         row["Product Name"] = product.Name;
                         row["Quantity Order"] = product.Quantity;
+
                         foreach (Product product2 in products)
                         {
                             if (product.ProductId == product2.ProductId)
@@ -244,13 +260,12 @@ namespace Inventory_Management
                         dt.Rows.Add(row);
                     }
                 }
-
-                ShowOrder.DataSource = dt;
-                ChangeDataView = true;
             }
             else
             {
-                DataTable dt = new DataTable();
+                ShowOrder.CurrentCell = null;
+
+                button4.Text = "Order";
 
                 dt.Columns.Add("Supplier ID");
                 dt.Columns.Add("Supplier Name");
@@ -272,11 +287,28 @@ namespace Inventory_Management
                         row["Base Price"] = suppliedProduct.Price;
                         dt.Rows.Add(row);
                     }
-                    ChangeDataView = false;
                 }
-
-                ShowOrder.DataSource = dt;
             }
+
+            ShowOrder.DataSource = dt;
+
+            ChangeDataView = !ChangeDataView;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Order_Add order_Add = new Order_Add(
+                                   Username,
+                                   Warehouse,
+                                   Supplier,
+                                   PurchaseOrder,
+                                   ReturnOrder,
+                                   Customer,
+                                   OrderManager,
+                                   SalesInvoice,
+                                   Report
+               );
+            order_Add.Show();
         }
     }
 }

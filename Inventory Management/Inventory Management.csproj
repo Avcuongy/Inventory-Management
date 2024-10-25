@@ -38,6 +38,7 @@
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,12 +77,6 @@
     <Compile Include="Inventory_GUI\Order_Menu.Designer.cs">
       <DependentUpon>Order_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventory_GUI\Order_Subtract.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inventory_GUI\Order_Subtract.Designer.cs">
-      <DependentUpon>Order_Subtract.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inventory_System\Products\Phone.cs" />
     <Compile Include="Inventory_System\Product.cs" />
     <Compile Include="Inventory_GUI\Product_Add.cs">
@@ -113,7 +108,7 @@
     <Compile Include="Inventory_System\PurchaseOrder.cs" />
     <Compile Include="Inventory_System\Report.cs" />
     <Compile Include="Inventory_System\ReturnOrder.cs" />
-    <Compile Include="Inventory_System\SaleInvoice.cs" />
+    <Compile Include="Inventory_System\SalesInvoice.cs" />
     <Compile Include="Inventory_System\Supplier.cs" />
     <Compile Include="Inventory_System\Products\Tablet.cs" />
     <Compile Include="Inventory_GUI\Transaction_Menu.cs">
@@ -155,9 +150,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory_GUI\Order_Menu.resx">
       <DependentUpon>Order_Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inventory_GUI\Order_Subtract.resx">
-      <DependentUpon>Order_Subtract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory_GUI\Product_Add.resx">
       <DependentUpon>Product_Add.cs</DependentUpon>

@@ -11,6 +11,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace Inventory_Management
 {
+    public delegate void StockLevelChangedHandler();
     public partial class Warehouse_Menu : Form
     {
         private string _username;
@@ -22,6 +23,15 @@ namespace Inventory_Management
         private OrderManager _orderManager;
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
+        public string Username { get => _username; set => _username = value; }
+        public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report { get => _report; set => _report = value; }
 
         public Warehouse_Menu(string username,
                         Warehouse warehouse,
@@ -34,30 +44,30 @@ namespace Inventory_Management
                         Report report)
         {
             InitializeComponent();
-            _username = username;
-            _warehouse = warehouse;
-            _supplier = supplier;
-            _purchaseOrder = purchaseOrder;
-            _returnOrder = returnOrder;
-            _customer = customer;
-            _orderManager = orderManager;
-            _salesInvoice = salesInvoice;
-            _report = report;
+            Username = username;
+            Warehouse = warehouse;
+            Supplier = supplier;
+            PurchaseOrder = purchaseOrder;
+            ReturnOrder = returnOrder;
+            Customer = customer;
+            OrderManager = orderManager;
+            SalesInvoice = salesInvoice;
+            Report = report;
             ShowDataGridView();
         }
         // Back to menu
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Profile profile = new Profile(
-                                    _username,
-                                    _warehouse,
-                                    _supplier,
-                                    _purchaseOrder,
-                                    _returnOrder,
-                                    _customer,
-                                    _orderManager,
-                                    _salesInvoice,
-                                    _report
+                                    Username,
+                                    Warehouse,
+                                    Supplier,
+                                    PurchaseOrder,
+                                    ReturnOrder,
+                                    Customer,
+                                    OrderManager,
+                                    SalesInvoice,
+                                    Report
                 );
             profile.Show();
             this.Hide();
@@ -75,9 +85,9 @@ namespace Inventory_Management
             dt.Columns.Add("Supplier");
             dt.Columns.Add("Current Stock Level");
 
-            List<Product> products = _warehouse.Products;
-            List<Inventory> inventory = _warehouse.Inventory;
-            List<Supplier> suppliers = _supplier;
+            List<Product> products = Warehouse.Products;
+            List<Inventory> inventory = Warehouse.Inventory;
+            List<Supplier> suppliers = Supplier;
 
             Dictionary<string, int> productStock = inventory[0].ProductStock;
 
@@ -118,15 +128,15 @@ namespace Inventory_Management
         private void Check_Stock_Click(object sender, EventArgs e)
         {
             Warehouse_CheckStock warehouse_CheckStock = new Warehouse_CheckStock(
-                                    _username,
-                                    _warehouse,
-                                    _supplier,
-                                    _purchaseOrder,
-                                    _returnOrder,
-                                    _customer,
-                                    _orderManager,
-                                    _salesInvoice,
-                                    _report
+                                    Username,
+                                    Warehouse,
+                                    Supplier,
+                                    PurchaseOrder,
+                                    ReturnOrder,
+                                    Customer,
+                                    OrderManager,
+                                    SalesInvoice,
+                                    Report
                 );
             warehouse_CheckStock.Show();
         }
@@ -134,15 +144,15 @@ namespace Inventory_Management
         private void button2_Click(object sender, EventArgs e)
         {
             Warehouse_Export warehouse_Export = new Warehouse_Export(
-                _username,
-                _warehouse,
-                _supplier,
-                _purchaseOrder,
-                _returnOrder,
-                _customer,
-                _orderManager,
-                _salesInvoice,
-                _report
+                Username,
+                Warehouse,
+                Supplier,
+                PurchaseOrder,
+                ReturnOrder,
+                Customer,
+                OrderManager,
+                SalesInvoice,
+                Report
             );
             warehouse_Export.StockLevelChanged += Warehouse_Export_StockLevelChanged;
             warehouse_Export.Show();
@@ -162,9 +172,9 @@ namespace Inventory_Management
             dt.Columns.Add("Supplier");
             dt.Columns.Add("Current Stock Level");
 
-            List<Product> products = _warehouse.Products;
-            List<Inventory> inventory = _warehouse.Inventory;
-            List<Supplier> suppliers = _supplier;
+            List<Product> products = Warehouse.Products;
+            List<Inventory> inventory = Warehouse.Inventory;
+            List<Supplier> suppliers = Supplier;
 
             Dictionary<string, int> productStock = inventory[0].ProductStock;
 
@@ -248,15 +258,15 @@ namespace Inventory_Management
         private void button1_Click(object sender, EventArgs e)
         {
             Warehouse_Import warehouse_Import = new Warehouse_Import(
-                _username,
-                _warehouse,
-                _supplier,
-                _purchaseOrder,
-                _returnOrder,
-                _customer,
-                _orderManager,
-                _salesInvoice,
-                _report
+                Username,
+                Warehouse,
+                Supplier,
+                PurchaseOrder,
+                ReturnOrder,
+                Customer,
+                OrderManager,
+                SalesInvoice,
+                Report
             );
             warehouse_Import.StockLevelChanged += Warehouse_Import_StockLevelChanged;
             warehouse_Import.Show();

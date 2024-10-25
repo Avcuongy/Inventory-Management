@@ -10,7 +10,6 @@ using System.Text.Json.Serialization;
 
 namespace Inventory_Management
 {
-    public delegate void StockLevelChangedHandler();
     public class Warehouse : ISerializable
     {
         private List<Product> products = new List<Product>();

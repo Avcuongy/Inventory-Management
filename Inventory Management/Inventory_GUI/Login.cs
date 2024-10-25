@@ -20,7 +20,6 @@ namespace Inventory_Management
         private OrderManager _orderManager;
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
-
         public Login(Warehouse warehouse,
             List<Supplier> supplier,
             List<PurchaseOrder> purchaseOrder,
@@ -31,33 +30,43 @@ namespace Inventory_Management
             Report report)
         {
             InitializeComponent();
-            _warehouse = warehouse;
-            _supplier = supplier;
-            _purchaseOrder = purchaseOrder;
-            _returnOrder = returnOrder;
-            _customer = customer;
-            _orderManager = orderManager;
-            _salesInvoice = salesInvoice;
-            _report = report;
+            Warehouse = warehouse;
+            Supplier = supplier;
+            PurchaseOrder = purchaseOrder;
+            ReturnOrder = returnOrder;
+            Customer = customer;
+            OrderManager = orderManager;
+            SalesInvoice = salesInvoice;
+            Report = report;
         }
+
+        public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report { get => _report; set => _report = value; }
+
         private void Login_Button_Click(object sender, EventArgs e)
         {
             string username = Username.Text;
             string password = Password.Text;
-            if (_warehouse.CheckUser(username, password))
+            if (Warehouse.CheckUser(username, password))
             {
                 MessageBox.Show("Login Successful!");
                 this.Hide();
                 Profile profile = new Profile(
                                     username, 
-                                    _warehouse,
-                                    _supplier,
-                                    _purchaseOrder,
-                                    _returnOrder,
-                                    _customer,
-                                    _orderManager,
-                                    _salesInvoice,
-                                    _report);
+                                    Warehouse,
+                                    Supplier,
+                                    PurchaseOrder,
+                                    ReturnOrder,
+                                    Customer,
+                                    OrderManager,
+                                    SalesInvoice,
+                                    Report);
                 profile.Show();
             }    
         }

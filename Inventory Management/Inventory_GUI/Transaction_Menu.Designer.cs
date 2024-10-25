@@ -34,7 +34,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NewTransaction = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.NewTransaction);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(80, 16);
@@ -99,19 +97,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1288, 472);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // NewTransaction
-            // 
-            this.NewTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.NewTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
-            this.NewTransaction.ForeColor = System.Drawing.Color.White;
-            this.NewTransaction.Location = new System.Drawing.Point(1072, 10);
-            this.NewTransaction.Name = "NewTransaction";
-            this.NewTransaction.Size = new System.Drawing.Size(240, 48);
-            this.NewTransaction.TabIndex = 4;
-            this.NewTransaction.TabStop = false;
-            this.NewTransaction.Text = "New Transaction";
-            this.NewTransaction.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -192,7 +177,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button NewTransaction;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;

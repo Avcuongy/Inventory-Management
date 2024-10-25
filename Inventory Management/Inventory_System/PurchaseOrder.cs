@@ -17,7 +17,6 @@ namespace Inventory_Management
         private Supplier supplier;
         private string status;
         private List<Product> orderedProducts = new List<Product>();
-
         public PurchaseOrder() { }
 
         public PurchaseOrder(SerializationInfo info, StreamingContext context)

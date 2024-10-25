@@ -24,6 +24,15 @@ namespace Inventory_Management
         private OrderManager _orderManager;
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
+        public string Username { get => _username; set => _username = value; }
+        public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report { get => _report; set => _report = value; }
 
         public Profile(string username,
                         Warehouse warehouse,
@@ -36,23 +45,23 @@ namespace Inventory_Management
                         Report report)
         {
             InitializeComponent();
-            _username = username;
-            _warehouse = warehouse;
-            _supplier = supplier;
-            _purchaseOrder = purchaseOrder;
-            _returnOrder = returnOrder;
-            _customer = customer;
-            _orderManager = orderManager;
-            _salesInvoice = salesInvoice;
-            _report = report;
+            Username = username;
+            Warehouse = warehouse;
+            Supplier = supplier;
+            PurchaseOrder = purchaseOrder;
+            ReturnOrder = returnOrder;
+            Customer = customer;
+            OrderManager = orderManager;
+            SalesInvoice = salesInvoice;
+            Report = report;
             ShowInfoInProfile();
         }
 
         public void ShowInfoInProfile()
         {
-            foreach (Employee employ in _warehouse.Employees)
+            foreach (Employee employ in Warehouse.Employees)
             {
-                if (employ.Username == _username)
+                if (employ.Username == Username)
                 {
                     NameLabel.Text = employ.Name;
                     RoleText.Text = employ.Role;
@@ -66,14 +75,14 @@ namespace Inventory_Management
         {           
             DataWrapper dataWrapper = new DataWrapper
             {
-                Warehouse = _warehouse,
-                Suppliers = _supplier,
-                PurchaseOrders = _purchaseOrder,
-                ReturnOrders = _returnOrder,
-                Customers = _customer,
-                OrderManager = _orderManager,
-                SalesInvoices = _salesInvoice,
-                Report = _report
+                Warehouse = Warehouse,
+                Suppliers = Supplier,
+                PurchaseOrders = PurchaseOrder,
+                ReturnOrders = ReturnOrder,
+                Customers = Customer,
+                OrderManager = OrderManager,
+                SalesInvoices = SalesInvoice,
+                Report = Report
             };
 
             string filePath = "Inventory_Management.dat";
@@ -88,15 +97,15 @@ namespace Inventory_Management
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Warehouse_Menu warehouse_Menu = new Warehouse_Menu(
-                                    _username,
-                                    _warehouse,
-                                    _supplier,
-                                    _purchaseOrder,
-                                    _returnOrder,
-                                    _customer,
-                                    _orderManager,
-                                    _salesInvoice,
-                                    _report
+                                    Username,
+                                    Warehouse,
+                                    Supplier,
+                                    PurchaseOrder,
+                                    ReturnOrder,
+                                    Customer,
+                                    OrderManager,
+                                    SalesInvoice,
+                                    Report
                 );
             this.Hide();
             warehouse_Menu.Show();
@@ -105,15 +114,15 @@ namespace Inventory_Management
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Order_Menu order_Menu = new Order_Menu(
-                                    _username,
-                                    _warehouse,
-                                    _supplier,
-                                    _purchaseOrder,
-                                    _returnOrder,
-                                    _customer,
-                                    _orderManager,
-                                    _salesInvoice,
-                                    _report
+                                    Username,
+                                    Warehouse,
+                                    Supplier,
+                                    PurchaseOrder,
+                                    ReturnOrder,
+                                    Customer,
+                                    OrderManager,
+                                    SalesInvoice,
+                                    Report
                 );
             order_Menu.Show();
             this.Hide();
