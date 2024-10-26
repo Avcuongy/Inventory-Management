@@ -155,7 +155,7 @@ namespace Inventory_Management
                 Report
             );
             warehouse_Export.StockLevelChanged += Warehouse_Export_StockLevelChanged;
-            warehouse_Export.Show();
+            warehouse_Export.ShowDialog();
         }
         
         private void button3_Click(object sender, EventArgs e)
@@ -269,7 +269,7 @@ namespace Inventory_Management
                 Report
             );
             warehouse_Import.StockLevelChanged += Warehouse_Import_StockLevelChanged;
-            warehouse_Import.Show();
+            warehouse_Import.ShowDialog();
         }
 
         private void Warehouse_Export_StockLevelChanged()

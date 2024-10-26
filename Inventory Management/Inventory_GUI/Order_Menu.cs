@@ -43,7 +43,7 @@ namespace Inventory_Management
             OrderManager = orderManager;
             SalesInvoice = salesInvoice;
             Report = report;
-            ShowOrders();
+            ShowOrdersInfo();
         }
         private bool ChangeDataView = false;
         public string Username { get => _username; set => _username = value; }
@@ -55,7 +55,7 @@ namespace Inventory_Management
         public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
         public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
         public Report Report { get => _report; set => _report = value; }
-        public void ShowOrders()
+        public void ShowOrdersInfo()
         {
             ShowOrder.CurrentCell = null;
 
@@ -209,8 +209,6 @@ namespace Inventory_Management
             ShowOrder.DataSource = dt;
         }
 
-
-
         private void button4_Click(object sender, EventArgs e)
         {
             List<Supplier> suppliers = Supplier;
@@ -308,7 +306,7 @@ namespace Inventory_Management
                                    SalesInvoice,
                                    Report
                );
-            order_Add.Show();
+            order_Add.ShowDialog();
         }
     }
 }

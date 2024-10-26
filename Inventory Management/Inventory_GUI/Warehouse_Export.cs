@@ -78,7 +78,7 @@ namespace Inventory_Management
             List<Inventory> inventory = Warehouse.Inventory;
             List<Supplier> suppliers = Supplier;
 
-            string selectedProductId = comboBox1.SelectedItem.ToString().Trim();
+            string selectedProductId = comboBox1.SelectedItem?.ToString();
 
             foreach (Product product in products)
             {
@@ -118,7 +118,7 @@ namespace Inventory_Management
             List<Supplier> suppliers = Supplier;
             List<ReturnOrder> returnOrders = ReturnOrder;
 
-            string selectedProductId = comboBox1.SelectedItem.ToString();
+            string selectedProductId = comboBox1.SelectedItem?.ToString();
 
             Dictionary<string, int> productStock = inventory[0].ProductStock;
 

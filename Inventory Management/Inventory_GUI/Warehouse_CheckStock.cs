@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -71,26 +72,33 @@ namespace Inventory_Management
 
             Dictionary<string, int> productStock = inventory[0].ProductStock;
 
-            string selectedProductID = comboBoxProductID.SelectedItem.ToString();
+            string selectedProductID = comboBoxProductID.SelectedItem?.ToString();
 
-            foreach (Product product in products)
+            if (selectedProductID != null)
             {
-                if (product.ProductId == selectedProductID)
+                foreach (Product product in products)
                 {
-                    textBox1.Text = product.Name;
-                    textBox3.Text = product.Price.ToString();
-                    textBox5.Text = product.Category;
-
-                    foreach (string key in productStock.Keys)
+                    if (product.ProductId == selectedProductID)
                     {
-                        if (product.ProductId == key)
+                        textBox1.Text = product.Name;
+                        textBox3.Text = product.Price.ToString();
+                        textBox5.Text = product.Category;
+
+                        foreach (string key in productStock.Keys)
                         {
-                            textBox4.Text = productStock[key].ToString();
-                            break;
+                            if (product.ProductId == key)
+                            {
+                                textBox4.Text = productStock[key].ToString();
+                                break;
+                            }
                         }
+                        break;
                     }
-                    break;
                 }
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong");
             }
         }
     }

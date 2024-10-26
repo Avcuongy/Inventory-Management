@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order_Add));
             this.panel_Update_Product = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,6 +42,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.panel_Update_Product.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,6 +85,37 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(499, 360);
             this.panel2.TabIndex = 7;
+            // 
+            // comboBox11
+            // 
+            this.comboBox11.FormattingEnabled = true;
+            this.comboBox11.Location = new System.Drawing.Point(8, 72);
+            this.comboBox11.Name = "comboBox11";
+            this.comboBox11.Size = new System.Drawing.Size(480, 24);
+            this.comboBox11.TabIndex = 24;
+            this.comboBox11.TabStop = false;
+            this.comboBox11.SelectedIndexChanged += new System.EventHandler(this.comboBox11_SelectedIndexChanged);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.textBox3.Location = new System.Drawing.Point(8, 224);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(480, 28);
+            this.textBox3.TabIndex = 23;
+            this.textBox3.TabStop = false;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.textBox1.Location = new System.Drawing.Point(8, 304);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(480, 28);
+            this.textBox1.TabIndex = 22;
+            this.textBox1.TabStop = false;
             // 
             // label11
             // 
@@ -181,6 +212,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 360);
             this.panel1.TabIndex = 4;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Pending",
+            "Processing",
+            "Done"});
+            this.comboBox2.Location = new System.Drawing.Point(8, 168);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(675, 28);
+            this.comboBox2.TabIndex = 22;
+            this.comboBox2.TabStop = false;
             // 
             // button1
             // 
@@ -282,52 +328,6 @@
             this.label1.Size = new System.Drawing.Size(114, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "Order";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Pending",
-            "Processing",
-            "Done"});
-            this.comboBox2.Location = new System.Drawing.Point(8, 168);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(675, 28);
-            this.comboBox2.TabIndex = 22;
-            this.comboBox2.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.textBox1.Location = new System.Drawing.Point(8, 304);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(480, 28);
-            this.textBox1.TabIndex = 22;
-            this.textBox1.TabStop = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.textBox3.Location = new System.Drawing.Point(8, 224);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(480, 28);
-            this.textBox3.TabIndex = 23;
-            this.textBox3.TabStop = false;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(8, 72);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(480, 24);
-            this.comboBox11.TabIndex = 24;
-            this.comboBox11.TabStop = false;
-            this.comboBox11.SelectedIndexChanged += new System.EventHandler(this.comboBox11_SelectedIndexChanged);
             // 
             // Order_Add
             // 

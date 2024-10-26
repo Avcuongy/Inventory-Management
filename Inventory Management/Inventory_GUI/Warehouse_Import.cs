@@ -74,31 +74,42 @@ namespace Inventory_Management
             List<Inventory> inventory = Warehouse.Inventory;
             List<Supplier> suppliers = Supplier;
 
-            string selectedProductId = comboBox1.SelectedItem.ToString();
+            string selectedProductId = comboBox1.SelectedItem?.ToString();
 
-            foreach (Product product in products)
+            if (selectedProductId != null)
             {
-                if (product.ProductId == selectedProductId)
+                foreach (Product product in products)
                 {
-                    textBox2.Text = product.Name;
-                    textBox6.Text = product.Category;
-                    textBox5.Text = product.Price.ToString();
-                    textBox3.Text = "1";
-                    textBox1.Text = product.Price.ToString();
-
-                    foreach (Supplier sup in suppliers)
+                    if (product.ProductId == selectedProductId)
                     {
-                        foreach (Product suppliedProduct in sup.SuppliedProducts)
+                        textBox2.Text = product.Name;
+                        textBox6.Text = product.Category;
+                        textBox5.Text = product.Price.ToString();
+                        textBox3.Text = "1";
+                        textBox1.Text = product.Price.ToString();
+
+                        foreach (Supplier sup in suppliers)
                         {
-                            if (suppliedProduct.ProductId == selectedProductId)
+                            foreach (Product suppliedProduct in sup.SuppliedProducts)
                             {
-                                textBox4.Text = sup.Name;
-                                break;
+                                if (suppliedProduct.ProductId == selectedProductId)
+                                {
+                                    textBox4.Text = sup.Name;
+                                    break;
+                                }
                             }
                         }
+                        break;
                     }
-                    break;
                 }
+            }
+            else
+            {
+                textBox2.Text = "N/A";
+                textBox6.Text = "N/A";
+                textBox5.Text = "N/A";
+                textBox3.Text = "N/A";
+                textBox1.Text = "N/A";
             }
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,7 +128,7 @@ namespace Inventory_Management
                 quantity_Import = quantity;
             }
 
-            string selectedProductId = comboBox1.SelectedItem.ToString();
+            string selectedProductId = comboBox1.SelectedItem?.ToString();
 
             foreach (Product product in products)
             {
@@ -144,7 +155,7 @@ namespace Inventory_Management
 
             Dictionary<string, int> productStock = inventory[0].ProductStock;
 
-            string selectedProductId = comboBox1.SelectedItem.ToString();
+            string selectedProductId = comboBox1.SelectedItem?.ToString();
 
             DialogResult dialogResult = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
 
@@ -155,7 +166,7 @@ namespace Inventory_Management
                 quantity_Import = quantity;
             }
 
-            if (dialogResult == DialogResult.Yes && quantity_Import > 0)
+            if (dialogResult == DialogResult.Yes && quantity_Import > 0 && selectedProductId != null)
             {
                 inventory[0].AddStock(selectedProductId, quantity_Import);
 
