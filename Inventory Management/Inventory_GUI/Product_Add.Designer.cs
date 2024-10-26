@@ -130,10 +130,12 @@
             // 
             // cBx_Category
             // 
+            this.cBx_Category.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBx_Category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.cBx_Category.FormattingEnabled = true;
             this.cBx_Category.Location = new System.Drawing.Point(216, 60);
             this.cBx_Category.Name = "cBx_Category";
-            this.cBx_Category.Size = new System.Drawing.Size(168, 24);
+            this.cBx_Category.Size = new System.Drawing.Size(168, 28);
             this.cBx_Category.TabIndex = 25;
             // 
             // tBx_Price_Product

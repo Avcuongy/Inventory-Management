@@ -80,6 +80,7 @@ namespace Inventory_Management
         private void RefreshDataGridView()
         {
             DataTable displayData = new DataTable();
+
             displayData.Columns.Add("ProductId", typeof(string));
             displayData.Columns.Add("Name", typeof(string));
             displayData.Columns.Add("Category", typeof(string));

@@ -35,11 +35,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cBx_Category = new System.Windows.Forms.ComboBox();
             this.tBx_Price_Product = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cBx_ID_Product = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cBx_ID_Product = new System.Windows.Forms.ComboBox();
-            this.cBx_Category = new System.Windows.Forms.ComboBox();
             this.panel_Update_Product.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -127,6 +127,16 @@
             this.panel2.Size = new System.Drawing.Size(704, 112);
             this.panel2.TabIndex = 5;
             // 
+            // cBx_Category
+            // 
+            this.cBx_Category.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBx_Category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.cBx_Category.FormattingEnabled = true;
+            this.cBx_Category.Location = new System.Drawing.Point(216, 60);
+            this.cBx_Category.Name = "cBx_Category";
+            this.cBx_Category.Size = new System.Drawing.Size(168, 28);
+            this.cBx_Category.TabIndex = 26;
+            // 
             // tBx_Price_Product
             // 
             this.tBx_Price_Product.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -188,6 +198,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 360);
             this.panel1.TabIndex = 4;
+            // 
+            // cBx_ID_Product
+            // 
+            this.cBx_ID_Product.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBx_ID_Product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.cBx_ID_Product.FormattingEnabled = true;
+            this.cBx_ID_Product.Location = new System.Drawing.Point(8, 81);
+            this.cBx_ID_Product.Name = "cBx_ID_Product";
+            this.cBx_ID_Product.Size = new System.Drawing.Size(680, 28);
+            this.cBx_ID_Product.TabIndex = 18;
             // 
             // label7
             // 
@@ -297,22 +317,6 @@
             this.label1.Size = new System.Drawing.Size(167, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "Products";
-            // 
-            // cBx_ID_Product
-            // 
-            this.cBx_ID_Product.FormattingEnabled = true;
-            this.cBx_ID_Product.Location = new System.Drawing.Point(8, 81);
-            this.cBx_ID_Product.Name = "cBx_ID_Product";
-            this.cBx_ID_Product.Size = new System.Drawing.Size(680, 24);
-            this.cBx_ID_Product.TabIndex = 18;
-            // 
-            // cBx_Category
-            // 
-            this.cBx_Category.FormattingEnabled = true;
-            this.cBx_Category.Location = new System.Drawing.Point(216, 60);
-            this.cBx_Category.Name = "cBx_Category";
-            this.cBx_Category.Size = new System.Drawing.Size(168, 24);
-            this.cBx_Category.TabIndex = 26;
             // 
             // Product_Update
             // 
