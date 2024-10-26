@@ -35,8 +35,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tBx_Price_Product_inUP = new System.Windows.Forms.TextBox();
-            this.tBx_Category_Product_inUP = new System.Windows.Forms.TextBox();
+            this.tBx_Price_Product = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,13 +44,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tBx_Supplier_Product_inUP = new System.Windows.Forms.TextBox();
-            this.tBx_Quantity_Product_inUP = new System.Windows.Forms.TextBox();
-            this.tBx_Name_Product_inUP = new System.Windows.Forms.TextBox();
-            this.tBx_ID_Product_inUP = new System.Windows.Forms.TextBox();
+            this.tBx_Supplier_Product = new System.Windows.Forms.TextBox();
+            this.tBx_Quantity_Product = new System.Windows.Forms.TextBox();
+            this.tBx_Name_Product = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.cBx_ID_Product = new System.Windows.Forms.ComboBox();
+            this.cBx_Category = new System.Windows.Forms.ComboBox();
             this.panel_Update_Product.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,8 +117,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel2.Controls.Add(this.tBx_Price_Product_inUP);
-            this.panel2.Controls.Add(this.tBx_Category_Product_inUP);
+            this.panel2.Controls.Add(this.cBx_Category);
+            this.panel2.Controls.Add(this.tBx_Price_Product);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -127,25 +127,15 @@
             this.panel2.Size = new System.Drawing.Size(704, 112);
             this.panel2.TabIndex = 5;
             // 
-            // tBx_Price_Product_inUP
+            // tBx_Price_Product
             // 
-            this.tBx_Price_Product_inUP.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_Price_Product_inUP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.tBx_Price_Product_inUP.Location = new System.Drawing.Point(16, 60);
-            this.tBx_Price_Product_inUP.Name = "tBx_Price_Product_inUP";
-            this.tBx_Price_Product_inUP.Size = new System.Drawing.Size(168, 28);
-            this.tBx_Price_Product_inUP.TabIndex = 24;
-            this.tBx_Price_Product_inUP.TabStop = false;
-            // 
-            // tBx_Category_Product_inUP
-            // 
-            this.tBx_Category_Product_inUP.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_Category_Product_inUP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.tBx_Category_Product_inUP.Location = new System.Drawing.Point(216, 60);
-            this.tBx_Category_Product_inUP.Name = "tBx_Category_Product_inUP";
-            this.tBx_Category_Product_inUP.Size = new System.Drawing.Size(168, 28);
-            this.tBx_Category_Product_inUP.TabIndex = 23;
-            this.tBx_Category_Product_inUP.TabStop = false;
+            this.tBx_Price_Product.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBx_Price_Product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.tBx_Price_Product.Location = new System.Drawing.Point(16, 60);
+            this.tBx_Price_Product.Name = "tBx_Price_Product";
+            this.tBx_Price_Product.Size = new System.Drawing.Size(168, 28);
+            this.tBx_Price_Product.TabIndex = 24;
+            this.tBx_Price_Product.TabStop = false;
             // 
             // label10
             // 
@@ -185,14 +175,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.cBx_ID_Product);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.tBx_Supplier_Product_inUP);
-            this.panel1.Controls.Add(this.tBx_Quantity_Product_inUP);
-            this.panel1.Controls.Add(this.tBx_Name_Product_inUP);
-            this.panel1.Controls.Add(this.tBx_ID_Product_inUP);
+            this.panel1.Controls.Add(this.tBx_Supplier_Product);
+            this.panel1.Controls.Add(this.tBx_Quantity_Product);
+            this.panel1.Controls.Add(this.tBx_Name_Product);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(32, 128);
             this.panel1.Name = "panel1";
@@ -247,45 +237,35 @@
             this.label4.Text = "ID Product";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tBx_Supplier_Product_inUP
+            // tBx_Supplier_Product
             // 
-            this.tBx_Supplier_Product_inUP.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_Supplier_Product_inUP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.tBx_Supplier_Product_inUP.Location = new System.Drawing.Point(8, 296);
-            this.tBx_Supplier_Product_inUP.Name = "tBx_Supplier_Product_inUP";
-            this.tBx_Supplier_Product_inUP.Size = new System.Drawing.Size(680, 28);
-            this.tBx_Supplier_Product_inUP.TabIndex = 12;
-            this.tBx_Supplier_Product_inUP.TabStop = false;
+            this.tBx_Supplier_Product.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBx_Supplier_Product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.tBx_Supplier_Product.Location = new System.Drawing.Point(8, 296);
+            this.tBx_Supplier_Product.Name = "tBx_Supplier_Product";
+            this.tBx_Supplier_Product.Size = new System.Drawing.Size(680, 28);
+            this.tBx_Supplier_Product.TabIndex = 12;
+            this.tBx_Supplier_Product.TabStop = false;
             // 
-            // tBx_Quantity_Product_inUP
+            // tBx_Quantity_Product
             // 
-            this.tBx_Quantity_Product_inUP.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_Quantity_Product_inUP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.tBx_Quantity_Product_inUP.Location = new System.Drawing.Point(8, 224);
-            this.tBx_Quantity_Product_inUP.Name = "tBx_Quantity_Product_inUP";
-            this.tBx_Quantity_Product_inUP.Size = new System.Drawing.Size(680, 28);
-            this.tBx_Quantity_Product_inUP.TabIndex = 11;
-            this.tBx_Quantity_Product_inUP.TabStop = false;
+            this.tBx_Quantity_Product.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBx_Quantity_Product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.tBx_Quantity_Product.Location = new System.Drawing.Point(8, 224);
+            this.tBx_Quantity_Product.Name = "tBx_Quantity_Product";
+            this.tBx_Quantity_Product.Size = new System.Drawing.Size(680, 28);
+            this.tBx_Quantity_Product.TabIndex = 11;
+            this.tBx_Quantity_Product.TabStop = false;
             // 
-            // tBx_Name_Product_inUP
+            // tBx_Name_Product
             // 
-            this.tBx_Name_Product_inUP.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_Name_Product_inUP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.tBx_Name_Product_inUP.Location = new System.Drawing.Point(8, 152);
-            this.tBx_Name_Product_inUP.Name = "tBx_Name_Product_inUP";
-            this.tBx_Name_Product_inUP.Size = new System.Drawing.Size(680, 28);
-            this.tBx_Name_Product_inUP.TabIndex = 10;
-            this.tBx_Name_Product_inUP.TabStop = false;
-            // 
-            // tBx_ID_Product_inUP
-            // 
-            this.tBx_ID_Product_inUP.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_ID_Product_inUP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.tBx_ID_Product_inUP.Location = new System.Drawing.Point(8, 80);
-            this.tBx_ID_Product_inUP.Name = "tBx_ID_Product_inUP";
-            this.tBx_ID_Product_inUP.Size = new System.Drawing.Size(680, 28);
-            this.tBx_ID_Product_inUP.TabIndex = 9;
-            this.tBx_ID_Product_inUP.TabStop = false;
+            this.tBx_Name_Product.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBx_Name_Product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.tBx_Name_Product.Location = new System.Drawing.Point(8, 152);
+            this.tBx_Name_Product.Name = "tBx_Name_Product";
+            this.tBx_Name_Product.Size = new System.Drawing.Size(680, 28);
+            this.tBx_Name_Product.TabIndex = 10;
+            this.tBx_Name_Product.TabStop = false;
             // 
             // label3
             // 
@@ -317,6 +297,22 @@
             this.label1.Size = new System.Drawing.Size(167, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "Products";
+            // 
+            // cBx_ID_Product
+            // 
+            this.cBx_ID_Product.FormattingEnabled = true;
+            this.cBx_ID_Product.Location = new System.Drawing.Point(8, 81);
+            this.cBx_ID_Product.Name = "cBx_ID_Product";
+            this.cBx_ID_Product.Size = new System.Drawing.Size(680, 24);
+            this.cBx_ID_Product.TabIndex = 18;
+            // 
+            // cBx_Category
+            // 
+            this.cBx_Category.FormattingEnabled = true;
+            this.cBx_Category.Location = new System.Drawing.Point(216, 60);
+            this.cBx_Category.Name = "cBx_Category";
+            this.cBx_Category.Size = new System.Drawing.Size(168, 24);
+            this.cBx_Category.TabIndex = 26;
             // 
             // Product_Update
             // 
@@ -351,8 +347,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox tBx_Price_Product_inUP;
-        private System.Windows.Forms.TextBox tBx_Category_Product_inUP;
+        private System.Windows.Forms.TextBox tBx_Price_Product;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -361,12 +356,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tBx_Supplier_Product_inUP;
-        private System.Windows.Forms.TextBox tBx_Quantity_Product_inUP;
-        private System.Windows.Forms.TextBox tBx_Name_Product_inUP;
-        private System.Windows.Forms.TextBox tBx_ID_Product_inUP;
+        private System.Windows.Forms.TextBox tBx_Supplier_Product;
+        private System.Windows.Forms.TextBox tBx_Quantity_Product;
+        private System.Windows.Forms.TextBox tBx_Name_Product;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cBx_ID_Product;
+        private System.Windows.Forms.ComboBox cBx_Category;
     }
 }
