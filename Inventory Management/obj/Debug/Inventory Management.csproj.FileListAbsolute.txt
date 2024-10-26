@@ -92,3 +92,36 @@ D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\D
 D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventor.CCAFEA7E.Up2Date
 D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory Management.exe
 D:\_Dev\C#\_Group Project\Inventory-Management - Copy\Inventory Management\obj\Debug\Inventory Management.pdb
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\Inventory Management.exe.config
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\Inventory Management.exe
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\Inventory Management.pdb
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\System.Memory.dll
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\System.Text.Json.dll
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\System.Buffers.dll
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\System.ValueTuple.dll
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.csproj.AssemblyReference.cache
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.csproj.SuggestedBindingRedirects.cache
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.exe.config
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Login.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Order_Add.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Order_Menu.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Product_Add.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Product_Menu.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Product_Update.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Profile.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Properties.Resources.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Transaction_Menu.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Warehouse_CheckStock.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Warehouse_Export.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Warehouse_Import.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Warehouse_Menu.resources
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.csproj.GenerateResource.cache
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.csproj.CoreCompileInputs.cache
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventor.CCAFEA7E.Up2Date
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.exe
+C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.pdb

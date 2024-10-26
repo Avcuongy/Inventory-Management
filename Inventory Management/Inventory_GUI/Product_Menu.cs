@@ -24,6 +24,18 @@ namespace Inventory_Management
         private OrderManager _orderManager;
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
+
+        public List<Product> Products { get => products; set => products = value; }
+        public string Username { get => _username; set => _username = value; }
+        public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report { get => _report; set => _report = value; }
+
         public Product_Menu(string username,
                         Warehouse warehouse,
                         List<Supplier> supplier,
@@ -35,15 +47,15 @@ namespace Inventory_Management
                         Report report)
         {
             InitializeComponent();
-            _username = username;
-            _warehouse = warehouse;
-            _supplier = supplier;
-            _purchaseOrder = purchaseOrder;
-            _returnOrder = returnOrder;
-            _customer = customer;
-            _orderManager = orderManager;
-            _salesInvoice = salesInvoice;
-            _report = report;
+            Username = username;
+            Warehouse = warehouse;
+            Supplier = supplier;
+            PurchaseOrder = purchaseOrder;
+            ReturnOrder = returnOrder;
+            Customer = customer;
+            OrderManager = orderManager;
+            SalesInvoice = salesInvoice;
+            Report = report;
             InitializeDataGridView();
             LoadProductData();
         }
@@ -74,9 +86,9 @@ namespace Inventory_Management
             displayData.Columns.Add("Price", typeof(decimal));
             displayData.Columns.Add("Supplier", typeof(string));
 
-            for (int i = 0; i < _warehouse.Products.Count; i++)
+            for (int i = 0; i < Warehouse.Products.Count; i++)
             {
-                Product product = _warehouse.Products[i];
+                Product product = Warehouse.Products[i];
                 string supplierName = GetSupplierName(product.ProductId);
 
                 DataRow row = displayData.NewRow();
@@ -95,14 +107,14 @@ namespace Inventory_Management
         {
             string supplierName = "N/A";
 
-            for (int i = 0; i < _supplier.Count; i++)
+            for (int i = 0; i < Supplier.Count; i++)
             {
-                List<Product> supplierProducts = _supplier[i].SuppliedProducts;
+                List<Product> supplierProducts = Supplier[i].SuppliedProducts;
                 for (int j = 0; j < supplierProducts.Count; j++)
                 {
                     if (supplierProducts[j].ProductId == productId)
                     {
-                        supplierName = _supplier[i].Name;
+                        supplierName = Supplier[i].Name;
                         return supplierName;
                     }
                 }
@@ -111,29 +123,29 @@ namespace Inventory_Management
         }
         private void LoadProductData()
         {
-            if (_warehouse != null && _warehouse.Products != null)
+            if (Warehouse != null && Warehouse.Products != null)
             {
-                products = _warehouse.Products;
+                Products = Warehouse.Products;
                 RefreshDataGridView();
             }
             else
             {
-                products = new List<Product>();
+                Products = new List<Product>();
                 MessageBox.Show("No products found in _warehouse.");
             }
         }
         public void AddProduct(Product product)
         {
-            products.Add(product);
-            _warehouse.Products = products;
+            Products.Add(product);
+            Warehouse.Products = Products;
             RefreshDataGridView();
         }
         public void UpdateProduct(Product product)
         {
             int index = -1;
-            for (int i = 0; i < products.Count; i++)
+            for (int i = 0; i < Products.Count; i++)
             {
-                if (products[i].ProductId == product.ProductId)
+                if (Products[i].ProductId == product.ProductId)
                 {
                     index = i;
                     break;
@@ -141,8 +153,8 @@ namespace Inventory_Management
             }
             if (index != -1)
             {
-                products[index] = product;
-                _warehouse.Products = products;
+                Products[index] = product;
+                Warehouse.Products = Products;
                 RefreshDataGridView();
             }
         }
@@ -151,12 +163,12 @@ namespace Inventory_Management
             string searchText = textBox1.Text.ToLower();
             List<Product> filteredProducts = new List<Product>();
 
-            for (int i = 0; i < products.Count; i++)
+            for (int i = 0; i < Products.Count; i++)
             {
-                if (products[i].Name.ToLower().Contains(searchText) ||
-                    products[i].ProductId.ToLower().Contains(searchText))
+                if (Products[i].Name.ToLower().Contains(searchText) ||
+                    Products[i].ProductId.ToLower().Contains(searchText))
                 {
-                    filteredProducts.Add(products[i]);
+                    filteredProducts.Add(Products[i]);
                 }
             }
             DataTable displayData = new DataTable();
@@ -186,7 +198,7 @@ namespace Inventory_Management
         private void button_Add_Product_Click_1(object sender, EventArgs e)
         {
             // Tạo form thêm sản phẩm mới
-            using (Product_Add addProductForm = new Product_Add(_warehouse, _supplier, dataGridView1))
+            using (Product_Add addProductForm = new Product_Add(Warehouse, Supplier, dataGridView1))
             {
                 // Hiển thị form dạng dialog
                 DialogResult result = addProductForm.ShowDialog();
@@ -204,7 +216,7 @@ namespace Inventory_Management
             try
             {
                 // Kiểm tra xem có sản phẩm nào trong danh sách không
-                if (products.Count == 0)
+                if (Products.Count == 0)
                 {
                     MessageBox.Show("No products available to update.", "Warning",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -212,7 +224,7 @@ namespace Inventory_Management
                 }
 
                 // Tạo instance của form Product_Update
-                Product_Update updateProductForm = new Product_Update(_username, _warehouse, _supplier, _purchaseOrder, _returnOrder, _customer, _orderManager, _salesInvoice, _report);
+                Product_Update updateProductForm = new Product_Update(Username, Warehouse, Supplier, PurchaseOrder, ReturnOrder, Customer, OrderManager, SalesInvoice, Report);
 
                 // Đăng ký event handler để nhận thông tin sản phẩm đã được cập nhật
                 updateProductForm.ProductUpdated += (Product updatedProduct) =>
@@ -234,15 +246,15 @@ namespace Inventory_Management
         }
         private void Return_Profile(object sender, EventArgs e)
         {
-            Profile profileForm = new Profile(_username,
-                                    _warehouse,
-                                    _supplier,
-                                    _purchaseOrder,
-                                    _returnOrder,
-                                    _customer,
-                                    _orderManager,
-                                    _salesInvoice,
-                                    _report);
+            Profile profileForm = new Profile(Username,
+                                    Warehouse,
+                                    Supplier,
+                                    PurchaseOrder,
+                                    ReturnOrder,
+                                    Customer,
+                                    OrderManager,
+                                    SalesInvoice,
+                                    Report);
             profileForm.Show();
             this.Close();
         }

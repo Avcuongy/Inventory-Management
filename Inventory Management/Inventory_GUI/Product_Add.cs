@@ -22,22 +22,32 @@ namespace Inventory_Management
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
 
-
         private List<string> categories = new List<string>()
-    {
+        {
         "Phone",
         "Tablet",
         "Keyboard",
         "Mouse",
         "Headphone"
-    };
+        };
+
         private DataGridView dataGridView1;
+
+        public string Username { get => _username; set => _username = value; }
+        public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report { get => _report; set => _report = value; }
 
         public Product_Add(Warehouse warehouse, List<Supplier> suppliers, DataGridView dataGridView1)
         {
             InitializeComponent();
-            this._warehouse = warehouse;
-            this._supplier = suppliers;
+            this.Warehouse = warehouse;
+            this.Supplier = suppliers;
             this.dataGridView1 = dataGridView1;
             LoadCategories();
             InitializeTextBoxes();
@@ -65,7 +75,7 @@ namespace Inventory_Management
         {
             // Tìm ID lớn nhất hiện tại
             int maxID = 0;
-            foreach (Product product in _warehouse.Products)
+            foreach (Product product in Warehouse.Products)
             {
                 if (product.ProductId.StartsWith("P"))
                 {
@@ -159,7 +169,7 @@ namespace Inventory_Management
                 if (newProduct != null)
                 {
                     // Add product to warehouse
-                    _warehouse.Products.Add(newProduct);
+                    Warehouse.Products.Add(newProduct);
 
                     // Get supplier name from input
                     string supplierName = tBx_Supplier_Product.Text.Trim();
@@ -180,7 +190,7 @@ namespace Inventory_Management
                         case "Keyboard" when supplierName.Equals("Logitech", StringComparison.OrdinalIgnoreCase):
                         case "Keyboard" when supplierName.Equals("Razer", StringComparison.OrdinalIgnoreCase):
                         case "Tablet" when supplierName.Equals("Microsoft", StringComparison.OrdinalIgnoreCase):
-                            matchingSupplier = _supplier.FirstOrDefault(s => s.Name.Equals(supplierName, StringComparison.OrdinalIgnoreCase));
+                            matchingSupplier = Supplier.FirstOrDefault(s => s.Name.Equals(supplierName, StringComparison.OrdinalIgnoreCase));
                             break;
                         default:
                             MessageBox.Show("Invalid supplier for this category!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -196,7 +206,7 @@ namespace Inventory_Management
                             "N/A", // Empty contact info
                             new List<Product> { newProduct }
                         );
-                        _supplier.Add(matchingSupplier);
+                        Supplier.Add(matchingSupplier);
                     }
                     else
                     {
@@ -228,7 +238,7 @@ namespace Inventory_Management
         {
             // Find maximum supplier ID
             int maxID = 0;
-            foreach (Supplier supplier in _supplier)
+            foreach (Supplier supplier in Supplier)
             {
                 if (supplier.SupplierId.StartsWith("S"))
                 {
@@ -243,8 +253,8 @@ namespace Inventory_Management
         private void UpdateDataGridView()
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = _warehouse.Products;
-            dataGridView1.DataSource = _supplier;
+            dataGridView1.DataSource = Warehouse.Products;
+            dataGridView1.DataSource = Supplier;
             dataGridView1.Refresh();
         }
 

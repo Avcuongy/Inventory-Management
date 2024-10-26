@@ -174,7 +174,7 @@ namespace Inventory_Management
 
                 MessageBox.Show("successful");
 
-                this.Hide();
+                this.Close();
             }
             else
             {

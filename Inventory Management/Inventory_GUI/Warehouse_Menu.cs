@@ -70,7 +70,7 @@ namespace Inventory_Management
                                     Report
                 );
             profile.Show();
-            this.Hide();
+            this.Close();
         }
 
         public void ShowDataGridView()
@@ -138,7 +138,7 @@ namespace Inventory_Management
                                     SalesInvoice,
                                     Report
                 );
-            warehouse_CheckStock.Show();
+            warehouse_CheckStock.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)

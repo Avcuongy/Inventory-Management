@@ -127,5 +127,14 @@ namespace Inventory_Management
             order_Menu.Show();
             this.Hide();
         }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            Product_Menu product_Menu = new Product_Menu(
+                Username, Warehouse, Supplier, PurchaseOrder, ReturnOrder, Customer, OrderManager, SalesInvoice, Report
+                );
+            this.Close();
+            product_Menu.Show();
+        }
     }
 }

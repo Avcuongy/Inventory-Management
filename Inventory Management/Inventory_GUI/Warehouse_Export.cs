@@ -205,7 +205,7 @@ namespace Inventory_Management
 
                 MessageBox.Show("successful");
 
-                this.Hide();
+                this.Close();
             }
             else if (quantity_Selected_Product <= 0 || quantity_Selected_Product < quantity_Export || quantity_Export <= 0)
             {

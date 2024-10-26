@@ -167,7 +167,7 @@ namespace Inventory_Management
 
                 PurchaseOrder.Add(newOrder);
                 MessageBox.Show("Successful");
-                this.Hide();
+                this.Close();
             }
         }
     }

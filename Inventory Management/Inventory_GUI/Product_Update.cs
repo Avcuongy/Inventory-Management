@@ -25,20 +25,39 @@ namespace Inventory_Management
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
 
+        public string Username { get => Username1; set => Username1 = value; }
+        public Warehouse Warehouse { get => Warehouse1; set => Warehouse1 = value; }
+        public List<Supplier> Supplier { get => Supplier1; set => Supplier1 = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => PurchaseOrder1; set => PurchaseOrder1 = value; }
+        public List<ReturnOrder> ReturnOrder { get => ReturnOrder1; set => ReturnOrder1 = value; }
+        public List<Customer> Customer { get => Customer1; set => Customer1 = value; }
+        public OrderManager OrderManager { get => OrderManager1; set => OrderManager1 = value; }
+        public List<SalesInvoice> SalesInvoice { get => SalesInvoice1; set => SalesInvoice1 = value; }
+        public Report Report { get => Report1; set => Report1 = value; }
+        public string Username1 { get => _username; set => _username = value; }
+        public Warehouse Warehouse1 { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier1 { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder1 { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder1 { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer1 { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager1 { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice1 { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report1 { get => _report; set => _report = value; }
+
         public Product_Update(string username, Warehouse warehouse, List<Supplier> suppliers, List<PurchaseOrder> purchaseOrders,
         List<ReturnOrder> returnOrders, List<Customer> customers, OrderManager orderManager,
         List<SalesInvoice> salesInvoices, Report report)
         {
             InitializeComponent();
-            this._username = username;
-            this._warehouse = warehouse;
-            this._supplier = suppliers;
-            this._purchaseOrder = purchaseOrders;
-            this._returnOrder = returnOrders;
-            this._customer = customers;
-            this._orderManager = orderManager;
-            this._salesInvoice = salesInvoices;
-            this._report = report;
+            this.Username = username;
+            this.Warehouse = warehouse;
+            this.Supplier = suppliers;
+            this.PurchaseOrder = purchaseOrders;
+            this.ReturnOrder = returnOrders;
+            this.Customer = customers;
+            this.OrderManager = orderManager;
+            this.SalesInvoice = salesInvoices;
+            this.Report = report;
             InitializeControls();
             LoadProductIds();
             InitializeEvents();
@@ -63,7 +82,7 @@ namespace Inventory_Management
         private void LoadProductIds()
         {
             cBx_ID_Product.Items.Clear();
-            foreach (Product product in _warehouse.Products)
+            foreach (Product product in Warehouse.Products)
             {
                 cBx_ID_Product.Items.Add(product.ProductId);
             }
@@ -86,11 +105,11 @@ namespace Inventory_Management
 
                 // Tìm sản phẩm được chọn trong warehouse
                 Product selectedProduct = null;
-                for (int i = 0; i < _warehouse.Products.Count; i++)
+                for (int i = 0; i < Warehouse.Products.Count; i++)
                 {
-                    if (_warehouse.Products[i].ProductId == selectedId)
+                    if (Warehouse.Products[i].ProductId == selectedId)
                     {
-                        selectedProduct = _warehouse.Products[i];
+                        selectedProduct = Warehouse.Products[i];
                         break;
                     }
                 }
@@ -99,13 +118,13 @@ namespace Inventory_Management
                 {
                     // Tìm supplier chứa sản phẩm này
                     Supplier productSupplier = null;
-                    for (int i = 0; i < _supplier.Count; i++)
+                    for (int i = 0; i < Supplier.Count; i++)
                     {
-                        for (int j = 0; j < _supplier[i].SuppliedProducts.Count; j++)
+                        for (int j = 0; j < Supplier[i].SuppliedProducts.Count; j++)
                         {
-                            if (_supplier[i].SuppliedProducts[j].ProductId == selectedId)
+                            if (Supplier[i].SuppliedProducts[j].ProductId == selectedId)
                             {
-                                productSupplier = _supplier[i];
+                                productSupplier = Supplier[i];
                                 break;
                             }
                         }
@@ -196,25 +215,25 @@ namespace Inventory_Management
                 string newSupplierName = tBx_Supplier_Product.Text.Trim();
 
                 // Find and update product in warehouse
-                for (int i = 0; i < _warehouse.Products.Count; i++)
+                for (int i = 0; i < Warehouse.Products.Count; i++)
                 {
-                    if (_warehouse.Products[i].ProductId == selectedId)
+                    if (Warehouse.Products[i].ProductId == selectedId)
                     {
-                        _warehouse.Products[i].Name = tBx_Name_Product.Text.Trim();
-                        _warehouse.Products[i].Price = double.Parse(tBx_Price_Product.Text);
-                        _warehouse.Products[i].Category = cBx_Category.SelectedItem.ToString();
+                        Warehouse.Products[i].Name = tBx_Name_Product.Text.Trim();
+                        Warehouse.Products[i].Price = double.Parse(tBx_Price_Product.Text);
+                        Warehouse.Products[i].Category = cBx_Category.SelectedItem.ToString();
                         break;
                     }
                 }
 
                 // Find current supplier of the product and remove product from their list
-                for (int i = 0; i < _supplier.Count; i++)
+                for (int i = 0; i < Supplier.Count; i++)
                 {
-                    for (int j = 0; j < _supplier[i].SuppliedProducts.Count; j++)
+                    for (int j = 0; j < Supplier[i].SuppliedProducts.Count; j++)
                     {
-                        if (_supplier[i].SuppliedProducts[j].ProductId == selectedId)
+                        if (Supplier[i].SuppliedProducts[j].ProductId == selectedId)
                         {
-                            _supplier[i].SuppliedProducts.RemoveAt(j);
+                            Supplier[i].SuppliedProducts.RemoveAt(j);
                             break;
                         }
                     }
@@ -222,29 +241,29 @@ namespace Inventory_Management
 
                 // Find or create new supplier
                 Supplier newSupplier = null;
-                for (int i = 0; i < _supplier.Count; i++)
+                for (int i = 0; i < Supplier.Count; i++)
                 {
-                    if (_supplier[i].Name.ToLower() == newSupplierName.ToLower())
+                    if (Supplier[i].Name.ToLower() == newSupplierName.ToLower())
                     {
-                        newSupplier = _supplier[i];
+                        newSupplier = Supplier[i];
                         break;
                     }
                 }
 
                 if (newSupplier == null)
                 {
-                    string newSupplierId = "S" + (_supplier.Count + 1).ToString();
+                    string newSupplierId = "S" + (Supplier.Count + 1).ToString();
                     newSupplier = new Supplier(newSupplierId, newSupplierName, "", new List<Product>());
-                    _supplier.Add(newSupplier);
+                    Supplier.Add(newSupplier);
                 }
 
                 // Add product to new supplier's list
                 Product updatedProduct = null;
-                for (int i = 0; i < _warehouse.Products.Count; i++)
+                for (int i = 0; i < Warehouse.Products.Count; i++)
                 {
-                    if (_warehouse.Products[i].ProductId == selectedId)
+                    if (Warehouse.Products[i].ProductId == selectedId)
                     {
-                        updatedProduct = _warehouse.Products[i];
+                        updatedProduct = Warehouse.Products[i];
                         break;
                     }
                 }
