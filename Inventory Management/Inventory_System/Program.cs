@@ -159,7 +159,8 @@ namespace Inventory_Management
                     new Supplier("S4", "Samsung", "0981234567", new List<Product>
                     {
                         new Phone("P11", "Samsung Galaxy S23", "Phone", 1, 999),
-                        new Phone("P16", "Google Pixel 8", "Phone", 1, 899)
+                        new Phone("P16", "Google Pixel 8", "Phone", 1, 899),
+                        new Headphone("P20", "Bose 700", "Headphone", 1, 450)
                     }),
 
                     new Supplier("S5", "Sony", "0987654321", new List<Product>

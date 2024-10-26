@@ -41,7 +41,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cBx_ID_Product = new System.Windows.Forms.ComboBox();
+            this.IdproductCombo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -85,6 +85,7 @@
             this.button1.TabStop = false;
             this.button1.Text = "Confirm";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -163,7 +164,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Righteous", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label9.Location = new System.Drawing.Point(256, 30);
+            this.label9.Location = new System.Drawing.Point(216, 32);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 22);
             this.label9.TabIndex = 19;
@@ -175,17 +176,17 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Righteous", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label8.Location = new System.Drawing.Point(72, 30);
+            this.label8.Location = new System.Drawing.Point(16, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 22);
+            this.label8.Size = new System.Drawing.Size(94, 22);
             this.label8.TabIndex = 17;
-            this.label8.Text = "Price";
+            this.label8.Text = "Base Price";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel1.Controls.Add(this.cBx_ID_Product);
+            this.panel1.Controls.Add(this.IdproductCombo);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -199,22 +200,24 @@
             this.panel1.Size = new System.Drawing.Size(704, 360);
             this.panel1.TabIndex = 4;
             // 
-            // cBx_ID_Product
+            // IdproductCombo
             // 
-            this.cBx_ID_Product.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBx_ID_Product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.cBx_ID_Product.FormattingEnabled = true;
-            this.cBx_ID_Product.Location = new System.Drawing.Point(8, 81);
-            this.cBx_ID_Product.Name = "cBx_ID_Product";
-            this.cBx_ID_Product.Size = new System.Drawing.Size(680, 28);
-            this.cBx_ID_Product.TabIndex = 18;
+            this.IdproductCombo.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdproductCombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.IdproductCombo.FormattingEnabled = true;
+            this.IdproductCombo.Location = new System.Drawing.Point(8, 81);
+            this.IdproductCombo.Name = "IdproductCombo";
+            this.IdproductCombo.Size = new System.Drawing.Size(680, 28);
+            this.IdproductCombo.TabIndex = 18;
+            this.IdproductCombo.TabStop = false;
+            this.IdproductCombo.SelectedIndexChanged += new System.EventHandler(this.IdproductCombo_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Righteous", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label7.Location = new System.Drawing.Point(8, 272);
+            this.label7.Location = new System.Drawing.Point(8, 264);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 22);
             this.label7.TabIndex = 16;
@@ -226,11 +229,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Righteous", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label6.Location = new System.Drawing.Point(8, 200);
+            this.label6.Location = new System.Drawing.Point(8, 192);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 22);
+            this.label6.Size = new System.Drawing.Size(173, 22);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Quantity";
+            this.label6.Text = "Quantity/Base Price";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
@@ -238,7 +241,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Righteous", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label5.Location = new System.Drawing.Point(8, 128);
+            this.label5.Location = new System.Drawing.Point(8, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 22);
             this.label5.TabIndex = 14;
@@ -250,7 +253,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Righteous", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.label4.Location = new System.Drawing.Point(8, 56);
+            this.label4.Location = new System.Drawing.Point(8, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 22);
             this.label4.TabIndex = 13;
@@ -366,7 +369,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cBx_ID_Product;
+        private System.Windows.Forms.ComboBox IdproductCombo;
         private System.Windows.Forms.ComboBox cBx_Category;
     }
 }

@@ -45,5 +45,16 @@ namespace Inventory_Management
             info.AddValue("ContactInfo", ContactInfo);
             info.AddValue("SuppliedProducts", SuppliedProducts);
         }
+        public string GetSupplierName(string productId)
+        {
+            foreach (Product product in suppliedProducts)
+            {
+                if (product.ProductId == productId)
+                {
+                   return Name;
+                }
+            }
+            return "N/A";
+        }
     }
 }

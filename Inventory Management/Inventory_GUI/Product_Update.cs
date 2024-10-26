@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +13,6 @@ namespace Inventory_Management
 {
     public partial class Product_Update : Form
     {
-        public delegate void ProductUpdatedHandler(Product product);
-        public event ProductUpdatedHandler ProductUpdated;
-
         private string _username;
         private Warehouse _warehouse;
         private List<Supplier> _supplier = new List<Supplier>();
@@ -25,267 +23,199 @@ namespace Inventory_Management
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
 
-        public string Username { get => Username1; set => Username1 = value; }
-        public Warehouse Warehouse { get => Warehouse1; set => Warehouse1 = value; }
-        public List<Supplier> Supplier { get => Supplier1; set => Supplier1 = value; }
-        public List<PurchaseOrder> PurchaseOrder { get => PurchaseOrder1; set => PurchaseOrder1 = value; }
-        public List<ReturnOrder> ReturnOrder { get => ReturnOrder1; set => ReturnOrder1 = value; }
-        public List<Customer> Customer { get => Customer1; set => Customer1 = value; }
-        public OrderManager OrderManager { get => OrderManager1; set => OrderManager1 = value; }
-        public List<SalesInvoice> SalesInvoice { get => SalesInvoice1; set => SalesInvoice1 = value; }
-        public Report Report { get => Report1; set => Report1 = value; }
-        public string Username1 { get => _username; set => _username = value; }
-        public Warehouse Warehouse1 { get => _warehouse; set => _warehouse = value; }
-        public List<Supplier> Supplier1 { get => _supplier; set => _supplier = value; }
-        public List<PurchaseOrder> PurchaseOrder1 { get => _purchaseOrder; set => _purchaseOrder = value; }
-        public List<ReturnOrder> ReturnOrder1 { get => _returnOrder; set => _returnOrder = value; }
-        public List<Customer> Customer1 { get => _customer; set => _customer = value; }
-        public OrderManager OrderManager1 { get => _orderManager; set => _orderManager = value; }
-        public List<SalesInvoice> SalesInvoice1 { get => _salesInvoice; set => _salesInvoice = value; }
-        public Report Report1 { get => _report; set => _report = value; }
+        public string Username { get => _username; set => _username = value; }
+        public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
+        public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
+        public List<PurchaseOrder> PurchaseOrder { get => _purchaseOrder; set => _purchaseOrder = value; }
+        public List<ReturnOrder> ReturnOrder { get => _returnOrder; set => _returnOrder = value; }
+        public List<Customer> Customer { get => _customer; set => _customer = value; }
+        public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
+        public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
+        public Report Report { get => _report; set => _report = value; }
 
         public Product_Update(string username, Warehouse warehouse, List<Supplier> suppliers, List<PurchaseOrder> purchaseOrders,
-        List<ReturnOrder> returnOrders, List<Customer> customers, OrderManager orderManager,
-        List<SalesInvoice> salesInvoices, Report report)
+         List<ReturnOrder> returnOrders, List<Customer> customers, OrderManager orderManager,
+         List<SalesInvoice> salesInvoices, Report report)
         {
             InitializeComponent();
-            this.Username = username;
-            this.Warehouse = warehouse;
-            this.Supplier = suppliers;
-            this.PurchaseOrder = purchaseOrders;
-            this.ReturnOrder = returnOrders;
-            this.Customer = customers;
-            this.OrderManager = orderManager;
-            this.SalesInvoice = salesInvoices;
-            this.Report = report;
-            InitializeControls();
-            LoadProductIds();
-            InitializeEvents();
+            Username = username;
+            Warehouse = warehouse;
+            Supplier = suppliers;
+            PurchaseOrder = purchaseOrders;
+            ReturnOrder = returnOrders;
+            Customer = customers;
+            OrderManager = orderManager;
+            SalesInvoice = salesInvoices;
+            Report = report;
+            ShowComboboxProductId();
+            IdproductCombo.SelectedIndexChanged += IdproductCombo_SelectedIndexChanged;
         }
-
-        private void InitializeControls()
+        public ProductChangeHandler ProductChangeHandler;
+        public void ShowComboboxProductId()
         {
-            // Populate category combobox
-            cBx_Category.Items.AddRange(new string[] {
-            "Tablet",
-            "Phone",
-            "Mouse",
-            "Keyboard",
-            "Headphone"
-        });
-            cBx_Category.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            // Make ID combobox read-only since it's for selection only
-            cBx_ID_Product.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        private void LoadProductIds()
-        {
-            cBx_ID_Product.Items.Clear();
-            foreach (Product product in Warehouse.Products)
+            List<Product> products = Warehouse.Products;
+            List<string> productsId = new List<string>();
+            foreach (Product product in products)
             {
-                cBx_ID_Product.Items.Add(product.ProductId);
+                productsId.Add(product.ProductId);
             }
+            IdproductCombo.DataSource = productsId;
         }
-
-        private void InitializeEvents()
+        public void ShowInfo()
         {
-            // Add event handlers
-            cBx_ID_Product.SelectedIndexChanged += CBx_ID_Product_SelectedIndexChanged;
-            tBx_Price_Product.KeyPress += ValidateDecimalInput;
-            tBx_Quantity_Product.KeyPress += ValidateNumberInput;
-            button1.Click += Btn_Confirm_Click;
-        }
+            List<Product> products = Warehouse.Products;
+            List<Supplier> suppliers = Supplier;
 
-        private void CBx_ID_Product_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cBx_ID_Product.SelectedItem != null)
+            string productId = IdproductCombo.Text.Trim();
+
+            foreach (Product product in products)
             {
-                string selectedId = cBx_ID_Product.SelectedItem.ToString();
-
-                // Tìm sản phẩm được chọn trong warehouse
-                Product selectedProduct = null;
-                for (int i = 0; i < Warehouse.Products.Count; i++)
+                if (productId == product.ProductId)
                 {
-                    if (Warehouse.Products[i].ProductId == selectedId)
-                    {
-                        selectedProduct = Warehouse.Products[i];
-                        break;
-                    }
-                }
+                    tBx_Name_Product.Text = product.Name;
+                    tBx_Quantity_Product.Text = product.Quantity.ToString();
+                    tBx_Price_Product.Text = product.Price.ToString();
+                    cBx_Category.Text = product.Category.ToString();
 
-                if (selectedProduct != null)
-                {
-                    // Tìm supplier chứa sản phẩm này
-                    Supplier productSupplier = null;
-                    for (int i = 0; i < Supplier.Count; i++)
+                    foreach (Supplier supplier in suppliers)
                     {
-                        for (int j = 0; j < Supplier[i].SuppliedProducts.Count; j++)
+                        foreach (Product product1 in supplier.SuppliedProducts)
                         {
-                            if (Supplier[i].SuppliedProducts[j].ProductId == selectedId)
+                            if (product1.ProductId == productId)
                             {
-                                productSupplier = Supplier[i];
-                                break;
+                                tBx_Supplier_Product.Text = supplier.Name;
+                                return;
                             }
                         }
-                        if (productSupplier != null) break;
                     }
 
-                    // Hiển thị thông tin sản phẩm
-                    tBx_Name_Product.Text = selectedProduct.Name;
-                    tBx_Quantity_Product.Text = selectedProduct.Quantity.ToString();
-                    tBx_Price_Product.Text = selectedProduct.Price.ToString();
-                    cBx_Category.SelectedItem = selectedProduct.Category;
-
-                    // Hiển thị tên supplier nếu tìm thấy
-                    if (productSupplier != null)
-                    {
-                        tBx_Supplier_Product.Text = productSupplier.Name;
-                    }
                 }
             }
         }
-
-        private void ValidateDecimalInput(object sender, KeyPressEventArgs e)
+        private void IdproductCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-
-            TextBox textBox = (TextBox)sender;
-            if (e.KeyChar == '.' && textBox.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
+            ShowInfo();
         }
 
-        private void ValidateNumberInput(object sender, KeyPressEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+            List<Product> products = Warehouse.Products;
+            List<Supplier> suppliers = Supplier;
 
-        private void Btn_Confirm_Click(object sender, EventArgs e)
-        {
-            if (ValidateInputs())
-            {
-                UpdateProduct();
-            }
-        }
+            string productId = IdproductCombo.Text.Trim();
+            string nameProduct = tBx_Name_Product.Text.Trim();
+            string category = cBx_Category.Text.Trim();
+            int quantityProduct = 0;
 
-        private bool ValidateInputs()
-        {
-            if (string.IsNullOrWhiteSpace(tBx_Name_Product.Text) ||
-                string.IsNullOrWhiteSpace(tBx_Quantity_Product.Text) ||
-                string.IsNullOrWhiteSpace(tBx_Supplier_Product.Text) ||
-                string.IsNullOrWhiteSpace(tBx_Price_Product.Text) ||
-                cBx_Category.SelectedItem == null ||
-                cBx_ID_Product.SelectedItem == null)
+            if (int.TryParse(tBx_Quantity_Product.Text, out int quantity))
             {
-                MessageBox.Show("Please fill in all required fields.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                quantityProduct = quantity;
             }
 
-            if (!int.TryParse(tBx_Quantity_Product.Text, out _))
+            int priceProduct = 0;
+
+            if (int.TryParse(tBx_Price_Product.Text, out int price))
             {
-                MessageBox.Show("Please enter a valid quantity.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                priceProduct = price;
             }
 
-            if (!decimal.TryParse(tBx_Price_Product.Text, out _))
+            string supplierName = IdproductCombo.Text.Trim();
+            string originalSupplier = "";
+
+            foreach (Product product in products)
             {
-                MessageBox.Show("Please enter a valid price.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            return true;
-        }
-
-        private void UpdateProduct()
-        {
-            try
-            {
-                string selectedId = cBx_ID_Product.SelectedItem.ToString();
-                string newSupplierName = tBx_Supplier_Product.Text.Trim();
-
-                // Find and update product in warehouse
-                for (int i = 0; i < Warehouse.Products.Count; i++)
+                if (productId == product.ProductId)
                 {
-                    if (Warehouse.Products[i].ProductId == selectedId)
+                    product.Name = nameProduct;
+                    product.Quantity = quantityProduct;
+                    product.Category = category;
+                    product.Price = priceProduct;
+                    break;
+                }
+            }
+
+            foreach (Supplier supplier in suppliers)
+            {
+                foreach (Product pro in supplier.SuppliedProducts)
+                {
+                    if (productId == pro.ProductId)
                     {
-                        Warehouse.Products[i].Name = tBx_Name_Product.Text.Trim();
-                        Warehouse.Products[i].Price = double.Parse(tBx_Price_Product.Text);
-                        Warehouse.Products[i].Category = cBx_Category.SelectedItem.ToString();
+                        originalSupplier = supplier.Name;
                         break;
                     }
                 }
+                if (!originalSupplier.Equals("")) break;
+            }
 
-                // Find current supplier of the product and remove product from their list
-                for (int i = 0; i < Supplier.Count; i++)
+            if (originalSupplier.Equals(supplierName))
+            {
+                foreach (Supplier supplier in suppliers)
                 {
-                    for (int j = 0; j < Supplier[i].SuppliedProducts.Count; j++)
+                    foreach (Product product in products)
                     {
-                        if (Supplier[i].SuppliedProducts[j].ProductId == selectedId)
+                        if (productId == product.ProductId)
                         {
-                            Supplier[i].SuppliedProducts.RemoveAt(j);
+                            product.Name = nameProduct;
+                            product.Quantity = quantityProduct;
+                            product.Category = category;
+                            product.Price = priceProduct;
                             break;
                         }
                     }
                 }
-
-                // Find or create new supplier
-                Supplier newSupplier = null;
-                for (int i = 0; i < Supplier.Count; i++)
-                {
-                    if (Supplier[i].Name.ToLower() == newSupplierName.ToLower())
-                    {
-                        newSupplier = Supplier[i];
-                        break;
-                    }
-                }
-
-                if (newSupplier == null)
-                {
-                    string newSupplierId = "S" + (Supplier.Count + 1).ToString();
-                    newSupplier = new Supplier(newSupplierId, newSupplierName, "", new List<Product>());
-                    Supplier.Add(newSupplier);
-                }
-
-                // Add product to new supplier's list
-                Product updatedProduct = null;
-                for (int i = 0; i < Warehouse.Products.Count; i++)
-                {
-                    if (Warehouse.Products[i].ProductId == selectedId)
-                    {
-                        updatedProduct = Warehouse.Products[i];
-                        break;
-                    }
-                }
-                newSupplier.SuppliedProducts.Add(updatedProduct);
-
-                // Raise the event to notify that a product has been updated
-                //OnProductUpdated(updatedProduct);
-
-                MessageBox.Show("Product updated successfully!", "Success",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error updating product: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+                bool supplierFound = false;
 
-        private void OnProductUpdated(Product product)
-        {
-            ProductUpdated?.Invoke(product);
+                foreach (Supplier supplier in suppliers)
+                {
+                    if (supplier.Name.Equals(supplierName))
+                    {
+                        supplierFound = true;
+                        break;
+                    }
+                }
+
+                if (supplierFound)
+                {
+                    foreach (Supplier supplier in suppliers)
+                    {
+                        foreach (Product pro in supplier.SuppliedProducts)
+                        {
+                            if (productId == pro.ProductId)
+                            {
+                                supplier.SuppliedProducts.Remove(pro);
+                                break;
+                            }
+                        }
+                    }
+
+                    foreach (Supplier supplier in suppliers)
+                    {
+                        if (supplier.Name.Equals(supplierName))
+                        {
+                            Product productToAdd = null;
+
+                            foreach (Product product in products)
+                            {
+                                if (productId == product.ProductId)
+                                {
+                                    productToAdd = product;
+                                    break;
+                                }
+                            }
+
+                            if (productToAdd != null)
+                            {
+                                supplier.SuppliedProducts.Add(productToAdd);
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

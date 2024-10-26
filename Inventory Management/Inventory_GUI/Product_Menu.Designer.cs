@@ -71,6 +71,7 @@
             this.button3.Size = new System.Drawing.Size(64, 48);
             this.button3.TabIndex = 7;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox1
             // 
@@ -82,7 +83,6 @@
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "Search";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.tbx_Search_Product_TextChanged);
             // 
             // dataGridView1
             // 
@@ -145,7 +145,7 @@
             this.button_Add_Product.TabStop = false;
             this.button_Add_Product.Text = "Add Product";
             this.button_Add_Product.UseVisualStyleBackColor = false;
-            this.button_Add_Product.Click += new System.EventHandler(this.button_Add_Product_Click_1);
+            this.button_Add_Product.Click += new System.EventHandler(this.button_Add_Product_Click);
             // 
             // panel3
             // 

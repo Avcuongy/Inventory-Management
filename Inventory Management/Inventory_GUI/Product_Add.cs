@@ -22,17 +22,22 @@ namespace Inventory_Management
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
 
-        private List<string> categories = new List<string>()
-        {
-        "Phone",
-        "Tablet",
-        "Keyboard",
-        "Mouse",
-        "Headphone"
-        };
-
         private DataGridView dataGridView1;
-
+        public Product_Add(string username, Warehouse warehouse, List<Supplier> supplier, List<PurchaseOrder> purchaseOrder, List<ReturnOrder> returnOrder, List<Customer> customer, OrderManager orderManager, List<SalesInvoice> salesInvoice, Report report)
+        {
+            InitializeComponent();
+            Username = username;
+            Warehouse = warehouse;
+            Supplier = supplier;
+            PurchaseOrder = purchaseOrder;
+            ReturnOrder = returnOrder;
+            Customer = customer;
+            OrderManager = orderManager;
+            SalesInvoice = salesInvoice;
+            Report = report;
+            ShowInfo();
+        }
+        public ProductChangeHandler ProductChangeHandler;
         public string Username { get => _username; set => _username = value; }
         public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
         public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
@@ -42,229 +47,110 @@ namespace Inventory_Management
         public OrderManager OrderManager { get => _orderManager; set => _orderManager = value; }
         public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
         public Report Report { get => _report; set => _report = value; }
-
-        public Product_Add(Warehouse warehouse, List<Supplier> suppliers, DataGridView dataGridView1)
+        public void ShowInfo()
         {
-            InitializeComponent();
-            this.Warehouse = warehouse;
-            this.Supplier = suppliers;
-            this.dataGridView1 = dataGridView1;
-            LoadCategories();
-            InitializeTextBoxes();
-        }
+            List<Product> products = Warehouse.Products;
+            HashSet<string> productCategory = new HashSet<string>();
+            List<Supplier> suppliers = Supplier;
+            List<string> supplierName = new List<string>();
 
-        private void LoadCategories()
-        {
-            cBx_Category.Items.Clear();
-            cBx_Category.Items.AddRange(categories.ToArray());
-            cBx_Category.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        private void InitializeTextBoxes()
-        {
-            // Tạo placeholder và chỉ cho phép nhập số cho các TextBox số liệu
-            tBx_Price_Product.KeyPress += NumericTextBox_KeyPress;
-            tBx_Quantity_Product.Text = "1";
-
-            // Tự động tạo Product ID
-            tBx_ID_Product.Text = GenerateNewProductID();
-            tBx_ID_Product.ReadOnly = true;
-        }
-
-        private string GenerateNewProductID()
-        {
-            // Tìm ID lớn nhất hiện tại
-            int maxID = 0;
-            foreach (Product product in Warehouse.Products)
+            foreach (Supplier supplier in suppliers)
             {
-                if (product.ProductId.StartsWith("P"))
+                supplierName.Add(supplier.Name);
+            }
+            comboBox1.DataSource = supplierName;
+
+            tBx_ID_Product.Text = $"P{products.Count + 1}";
+
+            foreach (Product product in products)
+            {
+                if (product is Phone || product is Tablet || product is Keyboard || product is Mouse || product is Headphone)
                 {
-                    if (int.TryParse(product.ProductId.Substring(1), out int id))
-                    {
-                        maxID = Math.Max(maxID, id);
-                    }
+                    string category = product.Category;
+                    productCategory.Add(category);
                 }
             }
-            return $"P{maxID + 1}";
+
+            cBx_Category.DataSource = productCategory.ToList();
         }
-
-        private void NumericTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void Confirm_Click_Click(object sender, EventArgs e)
         {
-            // Chỉ cho phép nhập số và điều khiển
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
+            List<Product> products = Warehouse.Products;
+            List<Supplier> suppliers = Supplier;
+            List<Inventory> inventory = Warehouse.Inventory;
 
-            // Chỉ cho phép một dấu thập phân
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-        }
+            Dictionary<string, int> stock = inventory[0].ProductStock;
 
-        private void btn_Confirm_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra các trường bắt buộc
-            if (string.IsNullOrWhiteSpace(tBx_Name_Product.Text))
+            string productId = tBx_ID_Product.Text.Trim();
+            string nameProduct = tBx_Name_Product.Text.Trim();
+
+            int quantity_add = 0;
+            if (!int.TryParse(tBx_Quantity_Product.Text, out quantity_add) || quantity_add <= 0)
             {
-                MessageBox.Show("Please enter product name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid quantity.");
                 return;
             }
 
-            if (cBx_Category.SelectedIndex == -1)
+            int product_price = 0;
+            if (!int.TryParse(tBx_Price_Product.Text, out product_price) || product_price <= 0)
             {
-                MessageBox.Show("Please select a category", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid price.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tBx_Price_Product.Text))
+            string product_Category = cBx_Category.SelectedItem != null ? cBx_Category.SelectedItem.ToString() : "";
+            string supplierName = comboBox1.SelectedItem != null ? comboBox1.SelectedItem.ToString() : "N/A";
+
+            if (string.IsNullOrEmpty(productId) || string.IsNullOrEmpty(nameProduct) || string.IsNullOrEmpty(product_Category))
             {
-                MessageBox.Show("Please enter price", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error, Try Again");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tBx_Supplier_Product.Text))
+            Product product_has_add = null;
+            if (product_Category == "Phone")
             {
-                MessageBox.Show("Please enter supplier name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                product_has_add = new Phone(productId, nameProduct, "Phone", quantity_add, product_price);
+            }
+            else if (product_Category == "Tablet")
+            {
+                product_has_add = new Tablet(productId, nameProduct, "Tablet", quantity_add, product_price);
+            }
+            else if (product_Category == "Headphone")
+            {
+                product_has_add = new Headphone(productId, nameProduct, "Headphone", quantity_add, product_price);
+            }
+            else if (product_Category == "Keyboard")
+            {
+                product_has_add = new Keyboard(productId, nameProduct, "Keyboard", quantity_add, product_price);
+            }
+            else if (product_Category == "Mouse")
+            {
+                product_has_add = new Mouse(productId, nameProduct, "Mouse", quantity_add, product_price);
+            }
+            else
+            {
+                MessageBox.Show("Invalid product category.");
                 return;
             }
 
-            if (!double.TryParse(tBx_Price_Product.Text, out double price) || price < 0)
-            {
-                MessageBox.Show("Invalid price value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            products.Add(product_has_add);
+            stock.Add($"P{stock.Count + 1}", 0);
 
-            if (!int.TryParse(tBx_Quantity_Product.Text, out int quantity) || quantity < 1)
+            foreach (Supplier supplier in suppliers)
             {
-                MessageBox.Show("Invalid quantity value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            try
-            {
-                // Tạo product mới dựa trên category được chọn
-                string selectedCategory = cBx_Category.SelectedItem.ToString();
-                Product newProduct = null;
-
-                switch (selectedCategory)
+                if (supplierName.ToLower() == supplier.Name.ToLower())
                 {
-                    case "Phone":
-                        newProduct = new Phone(tBx_ID_Product.Text, tBx_Name_Product.Text, selectedCategory, 1, price);
-                        break;
-                    case "Tablet":
-                        newProduct = new Tablet(tBx_ID_Product.Text, tBx_Name_Product.Text, selectedCategory, 1, price);
-                        break;
-                    case "Keyboard":
-                        newProduct = new Keyboard(tBx_ID_Product.Text, tBx_Name_Product.Text, selectedCategory, 1, price);
-                        break;
-                    case "Mouse":
-                        newProduct = new Mouse(tBx_ID_Product.Text, tBx_Name_Product.Text, selectedCategory, 1, price);
-                        break;
-                    case "Headphone":
-                        newProduct = new Headphone(tBx_ID_Product.Text, tBx_Name_Product.Text, selectedCategory, 1, price);
-                        break;
-                }
-                if (newProduct != null)
-                {
-                    // Add product to warehouse
-                    Warehouse.Products.Add(newProduct);
-
-                    // Get supplier name from input
-                    string supplierName = tBx_Supplier_Product.Text.Trim();
-
-                    // Find appropriate supplier based on category and name
-                    Supplier matchingSupplier = null;
-
-                    // Define supplier matching rules based on category
-                    switch (selectedCategory)
-                    {
-                        case "Phone" when supplierName.Equals("Cellphones", StringComparison.OrdinalIgnoreCase):
-                        case "Phone" when supplierName.Equals("Samsung", StringComparison.OrdinalIgnoreCase):
-                        case "Tablet" when supplierName.Equals("Xiaomi", StringComparison.OrdinalIgnoreCase):
-                        case "Headphone" when supplierName.Equals("XuanVuAudio", StringComparison.OrdinalIgnoreCase):
-                        case "Headphone" when supplierName.Equals("Sony", StringComparison.OrdinalIgnoreCase):
-                        case "Mouse" when supplierName.Equals("Logitech", StringComparison.OrdinalIgnoreCase):
-                        case "Mouse" when supplierName.Equals("Razer", StringComparison.OrdinalIgnoreCase):
-                        case "Keyboard" when supplierName.Equals("Logitech", StringComparison.OrdinalIgnoreCase):
-                        case "Keyboard" when supplierName.Equals("Razer", StringComparison.OrdinalIgnoreCase):
-                        case "Tablet" when supplierName.Equals("Microsoft", StringComparison.OrdinalIgnoreCase):
-                            matchingSupplier = Supplier.FirstOrDefault(s => s.Name.Equals(supplierName, StringComparison.OrdinalIgnoreCase));
-                            break;
-                        default:
-                            MessageBox.Show("Invalid supplier for this category!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                    }
-
-                    if (matchingSupplier == null)
-                    {
-                        // Create new supplier if not exists
-                        matchingSupplier = new Supplier(
-                            GenerateNewSupplierId(),
-                            supplierName,
-                            "N/A", // Empty contact info
-                            new List<Product> { newProduct }
-                        );
-                        Supplier.Add(matchingSupplier);
-                    }
-                    else
-                    {
-                        // Add product to existing supplier's product list
-                        if (matchingSupplier.SuppliedProducts == null)
-                        {
-                            matchingSupplier.SuppliedProducts = new List<Product>();
-                        }
-
-                        // Check if product already exists in supplier's list
-                        if (!matchingSupplier.SuppliedProducts.Any(p => p.ProductId == newProduct.ProductId))
-                        {
-                            matchingSupplier.SuppliedProducts.Add(newProduct);
-                        }
-                    }
-
-                    // Update UI
-                    UpdateDataGridView();
-                    ClearInputs();
-                    MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    supplier.SuppliedProducts.Add(product_has_add);
+                    return;
                 }
             }
-            catch (Exception ex)
+            MessageBox.Show("Successful");
+            if (ProductChangeHandler != null)
             {
-                MessageBox.Show($"Error adding product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ProductChangeHandler.Invoke();
             }
-        }
-        private string GenerateNewSupplierId()
-        {
-            // Find maximum supplier ID
-            int maxID = 0;
-            foreach (Supplier supplier in Supplier)
-            {
-                if (supplier.SupplierId.StartsWith("S"))
-                {
-                    if (int.TryParse(supplier.SupplierId.Substring(1), out int id))
-                    {
-                        maxID = Math.Max(maxID, id);
-                    }
-                }
-            }
-            return $"S{maxID + 1}";
-        }
-        private void UpdateDataGridView()
-        {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Warehouse.Products;
-            dataGridView1.DataSource = Supplier;
-            dataGridView1.Refresh();
-        }
-
-        private void ClearInputs()
-        {
-            tBx_ID_Product.Text = GenerateNewProductID();
-            tBx_Name_Product.Clear();
-            tBx_Price_Product.Clear();
-            cBx_Category.SelectedIndex = -1;
-            tBx_Supplier_Product.Clear();
+            this.Close();
         }
     }
 }

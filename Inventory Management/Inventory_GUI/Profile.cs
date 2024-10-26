@@ -107,7 +107,7 @@ namespace Inventory_Management
                                     SalesInvoice,
                                     Report
                 );
-            this.Hide();
+            this.Close();
             warehouse_Menu.Show();
         }
 
@@ -124,8 +124,8 @@ namespace Inventory_Management
                                     SalesInvoice,
                                     Report
                 );
+            this.Close();
             order_Menu.Show();
-            this.Hide();
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
