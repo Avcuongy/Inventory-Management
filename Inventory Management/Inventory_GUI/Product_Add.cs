@@ -107,6 +107,15 @@ namespace Inventory_Management
                 return;
             }
 
+            foreach (Product product in products)
+            {
+                if (productId == product.ProductId)
+                {
+                    MessageBox.Show("Product ID already exists.");
+                    return;
+                }
+            }
+
             Product product_has_add = null;
             if (product_Category == "Phone")
             {
@@ -135,22 +144,24 @@ namespace Inventory_Management
             }
 
             products.Add(product_has_add);
-            stock.Add($"P{stock.Count + 1}", 0);
+            stock.Add(productId, 0);
 
             foreach (Supplier supplier in suppliers)
             {
                 if (supplierName.ToLower() == supplier.Name.ToLower())
                 {
                     supplier.SuppliedProducts.Add(product_has_add);
-                    return;
+                    break;
                 }
             }
+
             MessageBox.Show("Successful");
             if (ProductChangeHandler != null)
             {
                 ProductChangeHandler.Invoke();
             }
             this.Close();
+
         }
     }
 }

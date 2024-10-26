@@ -205,7 +205,7 @@ namespace Inventory_Management
                 OrderManager,
                 SalesInvoice,
                 Report);
-            product_Update.ProductChangeHandler += ShowData;
+            product_Update.ProductChangeHandlerUpdate += ShowData;
             product_Update.ShowDialog();
         }
     }

@@ -213,7 +213,7 @@ namespace Inventory_Management
         {
             List<Supplier> suppliers = Supplier;
             OrderManager orderManager = OrderManager;
-            List<PurchaseOrder> purchaseOrders = OrderManager.Orders;
+            List<PurchaseOrder> purchaseOrders = orderManager.Orders;
             List<Product> products = Warehouse.Products;
 
             DataTable dt = new DataTable();
@@ -222,7 +222,9 @@ namespace Inventory_Management
             {
                 ShowOrder.CurrentCell = null;
 
-                button4.Text = "Supplier";
+                textBoxSupplier.Text = "Order ID";
+                label1.Text = "Order";
+                button4.Text = "Order"; 
 
                 dt.Columns.Add("Order ID");
                 dt.Columns.Add("Supplier Name");
@@ -263,7 +265,9 @@ namespace Inventory_Management
             {
                 ShowOrder.CurrentCell = null;
 
-                button4.Text = "Order";
+                textBoxSupplier.Text = "Supplier ID";
+                label1.Text = "Supplier";
+                button4.Text = "Supplier";
 
                 dt.Columns.Add("Supplier ID");
                 dt.Columns.Add("Supplier Name");
@@ -290,7 +294,8 @@ namespace Inventory_Management
 
             ShowOrder.DataSource = dt;
 
-            ChangeDataView = !ChangeDataView;
+            ChangeDataView = !ChangeDataView; 
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -306,7 +311,12 @@ namespace Inventory_Management
                                    SalesInvoice,
                                    Report
                );
+            order_Add.OrderChangeAdd += ShowOrdersInfo;
             order_Add.ShowDialog();
+        }
+        public void ShowAddOrder()
+        {
+            ShowOrdersInfo();
         }
     }
 }

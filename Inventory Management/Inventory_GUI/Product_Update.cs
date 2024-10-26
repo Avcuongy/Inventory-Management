@@ -50,7 +50,7 @@ namespace Inventory_Management
             ShowComboboxProductId();
             IdproductCombo.SelectedIndexChanged += IdproductCombo_SelectedIndexChanged;
         }
-        public ProductChangeHandler ProductChangeHandler;
+        public ProductChangeHandler ProductChangeHandlerUpdate;
         public void ShowComboboxProductId()
         {
             List<Product> products = Warehouse.Products;

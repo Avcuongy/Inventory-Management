@@ -41,7 +41,7 @@ namespace Inventory_Management
             comboBox11.SelectedIndexChanged += comboBox11_SelectedIndexChanged;
             textBox3.TextChanged += textBox3_TextChanged;
         }
-
+        public OrderChangeInformation OrderChangeAdd;
         public string Username { get => _username; set => _username = value; }
         public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
         public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
@@ -144,13 +144,13 @@ namespace Inventory_Management
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure?", "", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
             {
                 string orderId = OrderIDText.Text.Trim();
-                string productId = comboBox11.SelectedItem?.ToString();
-                string status = comboBox2.SelectedItem?.ToString() ?? "";
+                string productId = comboBox11.SelectedItem != null ? comboBox11.SelectedItem.ToString() : null;
+                string status = comboBox2.SelectedItem != null ? comboBox2.SelectedItem.ToString() : "";
 
                 if (string.IsNullOrEmpty(productId) || GetQuantity() <= 0 || string.IsNullOrEmpty(status))
                 {
@@ -158,17 +158,63 @@ namespace Inventory_Management
                     return;
                 }
 
+                Product selectedProduct = null;
+                List<Product> products = Warehouse.Products; 
+
+                for (int i = 0; i < products.Count; i++)
+                {
+                    if (products[i].ProductId == productId)
+                    {
+                        selectedProduct = products[i];
+                        break;
+                    }
+                }
+
+                if (selectedProduct == null)
+                {
+                    MessageBox.Show("Product not found.");
+                    return;
+                }
+
+                Supplier selectedSupplier = null;
+                List<Supplier> suppliers = Supplier;
+
+                for (int i = 0; i < suppliers.Count; i++)
+                {
+                    for (int j = 0; j < suppliers[i].SuppliedProducts.Count; j++)
+                    {
+                        if (suppliers[i].SuppliedProducts[j].ProductId == productId)
+                        {
+                            selectedSupplier = suppliers[i];
+                            break;
+                        }
+                    }
+                    if (selectedSupplier != null)
+                    {
+                        break;
+                    }
+                }
+
+                if (selectedSupplier == null)
+                {
+                    MessageBox.Show("Supplier not found for the selected product.");
+                    return;
+                }
+
                 PurchaseOrder newOrder = new PurchaseOrder(
                     orderId,
-                    GetSupplierForProduct(productId),
+                    selectedSupplier, 
                     status,
-                    new List<Product> { GetProductById(productId) 
-                    });
+                    new List<Product>() { selectedProduct }
+                );
+
 
                 PurchaseOrder.Add(newOrder);
-                MessageBox.Show("Successful");
+                OrderChangeAdd?.Invoke();
+                MessageBox.Show("Successfull");
                 this.Close();
             }
+
         }
     }
 }
