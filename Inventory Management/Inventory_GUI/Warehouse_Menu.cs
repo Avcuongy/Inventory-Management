@@ -160,7 +160,7 @@ namespace Inventory_Management
         
         private void button3_Click(object sender, EventArgs e)
         {
-            string productId = textBox1.Text.Trim();
+            string productId = textBox1.Text.Trim().ToLower();
 
             ShowWarehouse.CurrentCell = null;
 
@@ -217,8 +217,7 @@ namespace Inventory_Management
             {
                 foreach (Product product in products)
                 {
-                    if (product.ProductId.Equals(productId, StringComparison.OrdinalIgnoreCase) &&
-                        productStock.TryGetValue(product.ProductId, out int currentStockLevel))
+                    if (product.ProductId.ToLower() == productId && productStock.TryGetValue(product.ProductId, out int currentStockLevel))
                     {
                         Supplier foundSupplier = null;
 
@@ -247,7 +246,7 @@ namespace Inventory_Management
                             dt.Rows.Add(product.ProductId, product.Name, product.Category, "N/A", currentStockLevel);
                         }
 
-                        break; 
+                        break;
                     }
                 }
             }

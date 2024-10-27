@@ -119,120 +119,125 @@ namespace Inventory_Management
             string category = cBx_Category.Text.Trim();
 
             int quantityProduct = 0;
-            if (!int.TryParse(tBx_Quantity_Product.Text, out quantityProduct) || quantityProduct <=0)
+            if (!int.TryParse(tBx_Quantity_Product.Text, out quantityProduct) || quantityProduct <= 0)
             {
                 MessageBox.Show("Quantity Not Found");
                 return;
-            }    
-
+            }
 
             double priceProduct = 0;
-            if (!double.TryParse(tBx_Price_Product.Text, out priceProduct) || priceProduct <=0)
+            if (!double.TryParse(tBx_Price_Product.Text, out priceProduct) || priceProduct <= 0)
             {
                 MessageBox.Show("Base Price Not Found");
                 return;
-            }    
-            
+            }
 
-            string supplierName = IdproductCombo.Text.Trim();
+            string supplierName = comboBoxSupplier.Text.Trim();
+
             string originalSupplier = "";
 
+            // Cập nhật thông tin sản phẩm
+            bool productUpdated = false;
             foreach (Product product in products)
             {
-                if (productId == product.ProductId)
+                if (product.ProductId == productId)
                 {
                     product.Name = nameProduct;
                     product.Quantity = quantityProduct;
                     product.Category = category;
                     product.Price = priceProduct;
+                    productUpdated = true;
                     break;
                 }
             }
 
+            if (!productUpdated)
+            {
+                MessageBox.Show("Product Not Found");
+                return;
+            }
+
+            // Tìm nhà cung cấp ban đầu của sản phẩm
             foreach (Supplier supplier in suppliers)
             {
-                foreach (Product pro in supplier.SuppliedProducts)
+                foreach (Product product in supplier.SuppliedProducts)
                 {
-                    if (productId == pro.ProductId)
+                    if (product.ProductId == productId)
                     {
                         originalSupplier = supplier.Name;
                         break;
                     }
                 }
-                if (!originalSupplier.Equals("")) break;
             }
 
-            if (originalSupplier.Equals(supplierName))
+            // Nếu nhà cung cấp ban đầu trùng với nhà cung cấp đã chọn
+            if ((!string.IsNullOrEmpty(supplierName)))
             {
-                foreach (Supplier supplier in suppliers)
+                if (supplierName != originalSupplier)
                 {
-                    foreach (Product product in products)
+                    bool supplierFound = false;
+                    foreach (Supplier supplier in suppliers)
                     {
-                        if (productId == product.ProductId)
+                        if (supplier.Name.Equals(supplierName))
                         {
-                            product.Name = nameProduct;
-                            product.Quantity = quantityProduct;
-                            product.Category = category;
-                            product.Price = priceProduct;
+                            supplierFound = true;
                             break;
                         }
+                    }
+
+                    if (supplierFound)
+                    {
+                        foreach (Supplier supplier in suppliers)
+                        {
+                            Product productToRemove = null;
+
+                            foreach (Product suppliedProduct in supplier.SuppliedProducts)
+                            {
+                                if (suppliedProduct.ProductId == productId)
+                                {
+                                    productToRemove = suppliedProduct;
+                                    break;
+                                }
+                            }
+
+                            if (productToRemove != null)
+                            {
+                                supplier.SuppliedProducts.Remove(productToRemove);
+                                break;
+                            }
+                        }
+                        foreach (Supplier supplier in suppliers)
+                        {
+                            if (supplier.Name.Equals(supplierName))
+                            {
+                                foreach (Product product in products)
+                                {
+                                    if (product.ProductId == productId)
+                                    {
+                                        supplier.SuppliedProducts.Add(product);
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selected supplier not found.");
                     }
                 }
             }
             else
             {
-                bool supplierFound = false;
-
-                foreach (Supplier supplier in suppliers)
-                {
-                    if (supplier.Name.Equals(supplierName))
-                    {
-                        supplierFound = true;
-                        break;
-                    }
-                }
-
-                if (supplierFound)
-                {
-                    foreach (Supplier supplier in suppliers)
-                    {
-                        foreach (Product pro in supplier.SuppliedProducts)
-                        {
-                            if (productId == pro.ProductId)
-                            {
-                                supplier.SuppliedProducts.Remove(pro);
-                                break;
-                            }
-                        }
-                    }
-
-                    foreach (Supplier supplier in suppliers)
-                    {
-                        if (supplier.Name.Equals(supplierName))
-                        {
-                            Product productToAdd = null;
-
-                            foreach (Product product in products)
-                            {
-                                if (productId == product.ProductId)
-                                {
-                                    productToAdd = product;
-                                    break;
-                                }
-                            }
-
-                            if (productToAdd != null)
-                            {
-                                supplier.SuppliedProducts.Add(productToAdd);
-                            }
-                            break;
-                        }
-                    }
-                }
+                MessageBox.Show("Supplier Not Found");
+                return;
             }
+
             MessageBox.Show("Successful");
             ProductChangeHandlerUpdate?.Invoke();
             this.Close();
+
         }
     }
 }

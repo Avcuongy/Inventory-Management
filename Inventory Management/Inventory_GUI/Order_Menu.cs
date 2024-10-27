@@ -128,6 +128,7 @@ namespace Inventory_Management
             {
                 // Tìm kiếm theo Order ID
                 DataTable dtOrder = new DataTable();
+
                 dtOrder.Columns.Add("Order ID");
                 dtOrder.Columns.Add("Supplier Name");
                 dtOrder.Columns.Add("Product ID");
@@ -141,7 +142,7 @@ namespace Inventory_Management
 
                 foreach (PurchaseOrder order in purchaseOrders)
                 {
-                    if (string.IsNullOrEmpty(id) || order.OrderId == id)
+                    if (string.IsNullOrEmpty(id) || order.OrderId.ToLower() == id.ToLower())
                     {
                         string supplierName = order.Supplier.Name;
 
@@ -182,7 +183,7 @@ namespace Inventory_Management
 
                 foreach (Supplier sup in Supplier)
                 {
-                    if (string.IsNullOrEmpty(id) || sup.SupplierId == id)
+                    if (string.IsNullOrEmpty(id) || sup.SupplierId.ToLower() == id.ToLower())
                     {
                         foreach (Product suppliedProduct in sup.SuppliedProducts)
                         {

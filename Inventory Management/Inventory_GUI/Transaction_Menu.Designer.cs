@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transaction_Menu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_Supplier_Transaction = new System.Windows.Forms.Button();
+            this.button_Return_Order = new System.Windows.Forms.Button();
             this.button_Search = new System.Windows.Forms.Button();
             this.tBx_Search = new System.Windows.Forms.TextBox();
             this.dGV_Transaction = new System.Windows.Forms.DataGridView();
@@ -39,8 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.return_Profile = new System.Windows.Forms.PictureBox();
-            this.button_Return_Order = new System.Windows.Forms.Button();
-            this.button_Supplier_Transaction = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Transaction)).BeginInit();
             this.panel3.SuspendLayout();
@@ -62,6 +63,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1336, 624);
             this.panel1.TabIndex = 25;
+            // 
+            // button_Supplier_Transaction
+            // 
+            this.button_Supplier_Transaction.BackColor = System.Drawing.Color.White;
+            this.button_Supplier_Transaction.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Supplier_Transaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.button_Supplier_Transaction.Location = new System.Drawing.Point(826, 82);
+            this.button_Supplier_Transaction.Name = "button_Supplier_Transaction";
+            this.button_Supplier_Transaction.Size = new System.Drawing.Size(240, 48);
+            this.button_Supplier_Transaction.TabIndex = 12;
+            this.button_Supplier_Transaction.TabStop = false;
+            this.button_Supplier_Transaction.Text = "Supplier Order";
+            this.button_Supplier_Transaction.UseVisualStyleBackColor = false;
+            this.button_Supplier_Transaction.Click += new System.EventHandler(this.button_Supplier_Transaction_Click);
+            // 
+            // button_Return_Order
+            // 
+            this.button_Return_Order.BackColor = System.Drawing.Color.White;
+            this.button_Return_Order.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Return_Order.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.button_Return_Order.Location = new System.Drawing.Point(1072, 82);
+            this.button_Return_Order.Name = "button_Return_Order";
+            this.button_Return_Order.Size = new System.Drawing.Size(240, 48);
+            this.button_Return_Order.TabIndex = 11;
+            this.button_Return_Order.TabStop = false;
+            this.button_Return_Order.Text = "Return Order";
+            this.button_Return_Order.UseVisualStyleBackColor = false;
+            this.button_Return_Order.Click += new System.EventHandler(this.Return_Order_Click);
             // 
             // button_Search
             // 
@@ -93,6 +122,14 @@
             this.dGV_Transaction.AllowUserToResizeRows = false;
             this.dGV_Transaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGV_Transaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Transaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -104,6 +141,7 @@
             this.dGV_Transaction.DefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Transaction.Location = new System.Drawing.Point(24, 136);
             this.dGV_Transaction.Name = "dGV_Transaction";
+            this.dGV_Transaction.RowHeadersVisible = false;
             this.dGV_Transaction.RowHeadersWidth = 51;
             this.dGV_Transaction.RowTemplate.Height = 24;
             this.dGV_Transaction.Size = new System.Drawing.Size(1288, 472);
@@ -161,34 +199,6 @@
             this.return_Profile.TabStop = false;
             this.return_Profile.Click += new System.EventHandler(this.return_Profile_Click);
             // 
-            // button_Return_Order
-            // 
-            this.button_Return_Order.BackColor = System.Drawing.Color.White;
-            this.button_Return_Order.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Return_Order.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.button_Return_Order.Location = new System.Drawing.Point(1072, 82);
-            this.button_Return_Order.Name = "button_Return_Order";
-            this.button_Return_Order.Size = new System.Drawing.Size(240, 48);
-            this.button_Return_Order.TabIndex = 11;
-            this.button_Return_Order.TabStop = false;
-            this.button_Return_Order.Text = "Return Order";
-            this.button_Return_Order.UseVisualStyleBackColor = false;
-            this.button_Return_Order.Click += new System.EventHandler(this.Return_Order_Click);
-            // 
-            // button_Supplier_Transaction
-            // 
-            this.button_Supplier_Transaction.BackColor = System.Drawing.Color.White;
-            this.button_Supplier_Transaction.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Supplier_Transaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.button_Supplier_Transaction.Location = new System.Drawing.Point(826, 82);
-            this.button_Supplier_Transaction.Name = "button_Supplier_Transaction";
-            this.button_Supplier_Transaction.Size = new System.Drawing.Size(240, 48);
-            this.button_Supplier_Transaction.TabIndex = 12;
-            this.button_Supplier_Transaction.TabStop = false;
-            this.button_Supplier_Transaction.Text = "Supplier Order";
-            this.button_Supplier_Transaction.UseVisualStyleBackColor = false;
-            this.button_Supplier_Transaction.Click += new System.EventHandler(this.button_Supplier_Transaction_Click);
-            // 
             // Transaction_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,7 +208,7 @@
             this.Controls.Add(this.return_Profile);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Transaction_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

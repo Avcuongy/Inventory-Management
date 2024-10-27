@@ -199,11 +199,20 @@ namespace Inventory_Management
 
             List<SalesInvoice> salesInvoices = SalesInvoice;
             List<Customer> customers = Customer;
+            List<PurchaseOrder> purchaseOrders = PurchaseOrder;
+            List<ReturnOrder> returnOrders = ReturnOrder;
 
-            string search = tBx_Search.Text.Trim();
+            string search = tBx_Search.Text.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(search))
+            {
+                ShowTransactionInfo();
+                return;
+            }
 
             DataTable dt = new DataTable();
 
+            bool found = false;
             dt.Columns.Add("ID");
             dt.Columns.Add("Customer ID");
             dt.Columns.Add("Customer Name");
@@ -214,78 +223,109 @@ namespace Inventory_Management
             dt.Columns.Add("Paid");
             dt.Columns.Add("Status");
 
-            if (string.IsNullOrEmpty(search))
+            foreach (SalesInvoice invoice in salesInvoices)
             {
-                foreach (SalesInvoice salesInvoices1 in SalesInvoice)
+                if (invoice.InvoiceId.ToLower() == search ||
+                    invoice.Customer.CustomerId.ToLower() == search ||
+                    invoice.Customer.Name.ToLower() == search)
                 {
-                    foreach (Product product in salesInvoices1.SoldProducts)
+                    foreach (Product product in invoice.SoldProducts)
                     {
                         DataRow row = dt.NewRow();
-                        row["ID"] = salesInvoices1.InvoiceId;
-                        row["Customer ID"] = salesInvoices1.Customer.CustomerId;
-                        row["Customer Name"] = salesInvoices1.Customer.Name;
+                        row["ID"] = invoice.InvoiceId;
+                        row["Customer ID"] = invoice.Customer.CustomerId;
+                        row["Customer Name"] = invoice.Customer.Name;
                         row["Product ID"] = product.ProductId;
                         row["Product Name"] = product.Name;
                         row["Category"] = product.Category;
                         row["Quantity"] = product.Quantity;
                         row["Paid"] = product.Price;
-                        row["Status"] = salesInvoices1.PaymentStatus;
+                        row["Status"] = invoice.PaymentStatus;
 
                         dt.Rows.Add(row);
+                        found = true;
                     }
+                    break;
                 }
             }
-            else
-            {
-                foreach (SalesInvoice salesInvoices1 in SalesInvoice)
-                {
-                    if (salesInvoices1.InvoiceId == search || salesInvoices1.Customer.CustomerId == search || salesInvoices1.Customer.Name == search)
-                    {
-                        string supplierName = salesInvoices1.Customer.Name;
 
-                        foreach (Product product in salesInvoices1.SoldProducts)
+            if (!found)
+            {
+                dt.Clear();
+                dt.Columns.Clear();
+                dt.Columns.Add("ID");
+                dt.Columns.Add("Supplier ID");
+                dt.Columns.Add("Supplier Name");
+                dt.Columns.Add("Product ID");
+                dt.Columns.Add("Product Name");
+                dt.Columns.Add("Category");
+                dt.Columns.Add("Quantity");
+                dt.Columns.Add("Paid");
+                dt.Columns.Add("Status");
+
+                foreach (PurchaseOrder order in purchaseOrders)
+                {
+                    if (order.OrderId.ToLower() == search ||
+                        order.Supplier.Name.ToLower() == search ||
+                        order.Supplier.SupplierId.ToLower() == search)
+                    {
+                        foreach (Product product in order.OrderedProducts)
                         {
                             DataRow row = dt.NewRow();
-                            row["ID"] = salesInvoices1.InvoiceId;
-                            row["Customer ID"] = salesInvoices1.Customer.CustomerId;
-                            row["Customer Name"] = salesInvoices1.Customer.Name;
+                            row["ID"] = order.OrderId;
+                            row["Supplier ID"] = order.Supplier.SupplierId;
+                            row["Supplier Name"] = order.Supplier.Name;
                             row["Product ID"] = product.ProductId;
                             row["Product Name"] = product.Name;
                             row["Category"] = product.Category;
                             row["Quantity"] = product.Quantity;
                             row["Paid"] = product.Price;
-                            row["Status"] = salesInvoices1.PaymentStatus;
+                            row["Status"] = order.Status;
 
                             dt.Rows.Add(row);
+                            found = true;
                         }
                         break;
                     }
                 }
-                foreach (PurchaseOrder purchaseOrders in PurchaseOrder)
-                {
-                    if (purchaseOrders.OrderId == search || purchaseOrders.Supplier.Name == search || purchaseOrders.Supplier.SupplierId == search)
-                    {
-                        foreach (PurchaseOrder purchaseOrders1 in PurchaseOrder)
-                        {
-                            foreach (Product product in purchaseOrders1.OrderedProducts)
-                            {
-                                DataRow row = dt.NewRow();
-                                row["ID"] = purchaseOrders1.OrderId;
-                                row["Supplier ID"] = purchaseOrders1.Supplier.SupplierId;
-                                row["Supplier Name"] = purchaseOrders1.Supplier.Name;
-                                row["Product ID"] = product.ProductId;
-                                row["Product Name"] = product.Name;
-                                row["Category"] = product.Category;
-                                row["Quantity"] = product.Quantity;
-                                row["Paid"] = product.Price;
-                                row["Status"] = purchaseOrders1.Status;
+            }
 
-                                dt.Rows.Add(row);
-                            }
-                        }
+            if (!found)
+            {
+                dt.Clear();
+                dt.Columns.Clear();
+                dt.Columns.Add("ID");
+                dt.Columns.Add("Product ID");
+                dt.Columns.Add("Product Name");
+                dt.Columns.Add("Category");
+                dt.Columns.Add("Quantity");
+                dt.Columns.Add("Refund");
+                dt.Columns.Add("Reason");
+                dt.Columns.Add("Date");
+                dt.Columns.Add("Status");
+
+                foreach (ReturnOrder returnOrder in returnOrders)
+                {
+                    if (returnOrder.ReturnOrderId.ToLower() == search ||
+                        returnOrder.Product.ProductId.ToLower() == search ||
+                        returnOrder.Product.Name.ToLower() == search)
+                    {
+                        DataRow row = dt.NewRow();
+                        row["ID"] = returnOrder.ReturnOrderId;
+                        row["Product ID"] = returnOrder.Product.ProductId;
+                        row["Product Name"] = returnOrder.Product.Name;
+                        row["Category"] = returnOrder.Product.Category;
+                        row["Quantity"] = returnOrder.Product.Quantity;
+                        row["Refund"] = returnOrder.Product.Price;
+                        row["Reason"] = returnOrder.Reason;
+                        row["Date"] = returnOrder.ReturnDate.ToString("dd/MM/yyyy");
+                        row["Status"] = returnOrder.Status;
+
+                        dt.Rows.Add(row);
+                        found = true;
                         break;
-                    }    
-                }    
+                    }
+                }
             }
 
             dGV_Transaction.DataSource = dt;

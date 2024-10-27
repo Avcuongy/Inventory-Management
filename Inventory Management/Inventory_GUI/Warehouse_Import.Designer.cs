@@ -245,6 +245,7 @@
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.textBox1.Location = new System.Drawing.Point(416, 64);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(168, 28);
             this.textBox1.TabIndex = 26;
             this.textBox1.TabStop = false;
