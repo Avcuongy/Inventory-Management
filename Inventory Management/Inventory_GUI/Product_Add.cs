@@ -84,7 +84,7 @@ namespace Inventory_Management
             string productId = tBx_ID_Product.Text.Trim();
             string nameProduct = tBx_Name_Product.Text.Trim();
 
-            int quantity_add = 0;
+            int quantity_add = 1;
             if (!int.TryParse(tBx_Quantity_Product.Text, out quantity_add) || quantity_add <= 0)
             {
                 MessageBox.Show("Invalid quantity.");

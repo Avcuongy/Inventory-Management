@@ -152,20 +152,34 @@ namespace Inventory_Management
                 string productId = comboBox11.SelectedItem != null ? comboBox11.SelectedItem.ToString() : null;
                 string status = comboBox2.SelectedItem != null ? comboBox2.SelectedItem.ToString() : "";
 
-                if (string.IsNullOrEmpty(productId) || GetQuantity() <= 0 || string.IsNullOrEmpty(status))
+                int quantity_add_order;
+                if (!int.TryParse(textBox3.Text.Trim(), out quantity_add_order) || quantity_add_order <= 0)
                 {
-                    MessageBox.Show("An error occurred, please check again");
+                    MessageBox.Show("Invalid quantity. Please enter a positive number.");
+                    return;
+                }
+
+                double totalPrice;
+                if (!double.TryParse(textBox1.Text.Trim(), out totalPrice) || totalPrice <= 0)
+                {
+                    MessageBox.Show("Invalid total price. Please enter a positive amount.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(productId) || string.IsNullOrEmpty(status))
+                {
+                    MessageBox.Show("Error: Missing required information. Please check again.");
                     return;
                 }
 
                 Product selectedProduct = null;
-                List<Product> products = Warehouse.Products; 
+                List<Product> products = Warehouse.Products;
 
-                for (int i = 0; i < products.Count; i++)
+                foreach (Product product in products)
                 {
-                    if (products[i].ProductId == productId)
+                    if (product.ProductId == productId)
                     {
-                        selectedProduct = products[i];
+                        selectedProduct = product;
                         break;
                     }
                 }
@@ -175,17 +189,22 @@ namespace Inventory_Management
                     MessageBox.Show("Product not found.");
                     return;
                 }
+                else
+                {
+                    selectedProduct.Quantity = quantity_add_order;
+                    selectedProduct.Price = totalPrice;
+                }
 
                 Supplier selectedSupplier = null;
                 List<Supplier> suppliers = Supplier;
 
-                for (int i = 0; i < suppliers.Count; i++)
+                foreach (Supplier supplier in suppliers)
                 {
-                    for (int j = 0; j < suppliers[i].SuppliedProducts.Count; j++)
+                    foreach (Product suppliedProduct in supplier.SuppliedProducts)
                     {
-                        if (suppliers[i].SuppliedProducts[j].ProductId == productId)
+                        if (suppliedProduct.ProductId == productId)
                         {
-                            selectedSupplier = suppliers[i];
+                            selectedSupplier = supplier;
                             break;
                         }
                     }
@@ -197,21 +216,22 @@ namespace Inventory_Management
 
                 if (selectedSupplier == null)
                 {
-                    MessageBox.Show("Supplier not found for the selected product.");
+                    MessageBox.Show("Supplier not found.");
                     return;
                 }
 
                 PurchaseOrder newOrder = new PurchaseOrder(
                     orderId,
-                    selectedSupplier, 
+                    selectedSupplier,
                     status,
                     new List<Product>() { selectedProduct }
                 );
 
-
                 PurchaseOrder.Add(newOrder);
                 OrderChangeAdd?.Invoke();
+
                 MessageBox.Show("Successfull");
+                OrderChangeAdd?.Invoke();
                 this.Close();
             }
 

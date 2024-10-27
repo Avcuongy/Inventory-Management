@@ -60,7 +60,6 @@ namespace Inventory_Management
             ShowOrder.CurrentCell = null;
 
             List<Supplier> suppliers = Supplier;
-            OrderManager orderManager = OrderManager;
             List<PurchaseOrder> purchaseOrders = OrderManager.Orders;
             List<Product> products = Warehouse.Products;
 
