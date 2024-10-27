@@ -143,6 +143,7 @@
             this.ShowOrder.Size = new System.Drawing.Size(1288, 472);
             this.ShowOrder.TabIndex = 5;
             this.ShowOrder.TabStop = false;
+            this.ShowOrder.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShowOrder_CellEndEdit);
             // 
             // button2
             // 

@@ -311,5 +311,47 @@ namespace Inventory_Management
         {
             ShowOrdersInfo();
         }
+        private void UpdateOrderStatus(string orderId, string newStatus)
+        {
+            if (newStatus != "Done" && newStatus != "Processing" && newStatus != "Pending")
+            {
+                MessageBox.Show("Not Found Status");
+                return;
+            }
+
+            bool orderFound = false;
+
+            foreach (PurchaseOrder order in OrderManager.Orders)
+            {
+                if (order.OrderId == orderId)
+                {
+                    order.Status = newStatus;
+                    orderFound = true;
+                    ShowOrdersInfo();
+                    break;
+                }
+            }
+
+            if (!orderFound)
+            {
+                MessageBox.Show("Error");
+            }
+        }
+        private void ShowOrder_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            int statusColumnIndex = ShowOrder.Columns["Status"].Index;
+
+            DialogResult = MessageBox.Show("Are You Sure", "", MessageBoxButtons.YesNo);
+
+            if (DialogResult == DialogResult.Yes)
+            {
+                if (e.ColumnIndex == statusColumnIndex)
+                {
+                    string orderId = ShowOrder.Rows[e.RowIndex].Cells["Order ID"].Value.ToString();
+                    string newStatus = ShowOrder.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    UpdateOrderStatus(orderId, newStatus);
+                }
+            }
+        }
     }
 }

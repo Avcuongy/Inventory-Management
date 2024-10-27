@@ -74,7 +74,7 @@
             this.button_Supplier_Transaction.Size = new System.Drawing.Size(240, 48);
             this.button_Supplier_Transaction.TabIndex = 12;
             this.button_Supplier_Transaction.TabStop = false;
-            this.button_Supplier_Transaction.Text = "Supplier Order";
+            this.button_Supplier_Transaction.Text = "Purchase Order";
             this.button_Supplier_Transaction.UseVisualStyleBackColor = false;
             this.button_Supplier_Transaction.Click += new System.EventHandler(this.button_Supplier_Transaction_Click);
             // 
