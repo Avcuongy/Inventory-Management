@@ -115,6 +115,7 @@
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.textBox1.Location = new System.Drawing.Point(8, 304);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(480, 28);
             this.textBox1.TabIndex = 22;
             this.textBox1.TabStop = false;
@@ -137,6 +138,7 @@
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.textBox2.Location = new System.Drawing.Point(8, 152);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(480, 28);
             this.textBox2.TabIndex = 17;
             this.textBox2.TabStop = false;
@@ -286,6 +288,7 @@
             this.SupplierText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.SupplierText.Location = new System.Drawing.Point(8, 256);
             this.SupplierText.Name = "SupplierText";
+            this.SupplierText.ReadOnly = true;
             this.SupplierText.Size = new System.Drawing.Size(680, 28);
             this.SupplierText.TabIndex = 12;
             this.SupplierText.TabStop = false;
@@ -296,6 +299,7 @@
             this.OrderIDText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.OrderIDText.Location = new System.Drawing.Point(8, 80);
             this.OrderIDText.Name = "OrderIDText";
+            this.OrderIDText.ReadOnly = true;
             this.OrderIDText.Size = new System.Drawing.Size(680, 28);
             this.OrderIDText.TabIndex = 9;
             this.OrderIDText.TabStop = false;

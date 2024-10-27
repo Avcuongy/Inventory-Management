@@ -111,12 +111,6 @@
     <Compile Include="Inventory_System\SalesInvoice.cs" />
     <Compile Include="Inventory_System\Supplier.cs" />
     <Compile Include="Inventory_System\Products\Tablet.cs" />
-    <Compile Include="Inventory_GUI\Transaction_Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inventory_GUI\Transaction_Menu.Designer.cs">
-      <DependentUpon>Transaction_Menu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inventory_System\Warehouse.cs" />
     <Compile Include="Inventory_GUI\Warehouse_CheckStock.cs">
       <SubType>Form</SubType>
@@ -172,9 +166,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Inventory_GUI\Transaction_Menu.resx">
-      <DependentUpon>Transaction_Menu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Inventory_GUI\Warehouse_CheckStock.resx">
       <DependentUpon>Warehouse_CheckStock.cs</DependentUpon>
     </EmbeddedResource>

@@ -122,65 +122,32 @@ namespace Inventory_Management
         private void button3_Click(object sender, EventArgs e)
         {
             ShowOrder.CurrentCell = null;
-
-            List<Supplier> suppliers = Supplier;
-            OrderManager orderManager = OrderManager;
-            List<PurchaseOrder> purchaseOrders = OrderManager.Orders;
-            List<Product> products = Warehouse.Products;
-
             string id = textBoxSupplier.Text.Trim();
 
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("Order ID");
-            dt.Columns.Add("Supplier Name");
-            dt.Columns.Add("Product ID");
-            dt.Columns.Add("Product Name");
-            dt.Columns.Add("Quantity Order");
-            dt.Columns.Add("Total");
-            dt.Columns.Add("Status");
-
-            if (string.IsNullOrEmpty(id))
+            if (label1.Text == "Order")
             {
+                // Tìm kiếm theo Order ID
+                DataTable dtOrder = new DataTable();
+                dtOrder.Columns.Add("Order ID");
+                dtOrder.Columns.Add("Supplier Name");
+                dtOrder.Columns.Add("Product ID");
+                dtOrder.Columns.Add("Product Name");
+                dtOrder.Columns.Add("Quantity Order");
+                dtOrder.Columns.Add("Total");
+                dtOrder.Columns.Add("Status");
+
+                List<PurchaseOrder> purchaseOrders = OrderManager.Orders;
+                List<Product> products = Warehouse.Products;
+
                 foreach (PurchaseOrder order in purchaseOrders)
                 {
-                    string supplierName = order.Supplier.Name;
-
-                    foreach (Product product in order.OrderedProducts)
-                    {
-                        DataRow row = dt.NewRow();
-                        row["Order ID"] = order.OrderId;
-                        row["Supplier Name"] = supplierName;
-                        row["Product ID"] = product.ProductId;
-                        row["Product Name"] = product.Name;
-                        row["Quantity Order"] = product.Quantity;
-
-                        foreach (Product product2 in products)
-                        {
-                            if (product.ProductId == product2.ProductId)
-                            {
-                                row["Total"] = product2.Price * product.Quantity;
-                                break;
-                            }
-                        }
-
-                        row["Status"] = order.Status;
-
-                        dt.Rows.Add(row);
-                    }
-                }
-            }
-            else
-            {
-                foreach (PurchaseOrder order in purchaseOrders)
-                {
-                    if (order.OrderId == id || order.Supplier.SupplierId == id || order.Supplier.Name == id)
+                    if (string.IsNullOrEmpty(id) || order.OrderId == id)
                     {
                         string supplierName = order.Supplier.Name;
 
                         foreach (Product product in order.OrderedProducts)
                         {
-                            DataRow row = dt.NewRow();
+                            DataRow row = dtOrder.NewRow();
                             row["Order ID"] = order.OrderId;
                             row["Supplier Name"] = supplierName;
                             row["Product ID"] = product.ProductId;
@@ -195,17 +162,43 @@ namespace Inventory_Management
                                     break;
                                 }
                             }
-
                             row["Status"] = order.Status;
-
-                            dt.Rows.Add(row);
+                            dtOrder.Rows.Add(row);
                         }
-                        break;
                     }
                 }
+                ShowOrder.DataSource = dtOrder;
             }
+            else if (label1.Text == "Supplier")
+            {
+                // Tìm kiếm theo Supplier ID
+                DataTable dtSupplier = new DataTable();
+                dtSupplier.Columns.Add("Supplier ID");
+                dtSupplier.Columns.Add("Supplier Name");
+                dtSupplier.Columns.Add("Contact Info");
+                dtSupplier.Columns.Add("Product Supply");
+                dtSupplier.Columns.Add("Category");
+                dtSupplier.Columns.Add("Base Price");
 
-            ShowOrder.DataSource = dt;
+                foreach (Supplier sup in Supplier)
+                {
+                    if (string.IsNullOrEmpty(id) || sup.SupplierId == id)
+                    {
+                        foreach (Product suppliedProduct in sup.SuppliedProducts)
+                        {
+                            DataRow row = dtSupplier.NewRow();
+                            row["Supplier ID"] = sup.SupplierId;
+                            row["Supplier Name"] = sup.Name;
+                            row["Contact Info"] = sup.ContactInfo;
+                            row["Product Supply"] = suppliedProduct.Name;
+                            row["Category"] = suppliedProduct.Category;
+                            row["Base Price"] = suppliedProduct.Price;
+                            dtSupplier.Rows.Add(row);
+                        }
+                    }
+                }
+                ShowOrder.DataSource = dtSupplier;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

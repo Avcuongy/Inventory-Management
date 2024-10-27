@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Update));
             this.panel_Update_Product = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonConfim = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,12 +46,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tBx_Supplier_Product = new System.Windows.Forms.TextBox();
             this.tBx_Quantity_Product = new System.Windows.Forms.TextBox();
             this.tBx_Name_Product = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
             this.panel_Update_Product.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +61,7 @@
             // 
             // panel_Update_Product
             // 
-            this.panel_Update_Product.Controls.Add(this.button1);
+            this.panel_Update_Product.Controls.Add(this.buttonConfim);
             this.panel_Update_Product.Controls.Add(this.label2);
             this.panel_Update_Product.Controls.Add(this.panel4);
             this.panel_Update_Product.Controls.Add(this.panel2);
@@ -73,19 +73,19 @@
             this.panel_Update_Product.Size = new System.Drawing.Size(1376, 640);
             this.panel_Update_Product.TabIndex = 11;
             // 
-            // button1
+            // buttonConfim
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.button1.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1008, 496);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 56);
-            this.button1.TabIndex = 7;
-            this.button1.TabStop = false;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonConfim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.buttonConfim.Font = new System.Drawing.Font("Roboto", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfim.ForeColor = System.Drawing.Color.White;
+            this.buttonConfim.Location = new System.Drawing.Point(1000, 496);
+            this.buttonConfim.Name = "buttonConfim";
+            this.buttonConfim.Size = new System.Drawing.Size(192, 56);
+            this.buttonConfim.TabIndex = 7;
+            this.buttonConfim.TabStop = false;
+            this.buttonConfim.Text = "Confirm";
+            this.buttonConfim.UseVisualStyleBackColor = false;
+            this.buttonConfim.Click += new System.EventHandler(this.buttonConfim_Click);
             // 
             // label2
             // 
@@ -186,12 +186,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.comboBoxSupplier);
             this.panel1.Controls.Add(this.IdproductCombo);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.tBx_Supplier_Product);
             this.panel1.Controls.Add(this.tBx_Quantity_Product);
             this.panel1.Controls.Add(this.tBx_Name_Product);
             this.panel1.Controls.Add(this.label3);
@@ -260,16 +260,6 @@
             this.label4.Text = "ID Product";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tBx_Supplier_Product
-            // 
-            this.tBx_Supplier_Product.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_Supplier_Product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.tBx_Supplier_Product.Location = new System.Drawing.Point(8, 296);
-            this.tBx_Supplier_Product.Name = "tBx_Supplier_Product";
-            this.tBx_Supplier_Product.Size = new System.Drawing.Size(680, 28);
-            this.tBx_Supplier_Product.TabIndex = 12;
-            this.tBx_Supplier_Product.TabStop = false;
-            // 
             // tBx_Quantity_Product
             // 
             this.tBx_Quantity_Product.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -321,6 +311,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Products";
             // 
+            // comboBoxSupplier
+            // 
+            this.comboBoxSupplier.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.comboBoxSupplier.FormattingEnabled = true;
+            this.comboBoxSupplier.Location = new System.Drawing.Point(8, 296);
+            this.comboBoxSupplier.Name = "comboBoxSupplier";
+            this.comboBoxSupplier.Size = new System.Drawing.Size(680, 28);
+            this.comboBoxSupplier.TabIndex = 27;
+            // 
             // Product_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -329,7 +329,7 @@
             this.ClientSize = new System.Drawing.Size(1432, 653);
             this.Controls.Add(this.panel_Update_Product);
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Product_Update";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -349,7 +349,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_Update_Product;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonConfim;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -363,7 +363,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tBx_Supplier_Product;
         private System.Windows.Forms.TextBox tBx_Quantity_Product;
         private System.Windows.Forms.TextBox tBx_Name_Product;
         private System.Windows.Forms.Label label3;
@@ -371,5 +370,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox IdproductCombo;
         private System.Windows.Forms.ComboBox cBx_Category;
+        private System.Windows.Forms.ComboBox comboBoxSupplier;
     }
 }

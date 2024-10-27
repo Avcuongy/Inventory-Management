@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\inventory_gui\\order_add.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\inventory_gui\\order_add.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\inventory_gui\\product_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\inventory_gui\\product_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\inventory_gui\\order_add.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\inventory_gui\\order_add.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\inventory_gui\\order_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\inventory_gui\\order_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\inventory_gui\\order_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\inventory_gui\\order_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|d:\\_dev\\c#\\_group project\\inventory-management\\inventory management\\inventory_gui\\product_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9E4346A4-417F-4523-B361-F1E08F6EE92F}|Inventory Management\\Inventory Management.csproj|solutionrelative:inventory management\\inventory_gui\\product_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,85 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Product_Update.cs [Design]",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Product_Update.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Inventory_GUI\\Product_Update.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Product_Update.cs [Design]",
-              "RelativeToolTip": "Inventory Management\\Inventory_GUI\\Product_Update.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T03:31:49.439Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Product_Menu.cs [Design]",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Product_Menu.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Inventory_GUI\\Product_Menu.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Product_Menu.cs [Design]",
-              "RelativeToolTip": "Inventory Management\\Inventory_GUI\\Product_Menu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T03:31:48.74Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Order_Menu.cs [Design]",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Order_Menu.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Inventory_GUI\\Order_Menu.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Order_Menu.cs [Design]",
-              "RelativeToolTip": "Inventory Management\\Inventory_GUI\\Order_Menu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T03:31:45.86Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Order_Menu.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Order_Menu.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Inventory_GUI\\Order_Menu.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Order_Menu.cs",
-              "RelativeToolTip": "Inventory Management\\Inventory_GUI\\Order_Menu.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAD0BAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T03:32:01.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Order_Add.cs [Design]",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Order_Add.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Inventory_GUI\\Order_Add.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Order_Add.cs [Design]",
-              "RelativeToolTip": "Inventory Management\\Inventory_GUI\\Order_Add.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T03:31:46.547Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Order_Add.cs",
-              "DocumentMoniker": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Order_Add.cs",
-              "RelativeDocumentMoniker": "Inventory Management\\Inventory_GUI\\Order_Add.cs",
-              "ToolTip": "D:\\_Dev\\C#\\_Group Project\\Inventory-Management\\Inventory Management\\Inventory_GUI\\Order_Add.cs",
-              "RelativeToolTip": "Inventory Management\\Inventory_GUI\\Order_Add.cs",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAAwOkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T03:31:53.531Z",
-              "EditorCaption": ""
             }
           ]
         }

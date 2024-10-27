@@ -128,6 +128,7 @@
             this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.textBox5.Location = new System.Drawing.Point(8, 304);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(680, 28);
             this.textBox5.TabIndex = 24;
             this.textBox5.TabStop = false;
@@ -162,6 +163,7 @@
             this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.textBox4.Location = new System.Drawing.Point(8, 224);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(680, 28);
             this.textBox4.TabIndex = 12;
             this.textBox4.TabStop = false;
@@ -184,6 +186,7 @@
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.textBox2.Location = new System.Drawing.Point(8, 152);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(680, 28);
             this.textBox2.TabIndex = 10;
             this.textBox2.TabStop = false;
@@ -265,6 +268,7 @@
             this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
             this.textBox6.Location = new System.Drawing.Point(216, 64);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(168, 28);
             this.textBox6.TabIndex = 23;
             this.textBox6.TabStop = false;

@@ -22,7 +22,6 @@ namespace Inventory_Management
         private OrderManager _orderManager;
         private List<SalesInvoice> _salesInvoice = new List<SalesInvoice>();
         private Report _report;
-
         public string Username { get => _username; set => _username = value; }
         public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
         public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
@@ -47,19 +46,34 @@ namespace Inventory_Management
             OrderManager = orderManager;
             SalesInvoice = salesInvoices;
             Report = report;
-            ShowComboboxProductId();
+            ShowComboboxAll();
             IdproductCombo.SelectedIndexChanged += IdproductCombo_SelectedIndexChanged;
         }
         public ProductChangeHandler ProductChangeHandlerUpdate;
-        public void ShowComboboxProductId()
+        public void ShowComboboxAll()
         {
             List<Product> products = Warehouse.Products;
             List<string> productsId = new List<string>();
+            HashSet<string> category = new HashSet<string>();
+            List<string> suppliersName = new List<string>();
+
             foreach (Product product in products)
             {
                 productsId.Add(product.ProductId);
             }
             IdproductCombo.DataSource = productsId;
+
+            foreach (Product product in products)
+            {
+                category.Add(product.Category);
+            }
+            cBx_Category.DataSource = category.ToList();
+
+            foreach (Supplier sup in Supplier)
+            {
+                suppliersName.Add(sup.Name);
+            }
+            comboBoxSupplier.DataSource = suppliersName;
         }
         public void ShowInfo()
         {
@@ -83,12 +97,11 @@ namespace Inventory_Management
                         {
                             if (product1.ProductId == productId)
                             {
-                                tBx_Supplier_Product.Text = supplier.Name;
+                                comboBoxSupplier.Text = supplier.Name;
                                 return;
                             }
                         }
                     }
-
                 }
             }
         }
@@ -96,8 +109,7 @@ namespace Inventory_Management
         {
             ShowInfo();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonConfim_Click(object sender, EventArgs e)
         {
             List<Product> products = Warehouse.Products;
             List<Supplier> suppliers = Supplier;
@@ -105,19 +117,22 @@ namespace Inventory_Management
             string productId = IdproductCombo.Text.Trim();
             string nameProduct = tBx_Name_Product.Text.Trim();
             string category = cBx_Category.Text.Trim();
+
             int quantityProduct = 0;
-
-            if (int.TryParse(tBx_Quantity_Product.Text, out int quantity))
+            if (!int.TryParse(tBx_Quantity_Product.Text, out quantityProduct) || quantityProduct <=0)
             {
-                quantityProduct = quantity;
-            }
+                MessageBox.Show("Quantity Not Found");
+                return;
+            }    
 
-            int priceProduct = 0;
 
-            if (int.TryParse(tBx_Price_Product.Text, out int price))
+            double priceProduct = 0;
+            if (!double.TryParse(tBx_Price_Product.Text, out priceProduct) || priceProduct <=0)
             {
-                priceProduct = price;
-            }
+                MessageBox.Show("Base Price Not Found");
+                return;
+            }    
+            
 
             string supplierName = IdproductCombo.Text.Trim();
             string originalSupplier = "";
@@ -215,7 +230,9 @@ namespace Inventory_Management
                     }
                 }
             }
-
+            MessageBox.Show("Successful");
+            ProductChangeHandlerUpdate?.Invoke();
+            this.Close();
         }
     }
 }

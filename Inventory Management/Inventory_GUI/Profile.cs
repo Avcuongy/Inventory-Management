@@ -136,5 +136,14 @@ namespace Inventory_Management
             this.Close();
             product_Menu.Show();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Transaction_Menu transaction_Menu = new Transaction_Menu(
+               Username, Warehouse, Supplier, PurchaseOrder, ReturnOrder, Customer, OrderManager, SalesInvoice, Report
+               );
+            this.Close();
+            transaction_Menu.Show();
+        }
     }
 }
