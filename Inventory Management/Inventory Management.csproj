@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inventory_GUI\Transaction_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_GUI\Transaction_Menu.Designer.cs">
+      <DependentUpon>Transaction_Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory_System\Category.cs" />
     <Compile Include="Inventory_System\Customer.cs" />
     <Compile Include="Inventory_System\Employee.cs" />
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory_GUI\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_GUI\Transaction_Menu.resx">
+      <DependentUpon>Transaction_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
