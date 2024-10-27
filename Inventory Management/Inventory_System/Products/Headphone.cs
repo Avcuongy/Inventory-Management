@@ -22,9 +22,5 @@ namespace Inventory_Management
         {
             base.GetObjectData(info, context);
         }
-        public override double PriceQuantity()
-        {
-            return Price * Quantity;
-        }
     }
 }
