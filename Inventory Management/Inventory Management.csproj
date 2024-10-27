@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inventory_GUI\Report_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_GUI\Report_Menu.Designer.cs">
+      <DependentUpon>Report_Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory_GUI\Transaction_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <Compile Include="Inventory_GUI\Warehouse_Menu.Designer.cs">
       <DependentUpon>Warehouse_Menu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Inventory_GUI\Report_Menu.resx">
+      <DependentUpon>Report_Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory_GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

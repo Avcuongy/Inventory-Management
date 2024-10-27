@@ -125,3 +125,4 @@ C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debu
 C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventor.CCAFEA7E.Up2Date
 C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.exe
 C:\Users\DANG CUONG\Downloads\Inventory-Management\Inventory Management\obj\Debug\Inventory Management.pdb
+D:\_Dev\C#\_Group Project\Inventory-Management\Inventory Management\obj\Debug\Inventory_Management.Report_Menu.resources
