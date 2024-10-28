@@ -77,17 +77,20 @@ namespace Inventory_Management
 
             foreach (SalesInvoice invoice in invoices)
             {
-                foreach (Product product in invoice.SoldProducts)
+                if (invoice.PaymentStatus == "Paid")
                 {
-                    double productTotal = product.Price * product.Quantity; 
+                    foreach (Product product in invoice.SoldProducts)
+                    {
+                        double productTotal = product.Price * product.Quantity;
 
-                    if (productRevenue.ContainsKey(product.Name))
-                    {
-                        productRevenue[product.Name] += productTotal;
-                    }
-                    else
-                    {
-                        productRevenue.Add(product.Name, productTotal);
+                        if (productRevenue.ContainsKey(product.Name))
+                        {
+                            productRevenue[product.Name] += productTotal;
+                        }
+                        else
+                        {
+                            productRevenue.Add(product.Name, productTotal);
+                        }
                     }
                 }
             }
@@ -95,7 +98,7 @@ namespace Inventory_Management
             foreach (KeyValuePair<string, double> entry in productRevenue)
             {
                 int pointIndex = revenueSeries.Points.AddXY(entry.Key, entry.Value);
-                revenueSeries.Points[pointIndex].Label = entry.Value.ToString("F0"); 
+                revenueSeries.Points[pointIndex].Label = entry.Value.ToString("F0");
             }
 
             chart_Analysis.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
@@ -106,6 +109,7 @@ namespace Inventory_Management
             Title title = new Title("Total Amount by Product");
             title.Font = new Font("Righteous", 14, FontStyle.Bold);
             chart_Analysis.Titles.Add(title);
+
         }
         // Back Profile
         private void return_Profile_Click_Click(object sender, EventArgs e)

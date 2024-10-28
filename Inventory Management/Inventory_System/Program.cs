@@ -262,36 +262,36 @@ namespace Inventory_Management
                 {
                     new SalesInvoice("SI01", customers[0], new List<Product>
                     {
-                        new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199)
-                    }, "Done"),
+                        new Phone("P1", "Iphone 16 Pro", "Phone", 4, 199)
+                    }, "Paid"),
                     new SalesInvoice("SI02", customers[1], new List<Product>
                     {
                         new Tablet("P8", "Ipad Gen 6", "Tablet", 2, 298)
-                    }, "Done"),
+                    }, "Unpaid"),
                     new SalesInvoice("SI03", customers[2], new List<Product>
                     {
-                        new Phone("P11", "Samsung Galaxy S23", "Phone", 1, 999)
-                    }, "Done"),
+                        new Phone("P11", "Samsung Galaxy S23", "Phone", 2, 999)
+                    }, "Paid"),
                     new SalesInvoice("SI04", customers[3], new List<Product>
                     {
                         new Headphone("P15", "Sony WH-1000XM4", "Headphone", 1, 400)
-                    }, "Done"),
+                    }, "Paid"),
                     new SalesInvoice("SI05", customers[4], new List<Product>
                     {
                         new Tablet("P12", "Microsoft Surface Pro", "Tablet", 1, 799)
-                    }, "Done"),
+                    }, "Paid"),
                     new SalesInvoice("SI06", customers[5], new List<Product>
                     {
-                        new Mouse("P13", "Logitech MX Master 3", "Mouse", 1, 1200)
-                    }, "Done"),
+                        new Mouse("P13", "Logitech MX Master 3", "Mouse", 5, 1200)
+                    }, "Paid"),
                     new SalesInvoice("SI07", customers[6], new List<Product>
                     {
                         new Mouse("P18", "Razer DeathAdder", "Mouse", 1, 800)
-                    }, "Done"),
+                    }, "Paid"),
                     new SalesInvoice("SI08", customers[7], new List<Product>
                     {
-                        new Keyboard("P19", "Corsair K70", "Keyboard", 1, 2500)
-                    }, "Done")
+                        new Keyboard("P19", "Corsair K70", "Keyboard", 2, 2500)
+                    }, "Unpaid")
                 };
 
                 // Report

@@ -98,7 +98,6 @@ namespace Inventory_Management
                     dt.Rows.Add(row);
                 }
             }
-
             ShowOrder.DataSource = dt;
         }
 

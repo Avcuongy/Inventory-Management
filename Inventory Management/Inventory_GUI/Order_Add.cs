@@ -36,10 +36,10 @@ namespace Inventory_Management
             OrderManager = orderManager;
             SalesInvoice = salesInvoice;
             Report = report;
-
-            ShowComboBox();
-            comboBox11.SelectedIndexChanged += comboBox11_SelectedIndexChanged;
-            textBox3.TextChanged += textBox3_TextChanged;
+            ShowComboBoxOrder();
+            ShowInfoOrder();
+            comboBoxProduct.SelectedIndexChanged += comboBoxProduct_SelectedIndexChanged;
+            QuantityTextOrder.TextChanged += textBox3_TextChanged;
         }
         public OrderChangeInformation OrderChangeAdd;
         public string Username { get => _username; set => _username = value; }
@@ -52,57 +52,32 @@ namespace Inventory_Management
         public List<SalesInvoice> SalesInvoice { get => _salesInvoice; set => _salesInvoice = value; }
         public Report Report { get => _report; set => _report = value; }
 
-        public void ShowComboBox()
+        public void ShowComboBoxOrder()
         {
             List<Product> products = Warehouse.Products;
+            List<Supplier> suppliers = Supplier;
             List<string> productsId = new List<string>();
+            List<string> suppliersName = new List<string>();
 
-            foreach (Product product in products)
+            foreach (Supplier supplier in suppliers)
             {
-                productsId.Add(product.ProductId);
+                suppliersName.Add(supplier.Name);
             }
-
-            comboBox11.DataSource = productsId;
+            comboBoxSupplier.DataSource = suppliersName;
         }
-
-
-        public void ShowInfo()
+        public void ShowInfoOrder()
         {
-            string productId = comboBox11.SelectedItem?.ToString().Trim();
-            if (string.IsNullOrEmpty(productId))
-            {
-                return;
-            }
-
-            Product selectedProduct = GetProductById(productId);
-            if (selectedProduct == null)
-            {
-                return;
-            }
-
-            Supplier productSupplier = GetSupplierForProduct(productId);
-            if (productSupplier == null)
-            {
-                return;
-            }
-
             OrderIDText.Text = GetOrderId();
-            textBox2.Text = selectedProduct.Name;
-            SupplierText.Text = productSupplier.Name;
-            textBox3.Text = "1";
-            textBox1.Text = selectedProduct.Price.ToString();
+            productsOrder.Text = "0";
         }
-
         private string GetOrderId()
         {
             return $"PD{PurchaseOrder.Count + 1}";
         }
-
         private Product GetProductById(string productId)
         {
             return Warehouse.Products.Find(product => product.ProductId == productId);
         }
-
         private Supplier GetSupplierForProduct(string productId)
         {
             foreach (Supplier supplier in Supplier)
@@ -114,127 +89,220 @@ namespace Inventory_Management
             }
             return null;
         }
-
         private int GetQuantity()
         {
-            return int.TryParse(textBox3.Text, out int quantity) ? quantity : 0;
+            return int.TryParse(QuantityTextOrder.Text, out int quantity) ? quantity : 0;
         }
-
         private double GetTotalPrice()
         {
-            return double.TryParse(textBox1.Text, out double totalPrice) ? totalPrice : 0;
+            return double.TryParse(TotalText.Text, out double totalPrice) ? totalPrice : 0;
         }
-
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            string selectedProductId = comboBox11.SelectedItem?.ToString();
+            string selectedProductId = comboBoxProduct.SelectedItem?.ToString();
             int quantity_add_order = GetQuantity();
 
             Product product = GetProductById(selectedProductId);
             if (product != null)
             {
-                textBox1.Text = (quantity_add_order > 0 ? product.Price * quantity_add_order : 0).ToString();
+                TotalText.Text = (quantity_add_order > 0 ? product.Price * quantity_add_order : 0).ToString();
             }
         }
-
-        private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ShowInfo();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure?", "", MessageBoxButtons.YesNo);
+            string supplierName = comboBoxSupplier.SelectedItem != null ? comboBoxSupplier.SelectedItem.ToString() : "";
 
-            if (dialogResult == DialogResult.Yes)
+            if (!string.IsNullOrEmpty(supplierName))
             {
-                string orderId = OrderIDText.Text.Trim();
-                string productId = comboBox11.SelectedItem != null ? comboBox11.SelectedItem.ToString() : null;
-                string status = comboBox2.SelectedItem != null ? comboBox2.SelectedItem.ToString() : "";
+                bool supplierFound = false;
 
-                int quantity_add_order;
-                if (!int.TryParse(textBox3.Text.Trim(), out quantity_add_order) || quantity_add_order <= 0)
+                foreach (Supplier supplier in Supplier)
                 {
-                    MessageBox.Show("Invalid quantity. Please enter a positive number.");
-                    return;
+                    if (supplier.Name == supplierName)
+                    {
+                        panel2.Visible = true;
+                        labelStatus.Visible = true;
+                        statusText.Visible = true;
+                        supplierFound = true;
+                        button1.Visible = false;
+                        AddButton.Visible = true;
+                        comboBoxSupplier.Enabled = false;
+                        productsOrder.Visible = true;
+                        label12.Visible = true;
+                        ShowInfoProductOfSupplier();
+                        break;
+                    }
                 }
 
-                double totalPrice;
-                if (!double.TryParse(textBox1.Text.Trim(), out totalPrice) || totalPrice <= 0)
+                if (!supplierFound)
                 {
-                    MessageBox.Show("Invalid total price. Please enter a positive amount.");
-                    return;
+                    MessageBox.Show("Supplier Not Found");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Supplier Not Found");
+            }
+        }
+        public void ShowInfoProductOfSupplier()
+        {
+            List<Product> products = Warehouse.Products;
+            List<Supplier> suppliers = Supplier;
+            List<string> productsOfSupplier = new List<string>();
 
-                if (string.IsNullOrEmpty(productId) || string.IsNullOrEmpty(status))
+            string supplierName = comboBoxSupplier.SelectedItem.ToString();
+
+            Supplier selectedSupplier = null;
+
+            foreach (Supplier supplier in suppliers)
+            {
+                if (supplier.Name == supplierName)
                 {
-                    MessageBox.Show("Error: Missing required information. Please check again.");
-                    return;
+                    selectedSupplier = supplier;
+                    break;
                 }
+            }
 
-                Product selectedProduct = null;
-                List<Product> products = Warehouse.Products;
+            if (selectedSupplier != null)
+            {
+                foreach (Product product in selectedSupplier.SuppliedProducts)
+                {
+                    productsOfSupplier.Add(product.ProductId);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Not Found Products Of Supplier");
+            }
 
-                foreach (Product product in products)
+            comboBoxProduct.DataSource = productsOfSupplier;
+
+            QuantityTextOrder.Text = "0";
+
+            TotalText.Text = "0";
+        }
+        private void comboBoxProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string productId = comboBoxProduct.SelectedItem?.ToString();
+
+            if (!string.IsNullOrEmpty(productId))
+            {
+                foreach (Product product in Warehouse.Products)
                 {
                     if (product.ProductId == productId)
                     {
-                        selectedProduct = product;
+                        nameProduct.Text = product.Name;
+                        QuantityTextOrder.Text = product.Quantity.ToString();
+                        TotalText.Text = product.Price.ToString();
+                        break;
+                    }
+                }
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<Product> products = new List<Product>();
+            List<Supplier> suppliers = Supplier;
+
+            string orderId = OrderIDText.Text.Trim();
+            string productId = comboBoxProduct.SelectedItem?.ToString();
+            string quantity = QuantityTextOrder.Text.Trim();
+            string total = TotalText.Text.Trim();
+            string status = "Pending";
+            string supplierName = comboBoxSupplier.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(orderId) || string.IsNullOrEmpty(productId) ||
+                string.IsNullOrEmpty(quantity) || string.IsNullOrEmpty(total) ||
+                string.IsNullOrEmpty(status))
+            {
+                MessageBox.Show("Not Found Information");
+                return;
+            }
+
+            if (!int.TryParse(quantity, out int quantityInt) || quantityInt <= 0)
+            {
+                MessageBox.Show("Quantity Not Found");
+                return;
+            }
+
+            Product selectedProduct = GetProductById(productId); 
+            if (selectedProduct == null)
+            {
+                MessageBox.Show("Not Found Product");
+                return;
+            }
+
+            selectedProduct.Quantity = int.Parse(quantity);
+            selectedProduct.Price = double.Parse(total);
+
+            Supplier supplier = null;
+            foreach (Supplier sup in suppliers)
+            {
+                if (sup.Name == supplierName)
+                {
+                    supplier = sup;
+                    break;
+                }
+            }
+
+            PurchaseOrder existingOrder = null;
+            foreach (PurchaseOrder order in PurchaseOrder)
+            {
+                if (order.OrderId == orderId)
+                {
+                    existingOrder = order;
+                    break;
+                }
+            }
+
+            if (existingOrder != null)
+            {
+                bool productExistsInOrder = false;
+                foreach (Product productInOrder in existingOrder.OrderedProducts)
+                {
+                    if (productInOrder.ProductId == selectedProduct.ProductId)
+                    {
+                        productInOrder.Quantity += quantityInt;
+                        productExistsInOrder = true;
                         break;
                     }
                 }
 
-                if (selectedProduct == null)
+                if (!productExistsInOrder)
                 {
-                    MessageBox.Show("Product not found.");
-                    return;
+                    existingOrder.OrderedProducts.Add(selectedProduct);
                 }
-                else
-                {
-                    selectedProduct.Quantity = quantity_add_order;
-                    selectedProduct.Price = totalPrice;
-                }
+                int orderspro = 1;
 
-                Supplier selectedSupplier = null;
-                List<Supplier> suppliers = Supplier;
-
-                foreach (Supplier supplier in suppliers)
+                if (int.TryParse(productsOrder.Text, out orderspro))
                 {
-                    foreach (Product suppliedProduct in supplier.SuppliedProducts)
-                    {
-                        if (suppliedProduct.ProductId == productId)
-                        {
-                            selectedSupplier = supplier;
-                            break;
-                        }
-                    }
-                    if (selectedSupplier != null)
-                    {
-                        break;
-                    }
+                    orderspro++;
                 }
 
-                if (selectedSupplier == null)
-                {
-                    MessageBox.Show("Supplier not found.");
-                    return;
-                }
+                productsOrder.Text = orderspro.ToString(); 
+                MessageBox.Show("Product added to existing order.");
+            }
+            else
+            {
+                products.Add(selectedProduct);
 
-                PurchaseOrder newOrder = new PurchaseOrder(
-                    orderId,
-                    selectedSupplier,
-                    status,
-                    new List<Product>() { selectedProduct }
-                );
+                PurchaseOrder newOrder = new PurchaseOrder(orderId, supplier, status, products);
 
                 PurchaseOrder.Add(newOrder);
-                OrderChangeAdd?.Invoke();
 
-                MessageBox.Show("Successfull");
+                MessageBox.Show("New order created successfully");
+
+                productsOrder.Text = "1";
+            }
+        }
+        private void DoneButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Are You Sure", "", MessageBoxButtons.YesNo);
+            if (DialogResult == DialogResult.Yes)
+            {
                 OrderChangeAdd?.Invoke();
                 this.Close();
             }
-
         }
     }
 }
