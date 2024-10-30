@@ -54,9 +54,9 @@ namespace Inventory_Management
             OrderManager = orderManager;
             SalesInvoice = salesInvoice;
             Report = report;
-            ShowTransactionInfo();
+            ShowInvoiceInfo();
         }
-        public void ShowTransactionInfo()
+        public void ShowInvoiceInfo()
         {
             dGV_Transaction.CurrentCell = null;
 
@@ -64,7 +64,7 @@ namespace Inventory_Management
 
             DataTable dt = new DataTable();
 
-            dt.Columns.Add("ID");
+            dt.Columns.Add("Invoice ID");
             dt.Columns.Add("Customer ID");
             dt.Columns.Add("Customer Name");
             dt.Columns.Add("Product ID");
@@ -79,7 +79,7 @@ namespace Inventory_Management
                 foreach (Product product in salesInvoices1.SoldProducts)
                 {
                     DataRow row = dt.NewRow();
-                    row["ID"] = salesInvoices1.InvoiceId;
+                    row["Invoice ID"] = salesInvoices1.InvoiceId;
                     row["Customer ID"] = salesInvoices1.Customer.CustomerId;
                     row["Customer Name"] = salesInvoices1.Customer.Name;
                     row["Product ID"] = product.ProductId;
@@ -96,86 +96,94 @@ namespace Inventory_Management
             dGV_Transaction.DataSource = dt;
         }
 
-        private void Return_Order_Click(object sender, EventArgs e)
+        private void ShowReturnInfo()
         {
             List<ReturnOrder> returnOrders = ReturnOrder;
-            List<SalesInvoice> salesInvoices = SalesInvoice;
 
             DataTable dt = new DataTable();
 
-            if (ChangeDataView)
+            dGV_Transaction.CurrentCell = null;
+
+            dt.Columns.Add("Return ID");
+            dt.Columns.Add("Product ID");
+            dt.Columns.Add("Product Name");
+            dt.Columns.Add("Category");
+            dt.Columns.Add("Quantity");
+            dt.Columns.Add("Refund");
+            dt.Columns.Add("Reason");
+            dt.Columns.Add("Date");
+            dt.Columns.Add("Status");
+
+            foreach (ReturnOrder returnOrder1 in ReturnOrder)
             {
-                dGV_Transaction.CurrentCell = null;
+                DataRow row = dt.NewRow();
+                row["Return ID"] = returnOrder1.ReturnOrderId;
+                row["Product ID"] = returnOrder1.Product.ProductId;
+                row["Product Name"] = returnOrder1.Product.Name;
+                row["Category"] = returnOrder1.Product.Category;
+                row["Quantity"] = returnOrder1.Product.Quantity;
+                row["Refund"] = returnOrder1.Product.Price;
+                row["Reason"] = returnOrder1.Reason;
+                row["Date"] = returnOrder1.ReturnDate.ToString("dd/MM/yyyy");
+                row["Status"] = returnOrder1.Status;
 
-                button_Return_Order.Text = "Return Order";
-
-                dt.Columns.Add("ID");
-                dt.Columns.Add("Customer ID");
-                dt.Columns.Add("Customer Name");
-                dt.Columns.Add("Product ID");
-                dt.Columns.Add("Product Name");
-                dt.Columns.Add("Category");
-                dt.Columns.Add("Quantity");
-                dt.Columns.Add("Paid");
-                dt.Columns.Add("Status");
-
-                foreach (SalesInvoice salesInvoices1 in SalesInvoice)
-                {
-                    foreach (Product product in salesInvoices1.SoldProducts)
-                    {
-                        DataRow row = dt.NewRow();
-                        row["ID"] = salesInvoices1.InvoiceId;
-                        row["Customer ID"] = salesInvoices1.Customer.CustomerId;
-                        row["Customer Name"] = salesInvoices1.Customer.Name;
-                        row["Product ID"] = product.ProductId;
-                        row["Product Name"] = product.Name;
-                        row["Category"] = product.Category;
-                        row["Quantity"] = product.Quantity;
-                        row["Paid"] = product.Price;
-                        row["Status"] = salesInvoices1.PaymentStatus;
-
-                        dt.Rows.Add(row);
-                    }
-                }
+                dt.Rows.Add(row);
             }
-            else
+
+            dGV_Transaction.DataSource = dt;
+        }
+
+        private void ShowPurchaseInfo()
+        {
+            dGV_Transaction.CurrentCell = null;
+
+            List<PurchaseOrder> purchaseOrders = PurchaseOrder;
+
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Purchase ID");
+            dt.Columns.Add("Supplier ID");
+            dt.Columns.Add("Supplier Name");
+            dt.Columns.Add("Product ID");
+            dt.Columns.Add("Product Name");
+            dt.Columns.Add("Category");
+            dt.Columns.Add("Quantity");
+            dt.Columns.Add("Paid");
+            dt.Columns.Add("Status");
+
+            foreach (PurchaseOrder purchaseOrders1 in PurchaseOrder)
             {
-                dGV_Transaction.CurrentCell = null;
-
-                button_Return_Order.Text = "Invoice";
-
-                dt.Columns.Add("ID");
-                dt.Columns.Add("Product ID");
-                dt.Columns.Add("Product Name");
-                dt.Columns.Add("Category");
-                dt.Columns.Add("Quantity");
-                dt.Columns.Add("Refund");
-                dt.Columns.Add("Reason");
-                dt.Columns.Add("Date");
-                dt.Columns.Add("Status");
-
-                foreach (ReturnOrder returnOrder1 in ReturnOrder)
+                foreach (Product product in purchaseOrders1.OrderedProducts)
                 {
                     DataRow row = dt.NewRow();
-                    row["ID"] = returnOrder1.ReturnOrderId;
-                    row["Product ID"] = returnOrder1.Product.ProductId;
-                    row["Product Name"] = returnOrder1.Product.Name;
-                    row["Category"] = returnOrder1.Product.Category;
-                    row["Quantity"] = returnOrder1.Product.Quantity;
-                    row["Refund"] = returnOrder1.Product.Price;
-                    row["Reason"] = returnOrder1.Reason;
-                    row["Date"] = returnOrder1.ReturnDate.ToString("dd/MM/yyyy");
-                    row["Status"] = returnOrder1.Status;
+                    row["Purchase ID"] = purchaseOrders1.OrderId;
+                    row["Supplier ID"] = purchaseOrders1.Supplier.SupplierId;
+                    row["Supplier Name"] = purchaseOrders1.Supplier.Name;
+                    row["Product ID"] = product.ProductId;
+                    row["Product Name"] = product.Name;
+                    row["Category"] = product.Category;
+                    row["Quantity"] = product.Quantity;
+                    row["Paid"] = product.Price;
+                    row["Status"] = purchaseOrders1.Status;
 
                     dt.Rows.Add(row);
                 }
             }
 
             dGV_Transaction.DataSource = dt;
-
-            ChangeDataView = !ChangeDataView;
         }
 
+        private void Return_Order_Click(object sender, EventArgs e)
+        {
+
+            button_Return_Order.Text = "Return Order";
+            ShowInvoiceInfo();
+        }
+        private void salesinvoice_Click(object sender, EventArgs e)
+        {
+            button_Return_Order.Text = "Invoice";
+            ShowReturnInfo();
+        }
         private void return_Profile_Click(object sender, EventArgs e)
         {
             Profile profile = new Profile(
@@ -206,14 +214,14 @@ namespace Inventory_Management
 
             if (string.IsNullOrEmpty(search))
             {
-                ShowTransactionInfo();
+                ShowInvoiceInfo();
                 return;
             }
 
             DataTable dt = new DataTable();
 
             bool found = false;
-            dt.Columns.Add("ID");
+            dt.Columns.Add("Invoice ID");
             dt.Columns.Add("Customer ID");
             dt.Columns.Add("Customer Name");
             dt.Columns.Add("Product ID");
@@ -232,7 +240,7 @@ namespace Inventory_Management
                     foreach (Product product in invoice.SoldProducts)
                     {
                         DataRow row = dt.NewRow();
-                        row["ID"] = invoice.InvoiceId;
+                        row["Invoice ID"] = invoice.InvoiceId;
                         row["Customer ID"] = invoice.Customer.CustomerId;
                         row["Customer Name"] = invoice.Customer.Name;
                         row["Product ID"] = product.ProductId;
@@ -253,7 +261,7 @@ namespace Inventory_Management
             {
                 dt.Clear();
                 dt.Columns.Clear();
-                dt.Columns.Add("ID");
+                dt.Columns.Add("Invoice ID");
                 dt.Columns.Add("Supplier ID");
                 dt.Columns.Add("Supplier Name");
                 dt.Columns.Add("Product ID");
@@ -272,7 +280,7 @@ namespace Inventory_Management
                         foreach (Product product in order.OrderedProducts)
                         {
                             DataRow row = dt.NewRow();
-                            row["ID"] = order.OrderId;
+                            row["Invoice ID"] = order.OrderId;
                             row["Supplier ID"] = order.Supplier.SupplierId;
                             row["Supplier Name"] = order.Supplier.Name;
                             row["Product ID"] = product.ProductId;
@@ -294,7 +302,7 @@ namespace Inventory_Management
             {
                 dt.Clear();
                 dt.Columns.Clear();
-                dt.Columns.Add("ID");
+                dt.Columns.Add("Return ID");
                 dt.Columns.Add("Product ID");
                 dt.Columns.Add("Product Name");
                 dt.Columns.Add("Category");
@@ -311,7 +319,7 @@ namespace Inventory_Management
                         returnOrder.Product.Name.ToLower() == search)
                     {
                         DataRow row = dt.NewRow();
-                        row["ID"] = returnOrder.ReturnOrderId;
+                        row["Return ID"] = returnOrder.ReturnOrderId;
                         row["Product ID"] = returnOrder.Product.ProductId;
                         row["Product Name"] = returnOrder.Product.Name;
                         row["Category"] = returnOrder.Product.Category;
@@ -333,42 +341,133 @@ namespace Inventory_Management
 
         private void button_Supplier_Transaction_Click(object sender, EventArgs e)
         {
-            dGV_Transaction.CurrentCell = null;
-
-            List<PurchaseOrder> purchaseOrders = PurchaseOrder;
-
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("ID");
-            dt.Columns.Add("Supplier ID");
-            dt.Columns.Add("Supplier Name");
-            dt.Columns.Add("Product ID");
-            dt.Columns.Add("Product Name");
-            dt.Columns.Add("Category");
-            dt.Columns.Add("Quantity");
-            dt.Columns.Add("Paid");
-            dt.Columns.Add("Status");
-
-            foreach (PurchaseOrder purchaseOrders1 in PurchaseOrder)
+            ShowPurchaseInfo();
+        }
+        private void UpdateInvoiceStatus(string id, string newStatus)
+        {
+            if (newStatus != "Done" && newStatus != "Processing" && newStatus != "Pending")
             {
-                foreach (Product product in purchaseOrders1.OrderedProducts)
-                {
-                    DataRow row = dt.NewRow();
-                    row["ID"] = purchaseOrders1.OrderId;
-                    row["Supplier ID"] = purchaseOrders1.Supplier.SupplierId;
-                    row["Supplier Name"] = purchaseOrders1.Supplier.Name;
-                    row["Product ID"] = product.ProductId;
-                    row["Product Name"] = product.Name;
-                    row["Category"] = product.Category;
-                    row["Quantity"] = product.Quantity;
-                    row["Paid"] = product.Price;
-                    row["Status"] = purchaseOrders1.Status;
+                MessageBox.Show("Not Found Status");
+                return;
+            }
 
-                    dt.Rows.Add(row);
+            bool found = false;
+
+            foreach (SalesInvoice invoice in SalesInvoice)
+            {
+                if (invoice.InvoiceId == id)
+                {
+                    invoice.PaymentStatus = newStatus;
+                    found = true;
+                    ShowInvoiceInfo();
+                    break;
                 }
             }
 
-            dGV_Transaction.DataSource = dt;
+            if (!found)
+            {
+                MessageBox.Show("Error");
+            }
         }
+        private void UpdateReturnStatus(string id, string newStatus)
+        {
+            if (newStatus != "Done" && newStatus != "Processing" && newStatus != "Pending")
+            {
+                MessageBox.Show("Not Found Status");
+                return;
+            }
+
+            bool found = false;
+
+            foreach (ReturnOrder returnOrder in ReturnOrder)
+            {
+                if (returnOrder.ReturnOrderId == id)
+                {
+                    returnOrder.Status = newStatus;
+                    found = true;
+                    ShowReturnInfo();
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                MessageBox.Show("Error");
+            }
+        }
+        private void UpdatePurchaseStatus(string id, string newStatus)
+        {
+            if (newStatus != "Done" && newStatus != "Processing" && newStatus != "Pending")
+            {
+                MessageBox.Show("Not Found Status");
+                return;
+            }
+
+            bool found = false;
+
+            foreach (PurchaseOrder order in PurchaseOrder)
+            {
+                if (order.OrderId == id)
+                {
+                    order.Status = newStatus;
+                    found = true;
+                    ShowPurchaseInfo();
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                MessageBox.Show("Error");
+            }
+        }
+        private void dGV_Transaction_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            int statusColumnIndex = dGV_Transaction.Columns["Status"].Index;
+
+            DialogResult = MessageBox.Show("Are You Sure", "", MessageBoxButtons.YesNo);
+
+            if (DialogResult == DialogResult.Yes)
+            {
+                if (e.ColumnIndex == statusColumnIndex)
+                {
+                    string newStatus = dGV_Transaction.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+                    DataGridViewRow row = dGV_Transaction.Rows[e.RowIndex];
+
+                    if (dGV_Transaction.Columns["Invoice ID"] != null)
+                    {
+                        string invoiceId = dGV_Transaction.Rows[e.RowIndex].Cells["Invoice ID"].Value.ToString();
+                        if (!string.IsNullOrEmpty(invoiceId))
+                        {
+                            UpdateInvoiceStatus(invoiceId, newStatus);
+                            return;
+                        }
+                    }
+
+                    if (dGV_Transaction.Columns["Purchase ID"] != null)
+                    {
+                        string purchaseId = dGV_Transaction.Rows[e.RowIndex].Cells["Purchase ID"].Value.ToString();
+                        if (!string.IsNullOrEmpty(purchaseId))
+                        {
+                            UpdatePurchaseStatus(purchaseId, newStatus);
+                            return;
+                        }
+                    }
+
+                    if (dGV_Transaction.Columns["Return ID"] != null)
+                    {
+                        string returnId = dGV_Transaction.Rows[e.RowIndex].Cells["Return ID"].Value.ToString();
+                        if (!string.IsNullOrEmpty(returnId))
+                        {
+                            UpdateReturnStatus(returnId, newStatus);
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }
