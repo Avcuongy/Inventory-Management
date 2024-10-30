@@ -95,7 +95,6 @@ namespace Inventory_Management
 
             dGV_Transaction.DataSource = dt;
         }
-
         private void ShowReturnInfo()
         {
             List<ReturnOrder> returnOrders = ReturnOrder;
@@ -132,7 +131,6 @@ namespace Inventory_Management
 
             dGV_Transaction.DataSource = dt;
         }
-
         private void ShowPurchaseInfo()
         {
             dGV_Transaction.CurrentCell = null;
@@ -172,17 +170,17 @@ namespace Inventory_Management
 
             dGV_Transaction.DataSource = dt;
         }
-
         private void Return_Order_Click(object sender, EventArgs e)
         {
-
-            button_Return_Order.Text = "Return Order";
-            ShowInvoiceInfo();
+            ShowReturnInfo();
         }
         private void salesinvoice_Click(object sender, EventArgs e)
         {
-            button_Return_Order.Text = "Invoice";
-            ShowReturnInfo();
+            ShowInvoiceInfo();
+        }
+        private void button_Supplier_Transaction_Click(object sender, EventArgs e)
+        {
+            ShowPurchaseInfo();
         }
         private void return_Profile_Click(object sender, EventArgs e)
         {
@@ -200,7 +198,6 @@ namespace Inventory_Management
             profile.Show();
             this.Close();
         }
-
         private void button_Search_Click(object sender, EventArgs e)
         {
             dGV_Transaction.CurrentCell = null;
@@ -338,14 +335,9 @@ namespace Inventory_Management
 
             dGV_Transaction.DataSource = dt;
         }
-
-        private void button_Supplier_Transaction_Click(object sender, EventArgs e)
-        {
-            ShowPurchaseInfo();
-        }
         private void UpdateInvoiceStatus(string id, string newStatus)
         {
-            if (newStatus != "Done" && newStatus != "Processing" && newStatus != "Pending")
+            if (newStatus != "Unpaid" && newStatus != "Paid")
             {
                 MessageBox.Show("Not Found Status");
                 return;
@@ -467,7 +459,5 @@ namespace Inventory_Management
                 }
             }
         }
-
-
     }
 }
