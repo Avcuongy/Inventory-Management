@@ -15,31 +15,34 @@ namespace Inventory_Management
         private List<Product> products = new List<Product>();
         private List<Employee> employees = new List<Employee>();
         private List<Inventory> inventory = new List<Inventory>();
-        public Warehouse(List<Product> products, List<Employee> employees, List<Inventory> inventory)
+        private List<Category> categories = new List<Category>();
+        public Warehouse(List<Product> products, List<Employee> employees, List<Inventory> inventory, List<Category> categories)
         {
             this.products = products;
             this.employees = employees;
             this.inventory = inventory;
+            this.categories = categories;
         }
         public List<Product> Products { get => products; set => products = value; }
         public List<Employee> Employees { get => employees; set => employees = value; }
         public List<Inventory> Inventory { get => inventory; set => inventory = value; }
+        public List<Category> Categories { get => categories; set => categories = value; }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("Products", Products, typeof(List<Product>));
             info.AddValue("Employees", Employees, typeof(List<Employee>));
             info.AddValue("Inventory", Inventory, typeof(List<Inventory>));
+            info.AddValue("Categories", Categories, typeof(List<Category>));
         }
         public Warehouse(SerializationInfo info, StreamingContext context)
         {
             Products = (List<Product>)info.GetValue("Products", typeof(List<Product>));
             Employees = (List<Employee>)info.GetValue("Employees", typeof(List<Employee>));
             Inventory = (List<Inventory>)info.GetValue("Inventory", typeof(List<Inventory>));
+            Categories = (List<Category>)info.GetValue("Categories", typeof(List<Category>));
         }
-        public Warehouse()
-        {
-        }
+        public Warehouse() {}
         public bool CheckUser(string username, string password)
         {
             foreach (Employee employee in employees)

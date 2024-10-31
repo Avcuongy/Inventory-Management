@@ -19,10 +19,10 @@ namespace Inventory_Management
 
         public Category() { }
 
-        public Category(string categoryName)
+        public Category(string categoryName, List<Product> products)
         {
             this.categoryName = categoryName;
-            this.products = new List<Product>();
+            this.products = products;
         }
 
         public Category(SerializationInfo info, StreamingContext context)

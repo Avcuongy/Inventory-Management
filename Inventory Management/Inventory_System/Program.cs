@@ -129,6 +129,46 @@ namespace Inventory_Management
                     )
                 };
 
+                // Categories
+                warehouse.Categories = new List<Category>
+                {
+                    new Category("Phones", new List<Product>
+                    {
+                        new Phone("P1", "Iphone 16 Pro", "Phone", 1, 199),
+                        new Phone("P2", "One Plus Ace 3v", "Phone", 1, 299),
+                        new Phone("P7", "Iphone 16 Pro Plus", "Phone", 1, 390),
+                        new Phone("P11", "Samsung Galaxy S23", "Phone", 1, 999),
+                        new Phone("P16", "Google Pixel 8", "Phone", 1, 899)
+                    }),
+                    new Category("Tablets", new List<Product>
+                    {
+                        new Tablet("P3", "Xiaomi pad 6", "Tablet", 1, 399),
+                        new Tablet("P8", "Ipad Gen 6", "Tablet", 1, 149),
+                        new Tablet("P12", "Microsoft Surface Pro", "Tablet", 1, 799),
+                        new Tablet("P17", "Lenovo Tab P11", "Tablet", 1, 499)
+                    }),
+                    new Category("Keyboards", new List<Product>
+                    {
+                        new Keyboard("P4", "Cidoo", "Keyboard", 1, 890),
+                        new Keyboard("P9", "Logitech K102", "Keyboard", 1, 690),
+                        new Keyboard("P14", "Razer BlackWidow", "Keyboard", 1, 2200),
+                        new Keyboard("P19", "Corsair K70", "Keyboard", 1, 2500)
+                    }),
+                    new Category("Headphones", new List<Product>
+                    {
+                        new Headphone("P5", "Tanjim Zero", "Headphone", 1, 199),
+                        new Headphone("P10", "Moondrop Jiu", "Headphone", 1, 299),
+                        new Headphone("P15", "Sony WH-1000XM4", "Headphone", 1, 400),
+                        new Headphone("P20", "Bose 700", "Headphone", 1, 450)
+                    }),
+                    new Category("Mice", new List<Product>
+                    {
+                        new Mouse("P6", "G304", "Mouse", 1, 490),
+                        new Mouse("P13", "Logitech MX Master 3", "Mouse", 1, 1200),
+                        new Mouse("P18", "Razer DeathAdder", "Mouse", 1, 800)
+                    })
+                };
+
                 // Supplier
                 suppliers = new List<Supplier>()
                 {
