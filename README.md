@@ -35,6 +35,9 @@ This project aims to simplify inventory management tasks using a C# Windows Form
 
 - **User-Friendly Interface:** Designed with a focus on ease of navigation and functionality.
 - **Stock Updates:** Changes in stock levels are reflected.
+- **Order Management:** Create and track purchase orders, manage supplier relationships and monitor order status (Pending, Completed, etc.)
+- **Product Management:** Add and update product information, track product quantities and monitor product prices
+- **Reporting System:** Generate and view inventory reports
 
 ---
 
@@ -42,6 +45,7 @@ This project aims to simplify inventory management tasks using a C# Windows Form
 
 - **Expand Functionality**: Introducing features such as **supplier management, ...**
 - **Enhanced Security**: Implementing advanced user authentication and access controls.
+- **Data Analytics**: Inventory forecasting, sales trend analysis or performance metrics,...
 
 ---
 
