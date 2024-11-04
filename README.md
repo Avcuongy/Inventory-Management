@@ -47,7 +47,9 @@ This project aims to simplify inventory management tasks using a C# Windows Form
 
 ## Installation Guide
 
-- <b>Update Soon ... !</b>
+- Viết thêm cái gì đó, ...
+- To download the installation, click the link below:
+[Download](https://mega.nz/file/dqdzQbyQ#RL_Re3gYhWbsh3nZ4SeE1yA8YQA8cJd_WcTIUka2aQc)
 
 ---
 
