@@ -203,6 +203,7 @@
             this.Name = "Product_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrackerX";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Product_Menu_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

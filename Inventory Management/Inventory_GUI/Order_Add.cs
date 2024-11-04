@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Inventory_Management
 {
@@ -303,6 +305,27 @@ namespace Inventory_Management
                 OrderChangeAdd?.Invoke();
                 this.Close();
             }
+        }
+
+        private void Order_Add_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DataWrapper dataWrapper = new DataWrapper
+            {
+                Warehouse = Warehouse,
+                Suppliers = Supplier,
+                PurchaseOrders = PurchaseOrder,
+                ReturnOrders = ReturnOrder,
+                Customers = Customer,
+                OrderManager = OrderManager,
+                SalesInvoices = SalesInvoice,
+                Report = Report
+            };
+
+            string filePath = "Inventory_Management.dat";
+
+            string fileJson = JsonSerializer.Serialize(dataWrapper, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(filePath, fileJson);
         }
     }
 }

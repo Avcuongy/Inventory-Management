@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transaction_Menu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.salesinvoice = new System.Windows.Forms.Button();
             this.button_Supplier_Transaction = new System.Windows.Forms.Button();
             this.button_Return_Order = new System.Windows.Forms.Button();
             this.button_Search = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.return_Profile = new System.Windows.Forms.PictureBox();
-            this.salesinvoice = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Transaction)).BeginInit();
             this.panel3.SuspendLayout();
@@ -65,6 +65,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1336, 624);
             this.panel1.TabIndex = 25;
+            // 
+            // salesinvoice
+            // 
+            this.salesinvoice.BackColor = System.Drawing.Color.White;
+            this.salesinvoice.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesinvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.salesinvoice.Location = new System.Drawing.Point(576, 80);
+            this.salesinvoice.Name = "salesinvoice";
+            this.salesinvoice.Size = new System.Drawing.Size(240, 48);
+            this.salesinvoice.TabIndex = 13;
+            this.salesinvoice.TabStop = false;
+            this.salesinvoice.Text = "SalesInvoice";
+            this.salesinvoice.UseVisualStyleBackColor = false;
+            this.salesinvoice.Click += new System.EventHandler(this.salesinvoice_Click);
             // 
             // button_Supplier_Transaction
             // 
@@ -124,23 +138,23 @@
             this.dGV_Transaction.AllowUserToResizeRows = false;
             this.dGV_Transaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGV_Transaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGV_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Transaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGV_Transaction.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGV_Transaction.DefaultCellStyle = dataGridViewCellStyle2;
             this.dGV_Transaction.Location = new System.Drawing.Point(24, 136);
             this.dGV_Transaction.Name = "dGV_Transaction";
             this.dGV_Transaction.RowHeadersVisible = false;
@@ -202,20 +216,6 @@
             this.return_Profile.TabStop = false;
             this.return_Profile.Click += new System.EventHandler(this.return_Profile_Click);
             // 
-            // salesinvoice
-            // 
-            this.salesinvoice.BackColor = System.Drawing.Color.White;
-            this.salesinvoice.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salesinvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.salesinvoice.Location = new System.Drawing.Point(576, 80);
-            this.salesinvoice.Name = "salesinvoice";
-            this.salesinvoice.Size = new System.Drawing.Size(240, 48);
-            this.salesinvoice.TabIndex = 13;
-            this.salesinvoice.TabStop = false;
-            this.salesinvoice.Text = "SalesInvoice";
-            this.salesinvoice.UseVisualStyleBackColor = false;
-            this.salesinvoice.Click += new System.EventHandler(this.salesinvoice_Click);
-            // 
             // Transaction_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,6 +230,7 @@
             this.Name = "Transaction_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrackerX";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Transaction_Menu_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Transaction)).EndInit();

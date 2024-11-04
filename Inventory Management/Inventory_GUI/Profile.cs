@@ -152,5 +152,26 @@ namespace Inventory_Management
             this.Close();
             report_Menu.Show();
         }
+
+        private void Profile_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DataWrapper dataWrapper = new DataWrapper
+            {
+                Warehouse = Warehouse,
+                Suppliers = Supplier,
+                PurchaseOrders = PurchaseOrder,
+                ReturnOrders = ReturnOrder,
+                Customers = Customer,
+                OrderManager = OrderManager,
+                SalesInvoices = SalesInvoice,
+                Report = Report
+            };
+
+            string filePath = "Inventory_Management.dat";
+
+            string fileJson = JsonSerializer.Serialize(dataWrapper, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(filePath, fileJson);
+        }
     }
 }

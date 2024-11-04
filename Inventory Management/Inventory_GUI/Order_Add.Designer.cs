@@ -43,6 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.statusText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
             this.productsOrder = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.statusText = new System.Windows.Forms.TextBox();
             this.panel_Update_Product.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -240,6 +240,19 @@
             this.panel1.Size = new System.Drawing.Size(704, 448);
             this.panel1.TabIndex = 4;
             // 
+            // statusText
+            // 
+            this.statusText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.statusText.Location = new System.Drawing.Point(8, 328);
+            this.statusText.Name = "statusText";
+            this.statusText.ReadOnly = true;
+            this.statusText.Size = new System.Drawing.Size(680, 28);
+            this.statusText.TabIndex = 26;
+            this.statusText.TabStop = false;
+            this.statusText.Text = "Pending";
+            this.statusText.Visible = false;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
@@ -384,19 +397,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Order";
             // 
-            // statusText
-            // 
-            this.statusText.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.statusText.Location = new System.Drawing.Point(8, 328);
-            this.statusText.Name = "statusText";
-            this.statusText.ReadOnly = true;
-            this.statusText.Size = new System.Drawing.Size(680, 28);
-            this.statusText.TabIndex = 26;
-            this.statusText.TabStop = false;
-            this.statusText.Text = "Pending";
-            this.statusText.Visible = false;
-            // 
             // Order_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -409,6 +409,7 @@
             this.Name = "Order_Add";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TrackerX";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Order_Add_FormClosed);
             this.panel_Update_Product.ResumeLayout(false);
             this.panel_Update_Product.PerformLayout();
             this.panel2.ResumeLayout(false);

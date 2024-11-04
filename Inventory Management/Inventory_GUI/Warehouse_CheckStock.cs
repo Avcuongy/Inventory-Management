@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Inventory_Management
 {
@@ -100,6 +102,27 @@ namespace Inventory_Management
             {
                 MessageBox.Show("Something went wrong");
             }
+        }
+
+        private void Warehouse_CheckStock_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DataWrapper dataWrapper = new DataWrapper
+            {
+                Warehouse = Warehouse,
+                Suppliers = Supplier,
+                PurchaseOrders = PurchaseOrder,
+                ReturnOrders = ReturnOrder,
+                Customers = Customer,
+                OrderManager = OrderManager,
+                SalesInvoices = SalesInvoice,
+                Report = Report
+            };
+
+            string filePath = "Inventory_Management.dat";
+
+            string fileJson = JsonSerializer.Serialize(dataWrapper, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(filePath, fileJson);
         }
     }
 }

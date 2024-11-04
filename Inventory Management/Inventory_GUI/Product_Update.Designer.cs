@@ -41,6 +41,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
             this.IdproductCombo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
             this.panel_Update_Product.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -200,6 +200,16 @@
             this.panel1.Size = new System.Drawing.Size(704, 360);
             this.panel1.TabIndex = 4;
             // 
+            // comboBoxSupplier
+            // 
+            this.comboBoxSupplier.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.comboBoxSupplier.FormattingEnabled = true;
+            this.comboBoxSupplier.Location = new System.Drawing.Point(8, 296);
+            this.comboBoxSupplier.Name = "comboBoxSupplier";
+            this.comboBoxSupplier.Size = new System.Drawing.Size(680, 28);
+            this.comboBoxSupplier.TabIndex = 27;
+            // 
             // IdproductCombo
             // 
             this.IdproductCombo.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,16 +321,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Products";
             // 
-            // comboBoxSupplier
-            // 
-            this.comboBoxSupplier.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.comboBoxSupplier.FormattingEnabled = true;
-            this.comboBoxSupplier.Location = new System.Drawing.Point(8, 296);
-            this.comboBoxSupplier.Name = "comboBoxSupplier";
-            this.comboBoxSupplier.Size = new System.Drawing.Size(680, 28);
-            this.comboBoxSupplier.TabIndex = 27;
-            // 
             // Product_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -334,6 +334,7 @@
             this.Name = "Product_Update";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TrackerX";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Product_Update_FormClosed);
             this.panel_Update_Product.ResumeLayout(false);
             this.panel_Update_Product.PerformLayout();
             this.panel4.ResumeLayout(false);

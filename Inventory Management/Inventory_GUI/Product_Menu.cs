@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.Json;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Inventory_Management
 {
@@ -207,6 +209,27 @@ namespace Inventory_Management
                 Report);
             product_Update.ProductChangeHandlerUpdate += ShowData;
             product_Update.ShowDialog();
+        }
+
+        private void Product_Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DataWrapper dataWrapper = new DataWrapper
+            {
+                Warehouse = Warehouse,
+                Suppliers = Supplier,
+                PurchaseOrders = PurchaseOrder,
+                ReturnOrders = ReturnOrder,
+                Customers = Customer,
+                OrderManager = OrderManager,
+                SalesInvoices = SalesInvoice,
+                Report = Report
+            };
+
+            string filePath = "Inventory_Management.dat";
+
+            string fileJson = JsonSerializer.Serialize(dataWrapper, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(filePath, fileJson);
         }
     }
 }

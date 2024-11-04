@@ -5,7 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -278,6 +280,27 @@ namespace Inventory_Management
         private void Warehouse_Import_StockLevelChanged()
         {
             ShowDataGridView();
+        }
+
+        private void Warehouse_Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DataWrapper dataWrapper = new DataWrapper
+            {
+                Warehouse = Warehouse,
+                Suppliers = Supplier,
+                PurchaseOrders = PurchaseOrder,
+                ReturnOrders = ReturnOrder,
+                Customers = Customer,
+                OrderManager = OrderManager,
+                SalesInvoices = SalesInvoice,
+                Report = Report
+            };
+
+            string filePath = "Inventory_Management.dat";
+
+            string fileJson = JsonSerializer.Serialize(dataWrapper, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(filePath, fileJson);
         }
     }
 }

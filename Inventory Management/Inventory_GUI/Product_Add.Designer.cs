@@ -334,6 +334,7 @@
             this.Name = "Product_Add";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TrackerX";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Product_Add_FormClosed);
             this.panel_Update_Product.ResumeLayout(false);
             this.panel_Update_Product.PerformLayout();
             this.panel4.ResumeLayout(false);
