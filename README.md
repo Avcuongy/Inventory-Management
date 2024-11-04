@@ -48,7 +48,7 @@ This project aims to simplify inventory management tasks using a C# Windows Form
 ## Installation Guide
 
 - Viết thêm cái gì đó, ...
-- To download the installation, click the link below: <a href="https://mega.nz/file/dqdzQbyQ#RL_Re3gYhWbsh3nZ4SeE1yA8YQA8cJd_WcTIUka2aQc" target="_blank" title="Inventory-Management">Mega</a>
+- To download the installation, click the link below: <a href="https://mega.nz/file/l610DIQY#8N2_iQ2jz3FcCg_PgLmevQzULp-Asre0_rWF1qPYH_Y" target="_blank" title="Inventory-Management">Mega</a>
 
 
 ---
