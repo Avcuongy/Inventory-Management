@@ -39,7 +39,7 @@ namespace Inventory_Management
             Report = report;
             ShowInfo();
         }
-        public ProductChangeHandler ProductChangeHandler;
+        public event ProductChangeHandler ProductChangeHandler;
         public string Username { get => _username; set => _username = value; }
         public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
         public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }

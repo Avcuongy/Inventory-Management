@@ -23,5 +23,16 @@ namespace Inventory_Management
         {
             base.GetObjectData(info, context);
         }
+        public override object Clone()
+        {
+            return new Phone
+            {
+                ProductId = this.ProductId,
+                Name = this.Name,
+                Category = this.Category,
+                Quantity = this.Quantity,
+                Price = this.Price
+            };
+        }
     }
 }

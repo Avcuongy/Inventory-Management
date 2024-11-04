@@ -119,7 +119,6 @@ namespace Inventory_Management
             profile.Show();
             this.Close();
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             ShowOrder.CurrentCell = null;
@@ -308,10 +307,6 @@ namespace Inventory_Management
             order_Add.OrderChangeAdd += ShowOrdersInfo;
             order_Add.ShowDialog();
         }
-        public void ShowAddOrder()
-        {
-            ShowOrdersInfo();
-        }
         private void UpdateOrderStatus(string orderId, string newStatus)
         {
             if (newStatus != "Done" && newStatus != "Processing" && newStatus != "Pending")
@@ -354,7 +349,6 @@ namespace Inventory_Management
                 }
             }
         }
-
         private void Order_Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
             DataWrapper dataWrapper = new DataWrapper

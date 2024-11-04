@@ -17,7 +17,7 @@ namespace Inventory_Management
     [JsonDerivedType(typeof(Keyboard), typeDiscriminator: "Keyboard")]
     [JsonDerivedType(typeof(Headphone), typeDiscriminator: "Headphone")]
     [JsonDerivedType(typeof(Mouse), typeDiscriminator: "Mouse")]
-    public abstract class Product : ISerializable
+    public abstract class Product : ISerializable, ICloneable
     {
         private string productId;
         private string name;
@@ -29,7 +29,16 @@ namespace Inventory_Management
         public string Category { get => category; set => category = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public double Price { get => price; set => price = value; }
-        public Product() { }
+
+        [JsonConstructor]
+        public Product(string productId, string name, string category, int quantity, double price)
+        {
+            this.productId = productId;
+            this.name = name;
+            this.category = category;
+            this.quantity = quantity;
+            this.price = price;
+        }
         public Product(SerializationInfo info, StreamingContext context)
         {
             ProductId = info.GetString("ID");
@@ -46,14 +55,7 @@ namespace Inventory_Management
             info.AddValue("Quantity", Quantity);
             info.AddValue("Price", Price);
         }
-        [JsonConstructor]
-        public Product(string productId, string name, string category, int quantity, double price)
-        {
-            this.productId = productId;
-            this.name = name;
-            this.category = category;
-            this.quantity = quantity;
-            this.price = price;
-        }
+        public Product() { }
+        public abstract object Clone();
     }
 }

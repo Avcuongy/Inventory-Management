@@ -43,7 +43,7 @@ namespace Inventory_Management
             comboBoxProduct.SelectedIndexChanged += comboBoxProduct_SelectedIndexChanged;
             QuantityTextOrder.TextChanged += textBox3_TextChanged;
         }
-        public OrderChangeInformation OrderChangeAdd;
+        public event OrderChangeInformation OrderChangeAdd;
         public string Username { get => _username; set => _username = value; }
         public Warehouse Warehouse { get => _warehouse; set => _warehouse = value; }
         public List<Supplier> Supplier { get => _supplier; set => _supplier = value; }
@@ -76,21 +76,6 @@ namespace Inventory_Management
         {
             return $"PD{PurchaseOrder.Count + 1}";
         }
-        private Product GetProductById(string productId)
-        {
-            return Warehouse.Products.Find(product => product.ProductId == productId);
-        }
-        private Supplier GetSupplierForProduct(string productId)
-        {
-            foreach (Supplier supplier in Supplier)
-            {
-                if (supplier.SuppliedProducts.Exists(product => product.ProductId == productId))
-                {
-                    return supplier;
-                }
-            }
-            return null;
-        }
         private int GetQuantity()
         {
             return int.TryParse(QuantityTextOrder.Text, out int quantity) ? quantity : 0;
@@ -104,10 +89,13 @@ namespace Inventory_Management
             string selectedProductId = comboBoxProduct.SelectedItem?.ToString();
             int quantity_add_order = GetQuantity();
 
-            Product product = GetProductById(selectedProductId);
-            if (product != null)
+            foreach (Product product in Warehouse.Products)
             {
-                TotalText.Text = (quantity_add_order > 0 ? product.Price * quantity_add_order : 0).ToString();
+                if (product.ProductId == selectedProductId)
+                {
+                    TotalText.Text = (quantity_add_order > 0 ? product.Price * quantity_add_order : 0).ToString();
+                    break;
+                }
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -145,6 +133,36 @@ namespace Inventory_Management
             {
                 MessageBox.Show("Supplier Not Found");
             }
+        }
+        public Product GetProductById(string productid)
+        {
+            foreach (Product product in Warehouse.Products)
+            {
+                if (product.ProductId == productid)
+                {
+                    if (product is Phone)
+                    {
+                        return (Phone)product.Clone();
+                    }
+                    else if (product is Tablet)
+                    {
+                        return (Tablet)product.Clone();
+                    }
+                    else if (product is Headphone)
+                    {
+                        return (Headphone)product.Clone();
+                    }
+                    else if (product is Mouse)
+                    {
+                        return (Mouse)product.Clone();
+                    }
+                    else if (product is Keyboard)
+                    {
+                        return (Keyboard)product.Clone();
+                    }
+                }
+            }
+            return null;
         }
         public void ShowInfoProductOfSupplier()
         {
@@ -227,7 +245,8 @@ namespace Inventory_Management
                 return;
             }
 
-            Product selectedProduct = GetProductById(productId); 
+            Product selectedProduct = GetProductById(productId);
+
             if (selectedProduct == null)
             {
                 MessageBox.Show("Not Found Product");
@@ -281,7 +300,7 @@ namespace Inventory_Management
                     orderspro++;
                 }
 
-                productsOrder.Text = orderspro.ToString(); 
+                productsOrder.Text = orderspro.ToString();
                 MessageBox.Show("Product added to existing order.");
             }
             else
