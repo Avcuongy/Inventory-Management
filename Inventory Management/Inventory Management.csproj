@@ -68,7 +68,7 @@
     <Compile Include="Inventory_System\Products\Headphone.cs" />
     <Compile Include="Inventory_System\Inventory.cs" />
     <Compile Include="Inventory_System\Products\Keyboard.cs" />
-    <Compile Include="DataWrapper.cs" />
+    <Compile Include="Inventory_System\DataWrapper.cs" />
     <Compile Include="Inventory_GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
