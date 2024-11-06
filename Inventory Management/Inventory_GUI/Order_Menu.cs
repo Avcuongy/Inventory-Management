@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.IO;
+using Inventory_Management.Inventory_System;
 
 namespace Inventory_Management
 {
@@ -62,7 +63,7 @@ namespace Inventory_Management
             ShowOrder.CurrentCell = null;
 
             List<Supplier> suppliers = Supplier;
-            List<PurchaseOrder> purchaseOrders = OrderManager.Orders;
+            List<PurchaseOrder> purchaseOrders = PurchaseOrder;
             List<Product> products = Warehouse.Products;
 
             DataTable dt = new DataTable();
@@ -101,8 +102,9 @@ namespace Inventory_Management
                 }
             }
             ShowOrder.DataSource = dt;
-        }
 
+            ShowOrder.Refresh();
+        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Profile profile = new Profile(
@@ -201,7 +203,6 @@ namespace Inventory_Management
                 ShowOrder.DataSource = dtSupplier;
             }
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             List<Supplier> suppliers = Supplier;
@@ -290,7 +291,6 @@ namespace Inventory_Management
             ChangeDataView = !ChangeDataView; 
 
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Order_Add order_Add = new Order_Add(
@@ -351,23 +351,22 @@ namespace Inventory_Management
         }
         private void Order_Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DataWrapper dataWrapper = new DataWrapper
-            {
-                Warehouse = Warehouse,
-                Suppliers = Supplier,
-                PurchaseOrders = PurchaseOrder,
-                ReturnOrders = ReturnOrder,
-                Customers = Customer,
-                OrderManager = OrderManager,
-                SalesInvoices = SalesInvoice,
-                Report = Report
-            };
+            DataWarehouse dataWarehouse = new DataWarehouse(Warehouse, Supplier, Customer);
+            DataSales dataSales = new DataSales(SalesInvoice, Report);
+            DataOrder dataOrder = new DataOrder(PurchaseOrder, ReturnOrder, OrderManager);
 
-            string filePath = "Inventory_Management.dat";
+            string pathDataWarehouse = "DataWarehouse.dat";
+            string pathDataSales = "DataSales.dat";
+            string pathDataOrder = "DataOrder.dat";
 
-            string fileJson = JsonSerializer.Serialize(dataWrapper, new JsonSerializerOptions { WriteIndented = true });
+            string serializedDataWarehouse = JsonSerializer.Serialize(dataWarehouse, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(pathDataWarehouse, serializedDataWarehouse);
 
-            File.WriteAllText(filePath, fileJson);
+            string serializedDataSales = JsonSerializer.Serialize(dataSales, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(pathDataSales, serializedDataSales);
+
+            string serializedDataOrder = JsonSerializer.Serialize(dataOrder, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(pathDataOrder, serializedDataOrder);
         }
     }
 }

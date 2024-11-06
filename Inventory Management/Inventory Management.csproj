@@ -64,11 +64,13 @@
     </Compile>
     <Compile Include="Inventory_System\Category.cs" />
     <Compile Include="Inventory_System\Customer.cs" />
+    <Compile Include="Inventory_System\DataWrapper\DataOrder.cs" />
+    <Compile Include="Inventory_System\DataWrapper\DataSales.cs" />
+    <Compile Include="Inventory_System\DataWrapper\DataWarehouse.cs" />
     <Compile Include="Inventory_System\Employee.cs" />
     <Compile Include="Inventory_System\Products\Headphone.cs" />
     <Compile Include="Inventory_System\Inventory.cs" />
     <Compile Include="Inventory_System\Products\Keyboard.cs" />
-    <Compile Include="Inventory_System\DataWrapper.cs" />
     <Compile Include="Inventory_GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>

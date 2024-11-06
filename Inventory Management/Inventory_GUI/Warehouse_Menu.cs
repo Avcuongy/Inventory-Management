@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using Inventory_Management.Inventory_System;
 
 namespace Inventory_Management
 {
@@ -284,23 +285,22 @@ namespace Inventory_Management
 
         private void Warehouse_Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DataWrapper dataWrapper = new DataWrapper
-            {
-                Warehouse = Warehouse,
-                Suppliers = Supplier,
-                PurchaseOrders = PurchaseOrder,
-                ReturnOrders = ReturnOrder,
-                Customers = Customer,
-                OrderManager = OrderManager,
-                SalesInvoices = SalesInvoice,
-                Report = Report
-            };
+            DataWarehouse dataWarehouse = new DataWarehouse(Warehouse, Supplier, Customer);
+            DataSales dataSales = new DataSales(SalesInvoice, Report);
+            DataOrder dataOrder = new DataOrder(PurchaseOrder, ReturnOrder, OrderManager);
 
-            string filePath = "Inventory_Management.dat";
+            string pathDataWarehouse = "DataWarehouse.dat";
+            string pathDataSales = "DataSales.dat";
+            string pathDataOrder = "DataOrder.dat";
 
-            string fileJson = JsonSerializer.Serialize(dataWrapper, new JsonSerializerOptions { WriteIndented = true });
+            string serializedDataWarehouse = JsonSerializer.Serialize(dataWarehouse, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(pathDataWarehouse, serializedDataWarehouse);
 
-            File.WriteAllText(filePath, fileJson);
+            string serializedDataSales = JsonSerializer.Serialize(dataSales, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(pathDataSales, serializedDataSales);
+
+            string serializedDataOrder = JsonSerializer.Serialize(dataOrder, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(pathDataOrder, serializedDataOrder);
         }
     }
 }

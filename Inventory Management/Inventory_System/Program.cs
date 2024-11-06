@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.IO;
 using System.Text.Json.Serialization;
 using System.Drawing;
+using Inventory_Management.Inventory_System;
 
 namespace Inventory_Management
 {
@@ -24,30 +25,39 @@ namespace Inventory_Management
             // Khởi tạo các đối tượng
             Warehouse warehouse = new Warehouse();
             List<Supplier> suppliers = new List<Supplier>();
-            List<PurchaseOrder> purchaseOrders = new List<PurchaseOrder>();
-            List<ReturnOrder> returnOrders = new List<ReturnOrder>();
             List<Customer> customers = new List<Customer>();
+
+            List<PurchaseOrder> purchaseOrders = new List<PurchaseOrder>();
+            List<ReturnOrder> returnOrders = new List<ReturnOrder>();    
             OrderManager orderManager = new OrderManager(purchaseOrders);
+
             List<SalesInvoice> salesInvoices = new List<SalesInvoice>();
             Report report = new Report(salesInvoices);
 
-            string filePath = "Inventory_Management.dat";
+            string pathDataWarehouse = "DataWarehouse.dat";
+            string pathDataSales = "DataSales.dat";
+            string pathDataOrder = "DataOrder.dat";
 
-            if (File.Exists(filePath))
+            if (File.Exists(pathDataWarehouse) && File.Exists(pathDataSales) && File.Exists(pathDataOrder))
             {
-                string fileContent = File.ReadAllText(filePath);
+                string dataWarehouseJson = File.ReadAllText(pathDataWarehouse);
+                string dataSalesJson = File.ReadAllText(pathDataSales);
+                string dataOrderJson = File.ReadAllText(pathDataOrder);
 
-                DataWrapper dataWrapper = JsonSerializer.Deserialize<DataWrapper>(fileContent);
+                DataWarehouse dataWarehouse = JsonSerializer.Deserialize<DataWarehouse>(dataWarehouseJson);
+                DataSales dataSales = JsonSerializer.Deserialize<DataSales>(dataSalesJson);
+                DataOrder dataOrder = JsonSerializer.Deserialize<DataOrder>(dataOrderJson);
 
-                // Gán dữ liệu từ dataWrapper vào các biến tương ứng
-                warehouse = dataWrapper.Warehouse;
-                suppliers = dataWrapper.Suppliers;
-                purchaseOrders = dataWrapper.PurchaseOrders;
-                returnOrders = dataWrapper.ReturnOrders;
-                customers = dataWrapper.Customers;
-                orderManager = dataWrapper.OrderManager;
-                salesInvoices = dataWrapper.SalesInvoices;
-                report = dataWrapper.Report;
+                warehouse = dataWarehouse.Warehouse;
+                suppliers = dataWarehouse.Suppliers;
+                customers = dataWarehouse.Customers;
+
+                purchaseOrders = dataOrder.PurchaseOrders;
+                returnOrders = dataOrder.ReturnOrders;
+                orderManager = dataOrder.OrderManager;
+
+                salesInvoices = dataSales.SalesInvoices;
+                report = dataSales.Report;
             }
             else
             {
