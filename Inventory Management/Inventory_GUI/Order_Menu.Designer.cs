@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order_Menu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order_Menu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ShowOrder = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBoxSupplier = new System.Windows.Forms.TextBox();
@@ -40,11 +41,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ShowOrder = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,6 +61,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1336, 624);
             this.panel1.TabIndex = 16;
+            // 
+            // ShowOrder
+            // 
+            this.ShowOrder.AllowUserToAddRows = false;
+            this.ShowOrder.AllowUserToDeleteRows = false;
+            this.ShowOrder.AllowUserToResizeColumns = false;
+            this.ShowOrder.AllowUserToResizeRows = false;
+            this.ShowOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ShowOrder.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ShowOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.ShowOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ShowOrder.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ShowOrder.Location = new System.Drawing.Point(24, 136);
+            this.ShowOrder.Name = "ShowOrder";
+            this.ShowOrder.RowHeadersVisible = false;
+            this.ShowOrder.RowHeadersWidth = 51;
+            this.ShowOrder.RowTemplate.Height = 24;
+            this.ShowOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.ShowOrder.Size = new System.Drawing.Size(1288, 472);
+            this.ShowOrder.TabIndex = 9;
+            this.ShowOrder.TabStop = false;
+            this.ShowOrder.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShowOrder_CellEndEdit);
             // 
             // button4
             // 
@@ -155,41 +191,6 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // ShowOrder
-            // 
-            this.ShowOrder.AllowUserToAddRows = false;
-            this.ShowOrder.AllowUserToDeleteRows = false;
-            this.ShowOrder.AllowUserToResizeColumns = false;
-            this.ShowOrder.AllowUserToResizeRows = false;
-            this.ShowOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ShowOrder.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ShowOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.ShowOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ShowOrder.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ShowOrder.Location = new System.Drawing.Point(24, 136);
-            this.ShowOrder.Name = "ShowOrder";
-            this.ShowOrder.RowHeadersVisible = false;
-            this.ShowOrder.RowHeadersWidth = 51;
-            this.ShowOrder.RowTemplate.Height = 24;
-            this.ShowOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.ShowOrder.Size = new System.Drawing.Size(1288, 472);
-            this.ShowOrder.TabIndex = 9;
-            this.ShowOrder.TabStop = false;
-            // 
             // Order_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,9 +208,9 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Order_Menu_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowOrder)).EndInit();
             this.ResumeLayout(false);
 
         }

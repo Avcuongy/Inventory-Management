@@ -139,7 +139,7 @@ namespace Inventory_Management
                 dtOrder.Columns.Add("Total");
                 dtOrder.Columns.Add("Status");
 
-                List<PurchaseOrder> purchaseOrders = OrderManager.Orders;
+                List<PurchaseOrder> purchaseOrders = PurchaseOrder;
                 List<Product> products = Warehouse.Products;
 
                 foreach (PurchaseOrder order in purchaseOrders)
@@ -206,8 +206,7 @@ namespace Inventory_Management
         private void button4_Click(object sender, EventArgs e)
         {
             List<Supplier> suppliers = Supplier;
-            OrderManager orderManager = OrderManager;
-            List<PurchaseOrder> purchaseOrders = orderManager.Orders;
+            List<PurchaseOrder> purchaseOrders = PurchaseOrder;   
             List<Product> products = Warehouse.Products;
 
             DataTable dt = new DataTable();
@@ -317,7 +316,7 @@ namespace Inventory_Management
 
             bool orderFound = false;
 
-            foreach (PurchaseOrder order in OrderManager.Orders)
+            foreach (PurchaseOrder order in PurchaseOrder)
             {
                 if (order.OrderId == orderId)
                 {
