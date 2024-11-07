@@ -16,18 +16,6 @@
 
 Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng một ứng dụng Windows Forms C# . Bằng cách áp dụng các nguyên lý cơ bản của lập trình hướng đối tượng, ứng dụng cho phép người dùng theo dõi, cập nhật và quản lý tồn kho một cách hiệu quả và chính xác.
 
----
-
-## Project Team
-
-| **Member**              | **Role**                     |
-|-------------------------|------------------------------|
-| Đặng Xuân Cường         | Project Lead / Developer     |
-| Nguyễn Trọng Hưởng      | Developer                    |
-| Huỳnh Trần Bảo Việt     | Developer                    |
-| Trần Viết Gia Huy       | Developer                    |
-
----
 
 ## Installation Guide
 
