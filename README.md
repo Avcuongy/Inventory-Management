@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📦 Xây Dựng Chương Trình Quản Lí Hàng Hoá
+# 📦 Chương Trình Quản Lí Hàng Hoá
 
 Đồ Án Môn Học **Object-Oriented Programming in CSharp**.
 
