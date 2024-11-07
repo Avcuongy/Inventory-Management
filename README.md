@@ -1,8 +1,8 @@
 <div align="center">
 
-# 📦 Inventory Management System
+# 📦 Xây Dựng Chương Trình Quản Lí Hàng Hoá
 
-A collaborative project presented by our team as part of **Object-Oriented Programming in CSharp**.
+Đồ Án Môn Học **Object-Oriented Programming in CSharp**.
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/Avcuongy/Avcuongy/main/Pictures/warehouse-management-software.png" alt="Warehouse Management" width="400" height="400">
@@ -14,9 +14,7 @@ A collaborative project presented by our team as part of **Object-Oriented Progr
 
 ## Project Description
 
-This project aims to simplify inventory management tasks using a C# Windows Forms application. By applying key principles of object-oriented programming, the application enables users to track, update, and manage stock with efficiency and precision.  
-
-**Note:** The project details are still evolving to include more advanced features and optimizations.
+Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng một ứng dụng Windows Forms C# . Bằng cách áp dụng các nguyên lý cơ bản của lập trình hướng đối tượng, ứng dụng cho phép người dùng theo dõi, cập nhật và quản lý tồn kho một cách hiệu quả và chính xác.
 
 ---
 
@@ -31,30 +29,16 @@ This project aims to simplify inventory management tasks using a C# Windows Form
 
 ---
 
-## Key Features
-
-- **User-Friendly Interface:** Designed with a focus on ease of navigation and functionality.
-- **Stock Updates:** Changes in stock levels are reflected.
-
----
-
-## Future Plans
-
-- **Expand Functionality**: Introducing features such as **supplier management, ...**
-- **Enhanced Security**: Implementing advanced user authentication and access controls.
-
----
-
 ## Installation Guide
 
-- To download the installation, click the link below: <a href="https://mega.nz/file/gzcn1aTC#AgQZKsRUeJsgCBl3ESDrInHsm9CDNp1LUGCGqUHzM-8" target="_blank" title="Inventory-Management">Mega</a>
+- Để tải về bản cài đặt, nhấp vào liên kết: <a href="https://mega.nz/file/gzcn1aTC#AgQZKsRUeJsgCBl3ESDrInHsm9CDNp1LUGCGqUHzM-8" target="_blank" title="Inventory-Management">Mega</a>
     - Username: U1 (U1-U20)
     - Password: P1 (P1-P20)
 ---
 
 <div align="center">
 
-> *The project is conducted for educational purposes.*  
+> *Dự án phục vụ cho mục đích học tập.*  
 
 </div>
 
