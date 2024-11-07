@@ -14,8 +14,8 @@
 
 ## Project Description
 
-Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng một ứng dụng Windows Forms C# . Bằng cách áp dụng các nguyên lý cơ bản của lập trình hướng đối tượng, ứng dụng cho phép người dùng theo dõi, cập nhật và quản lý tồn kho một cách hiệu quả và chính xác.
-
+- Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng một ứng dụng Windows Forms C# . Bằng cách áp dụng các nguyên lý cơ bản của lập trình hướng đối tượng, ứng dụng cho phép người dùng theo dõi, cập nhật và quản lý tồn kho một cách hiệu quả và chính xác.
+- 
 ---
 
 ## Project Team
@@ -32,6 +32,7 @@ Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng m
 ## Installation Guide
 
 - Để tải về bản cài đặt, nhấp vào liên kết: <a href="https://mega.nz/file/gzcn1aTC#AgQZKsRUeJsgCBl3ESDrInHsm9CDNp1LUGCGqUHzM-8" target="_blank" title="Inventory-Management">Mega</a>
+- Để đăng nhập:
     - Username: U1 (U1-U20)
     - Password: P1 (P1-P20)
 ---
