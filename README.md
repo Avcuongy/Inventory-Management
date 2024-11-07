@@ -14,8 +14,8 @@
 
 ## Project Description
 
-- Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng một ứng dụng Windows Forms C# . Bằng cách áp dụng các nguyên lý cơ bản của lập trình hướng đối tượng, ứng dụng cho phép người dùng theo dõi, cập nhật và quản lý tồn kho một cách hiệu quả và chính xác.
-- 
+Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng một ứng dụng Windows Forms C# . Bằng cách áp dụng các nguyên lý cơ bản của lập trình hướng đối tượng, ứng dụng cho phép người dùng theo dõi, cập nhật và quản lý tồn kho một cách hiệu quả và chính xác.
+
 ---
 
 ## Project Team
