@@ -48,7 +48,8 @@ This project aims to simplify inventory management tasks using a C# Windows Form
 ## Installation Guide
 
 - To download the installation, click the link below: <a href="https://mega.nz/file/gzcn1aTC#AgQZKsRUeJsgCBl3ESDrInHsm9CDNp1LUGCGqUHzM-8" target="_blank" title="Inventory-Management">Mega</a>
-
+    - Username: U1 (U1-U20)
+    - Password: P1 (P1-P20)
 ---
 
 <div align="center">
