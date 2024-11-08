@@ -7,9 +7,7 @@
 <div align="center">
     <img src="https://raw.githubusercontent.com/Avcuongy/Avcuongy/main/Pictures/warehouse-management-software.png" alt="Warehouse Management" width="400" height="400">
 </div>
-
 </div>
-
 ---
 
 ## Project Description
@@ -19,10 +17,22 @@ Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng m
 
 ## Installation Guide
 
+**Cách 1: Bản cài đặt app**
 - Để tải về bản cài đặt, nhấp vào liên kết: <a href="https://mega.nz/file/gzcn1aTC#AgQZKsRUeJsgCBl3ESDrInHsm9CDNp1LUGCGqUHzM-8" target="_blank" title="Inventory-Management">Mega</a>
-- Để đăng nhập:
-    - Username: U1 (U1-U20)
-    - Password: P1 (P1-P20)
+- Tải file ```Inventory Management.rar``` về giải nén file ta được thư mục Inventory Management.
+- Nhấn vào tệp ```Inventory_Management_Install.msi``` để cài đặt.
+
+**Cách 2: Clone**
+- Yêu cầu có sẵn Visual studio bản community.
+- Cài đặt git bash sẵn trên máy.
+- mở git bash gõ lệnh ```git clone https://github.com/Avcuongy/Inventory-Management.git```
+- Thư mục chứa file code sẽ được clone về tại thư mục chỉ định bạn sử dụng git bash.
+- Nhấp vào thư mục chạy tệp ```Inventory Management.sln```
+
+**Để đăng nhập:**
+- Username: U1 (U1-U20)
+- Password: P1 (P1-P20)
+    
 ---
 
 <div align="center">
