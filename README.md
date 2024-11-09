@@ -33,7 +33,16 @@ Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng m
 **Để đăng nhập:**
 - Username: U1 (U1-U20)
 - Password: P1 (P1-P20)
-    
+
+## Thành viên
+
+| Tên     |
+|---------|
+| Đặng Xuân Cường   |
+| Huỳnh Trần Bảo Việt   |
+| Trần Viết Gia Huy    |
+| Nguyễn Trọng Hưởng     |
+
 ---
 
 <div align="center">
