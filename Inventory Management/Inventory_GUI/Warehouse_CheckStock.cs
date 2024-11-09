@@ -104,7 +104,6 @@ namespace Inventory_Management
                 MessageBox.Show("Something went wrong");
             }
         }
-
         private void Warehouse_CheckStock_FormClosed(object sender, FormClosedEventArgs e)
         {
             DataWarehouse dataWarehouse = new DataWarehouse(Warehouse, Supplier, Customer);

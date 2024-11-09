@@ -1,0 +1,1025 @@
+{
+  "PurchaseOrders": [
+    {
+      "OrderId": "PD1",
+      "Supplier": {
+        "SupplierId": "S1",
+        "Name": "Cellphones",
+        "ContactInfo": "0912345671",
+        "SuppliedProducts": [
+          {
+            "$type": "Phone",
+            "ProductId": "P1",
+            "Name": "Iphone 16 Pro",
+            "Category": "Phone",
+            "Quantity": 1,
+            "Price": 199
+          },
+          {
+            "$type": "Phone",
+            "ProductId": "P2",
+            "Name": "One Plus Ace 3v",
+            "Category": "Phone",
+            "Quantity": 1,
+            "Price": 299
+          },
+          {
+            "$type": "Phone",
+            "ProductId": "P7",
+            "Name": "Iphone 16 Pro Plus",
+            "Category": "Phone",
+            "Quantity": 1,
+            "Price": 399
+          },
+          {
+            "$type": "Keyboard",
+            "ProductId": "P4",
+            "Name": "Cidoo",
+            "Category": "Keyboard",
+            "Quantity": 1,
+            "Price": 890
+          },
+          {
+            "$type": "Mouse",
+            "ProductId": "P6",
+            "Name": "G304",
+            "Category": "Mouse",
+            "Quantity": 1,
+            "Price": 490
+          },
+          {
+            "$type": "Tablet",
+            "ProductId": "P8",
+            "Name": "Ipad Gen 6",
+            "Category": "Tablet",
+            "Quantity": 1,
+            "Price": 149
+          },
+          {
+            "$type": "Keyboard",
+            "ProductId": "P9",
+            "Name": "Logitech K102",
+            "Category": "Keyboard",
+            "Quantity": 1,
+            "Price": 690
+          },
+          {
+            "$type": "Phone",
+            "ProductId": "P11",
+            "Name": "Samsung Galaxy S23",
+            "Category": "Phone",
+            "Quantity": 1,
+            "Price": 999
+          }
+        ]
+      },
+      "Status": "Processing",
+      "OrderedProducts": [
+        {
+          "$type": "Phone",
+          "ProductId": "P1",
+          "Name": "Iphone 16 Pro",
+          "Category": "Phone",
+          "Quantity": 40,
+          "Price": 7960
+        },
+        {
+          "$type": "Tablet",
+          "ProductId": "P8",
+          "Name": "Ipad Gen 6",
+          "Category": "Tablet",
+          "Quantity": 5,
+          "Price": 745
+        },
+        {
+          "$type": "Keyboard",
+          "ProductId": "P9",
+          "Name": "Logitech K102",
+          "Category": "Keyboard",
+          "Quantity": 100,
+          "Price": 69000
+        }
+      ]
+    },
+    {
+      "OrderId": "PD2",
+      "Supplier": {
+        "SupplierId": "S2",
+        "Name": "Xiaomi",
+        "ContactInfo": "0987655555",
+        "SuppliedProducts": [
+          {
+            "$type": "Tablet",
+            "ProductId": "P3",
+            "Name": "Xiaomi pad 6",
+            "Category": "Tablet",
+            "Quantity": 1,
+            "Price": 399
+          },
+          {
+            "$type": "Tablet",
+            "ProductId": "P17",
+            "Name": "Lenovo Tab P11",
+            "Category": "Tablet",
+            "Quantity": 1,
+            "Price": 499
+          }
+        ]
+      },
+      "Status": "Pending",
+      "OrderedProducts": [
+        {
+          "$type": "Tablet",
+          "ProductId": "P3",
+          "Name": "Xiaomi pad 6",
+          "Category": "Tablet",
+          "Quantity": 10,
+          "Price": 3990
+        }
+      ]
+    },
+    {
+      "OrderId": "PD3",
+      "Supplier": {
+        "SupplierId": "S3",
+        "Name": "XuanVuAudio",
+        "ContactInfo": "1230098006",
+        "SuppliedProducts": [
+          {
+            "$type": "Headphone",
+            "ProductId": "P5",
+            "Name": "Tanjim Zero",
+            "Category": "Headphone",
+            "Quantity": 1,
+            "Price": 199
+          },
+          {
+            "$type": "Headphone",
+            "ProductId": "P10",
+            "Name": "Moondrop Jiu",
+            "Category": "Headphone",
+            "Quantity": 1,
+            "Price": 299
+          }
+        ]
+      },
+      "Status": "Pending",
+      "OrderedProducts": [
+        {
+          "$type": "Headphone",
+          "ProductId": "P5",
+          "Name": "Tanjim Zero",
+          "Category": "Headphone",
+          "Quantity": 10,
+          "Price": 1990
+        },
+        {
+          "$type": "Headphone",
+          "ProductId": "P10",
+          "Name": "Moondrop Jiu",
+          "Category": "Headphone",
+          "Quantity": 5,
+          "Price": 1495
+        }
+      ]
+    },
+    {
+      "OrderId": "PD4",
+      "Supplier": {
+        "SupplierId": "S4",
+        "Name": "Samsung",
+        "ContactInfo": "0981234567",
+        "SuppliedProducts": [
+          {
+            "$type": "Phone",
+            "ProductId": "P11",
+            "Name": "Samsung Galaxy S23",
+            "Category": "Phone",
+            "Quantity": 1,
+            "Price": 999
+          },
+          {
+            "$type": "Phone",
+            "ProductId": "P16",
+            "Name": "Google Pixel 8",
+            "Category": "Phone",
+            "Quantity": 1,
+            "Price": 899
+          },
+          {
+            "$type": "Headphone",
+            "ProductId": "P20",
+            "Name": "Bose 700",
+            "Category": "Headphone",
+            "Quantity": 1,
+            "Price": 450
+          }
+        ]
+      },
+      "Status": "Pending",
+      "OrderedProducts": [
+        {
+          "$type": "Phone",
+          "ProductId": "P11",
+          "Name": "Samsung Galaxy S23",
+          "Category": "Phone",
+          "Quantity": 20,
+          "Price": 19980
+        },
+        {
+          "$type": "Phone",
+          "ProductId": "P16",
+          "Name": "Google Pixel 8",
+          "Category": "Phone",
+          "Quantity": 15,
+          "Price": 13485
+        }
+      ]
+    },
+    {
+      "OrderId": "PD5",
+      "Supplier": {
+        "SupplierId": "S5",
+        "Name": "Sony",
+        "ContactInfo": "0987654321",
+        "SuppliedProducts": [
+          {
+            "$type": "Headphone",
+            "ProductId": "P15",
+            "Name": "Sony WH-1000XM4",
+            "Category": "Headphone",
+            "Quantity": 1,
+            "Price": 400
+          }
+        ]
+      },
+      "Status": "Pending",
+      "OrderedProducts": [
+        {
+          "$type": "Headphone",
+          "ProductId": "P15",
+          "Name": "Sony WH-1000XM4",
+          "Category": "Headphone",
+          "Quantity": 5,
+          "Price": 2000
+        }
+      ]
+    },
+    {
+      "OrderId": "PD6",
+      "Supplier": {
+        "SupplierId": "S6",
+        "Name": "Microsoft",
+        "ContactInfo": "1234567890",
+        "SuppliedProducts": [
+          {
+            "$type": "Tablet",
+            "ProductId": "P12",
+            "Name": "Microsoft Surface Pro",
+            "Category": "Tablet",
+            "Quantity": 1,
+            "Price": 799
+          }
+        ]
+      },
+      "Status": "Pending",
+      "OrderedProducts": [
+        {
+          "$type": "Tablet",
+          "ProductId": "P12",
+          "Name": "Microsoft Surface Pro",
+          "Category": "Tablet",
+          "Quantity": 10,
+          "Price": 7990
+        }
+      ]
+    },
+    {
+      "OrderId": "PD7",
+      "Supplier": {
+        "SupplierId": "S7",
+        "Name": "Logitech",
+        "ContactInfo": "9876543210",
+        "SuppliedProducts": [
+          {
+            "$type": "Mouse",
+            "ProductId": "P13",
+            "Name": "Logitech MX Master 3",
+            "Category": "Mouse",
+            "Quantity": 1,
+            "Price": 1200
+          },
+          {
+            "$type": "Keyboard",
+            "ProductId": "P14",
+            "Name": "Razer BlackWidow",
+            "Category": "Keyboard",
+            "Quantity": 1,
+            "Price": 2200
+          }
+        ]
+      },
+      "Status": "Pending",
+      "OrderedProducts": [
+        {
+          "$type": "Mouse",
+          "ProductId": "P13",
+          "Name": "Logitech MX Master 3",
+          "Category": "Mouse",
+          "Quantity": 50,
+          "Price": 60000
+        }
+      ]
+    },
+    {
+      "OrderId": "PD8",
+      "Supplier": {
+        "SupplierId": "S8",
+        "Name": "Razer",
+        "ContactInfo": "0123456789",
+        "SuppliedProducts": [
+          {
+            "$type": "Mouse",
+            "ProductId": "P18",
+            "Name": "Razer DeathAdder",
+            "Category": "Mouse",
+            "Quantity": 1,
+            "Price": 800
+          },
+          {
+            "$type": "Keyboard",
+            "ProductId": "P19",
+            "Name": "Corsair K70",
+            "Category": "Keyboard",
+            "Quantity": 1,
+            "Price": 2500
+          }
+        ]
+      },
+      "Status": "Pending",
+      "OrderedProducts": [
+        {
+          "$type": "Mouse",
+          "ProductId": "P18",
+          "Name": "Razer DeathAdder",
+          "Category": "Mouse",
+          "Quantity": 30,
+          "Price": 24000
+        },
+        {
+          "$type": "Keyboard",
+          "ProductId": "P19",
+          "Name": "Corsair K70",
+          "Category": "Keyboard",
+          "Quantity": 20,
+          "Price": 50000
+        }
+      ]
+    },
+    {
+      "OrderId": "PD9",
+      "Supplier": {
+        "SupplierId": "S4",
+        "Name": "Samsung",
+        "ContactInfo": "0981234567",
+        "SuppliedProducts": [
+          {
+            "$type": "Phone",
+            "ProductId": "P11",
+            "Name": "Samsung Galaxy S23",
+            "Category": "Phone",
+            "Quantity": 1,
+            "Price": 999
+          },
+          {
+            "$type": "Phone",
+            "ProductId": "P16",
+            "Name": "Google Pixel 8",
+            "Category": "Phone",
+            "Quantity": 1,
+            "Price": 899
+          },
+          {
+            "$type": "Headphone",
+            "ProductId": "P20",
+            "Name": "Bose 700",
+            "Category": "Headphone",
+            "Quantity": 1,
+            "Price": 450
+          }
+        ]
+      },
+      "Status": "Pending",
+      "OrderedProducts": [
+        {
+          "$type": "Phone",
+          "ProductId": "P11",
+          "Name": "Samsung Galaxy S23",
+          "Category": "Phone",
+          "Quantity": 3,
+          "Price": 2997
+        },
+        {
+          "$type": "Phone",
+          "ProductId": "P16",
+          "Name": "Google Pixel 8",
+          "Category": "Phone",
+          "Quantity": 12,
+          "Price": 10788
+        }
+      ]
+    },
+    {
+      "OrderId": "PD10",
+      "Supplier": {
+        "SupplierId": "S8",
+        "Name": "Razer",
+        "ContactInfo": "0123456789",
+        "SuppliedProducts": [
+          {
+            "$type": "Mouse",
+            "ProductId": "P18",
+            "Name": "Razer DeathAdder",
+            "Category": "Mouse",
+            "Quantity": 1,
+            "Price": 800
+          },
+          {
+            "$type": "Keyboard",
+            "ProductId": "P19",
+            "Name": "Corsair K70",
+            "Category": "Keyboard",
+            "Quantity": 1,
+            "Price": 2500
+          }
+        ]
+      },
+      "Status": "Pending",
+      "OrderedProducts": [
+        {
+          "$type": "Mouse",
+          "ProductId": "P18",
+          "Name": "Razer DeathAdder",
+          "Category": "Mouse",
+          "Quantity": 21,
+          "Price": 16800
+        },
+        {
+          "$type": "Keyboard",
+          "ProductId": "P19",
+          "Name": "Corsair K70",
+          "Category": "Keyboard",
+          "Quantity": 13,
+          "Price": 32500
+        }
+      ]
+    }
+  ],
+  "ReturnOrders": [
+    {
+      "ReturnOrderId": "R1",
+      "Product": {
+        "$type": "Phone",
+        "ProductId": "P1",
+        "Name": "Iphone 16 Pro",
+        "Category": "Phone",
+        "Quantity": 3,
+        "Price": 597
+      },
+      "Reason": "Broken During Transportation",
+      "ReturnDate": "2024-10-23T00:00:00",
+      "Status": "Done"
+    },
+    {
+      "ReturnOrderId": "R2",
+      "Product": {
+        "$type": "Headphone",
+        "ProductId": "P5",
+        "Name": "Tanjim Zero",
+        "Category": "Headphone",
+        "Quantity": 2,
+        "Price": 398
+      },
+      "Reason": "Broken During Transportation",
+      "ReturnDate": "2024-10-24T00:00:00",
+      "Status": "Done"
+    },
+    {
+      "ReturnOrderId": "R3",
+      "Product": {
+        "$type": "Keyboard",
+        "ProductId": "P4",
+        "Name": "Cidoo",
+        "Category": "Keyboard",
+        "Quantity": 5,
+        "Price": 4450
+      },
+      "Reason": "Broken During Transportation",
+      "ReturnDate": "2024-10-25T00:00:00",
+      "Status": "Done"
+    },
+    {
+      "ReturnOrderId": "R4",
+      "Product": {
+        "$type": "Phone",
+        "ProductId": "P11",
+        "Name": "Samsung Galaxy S23",
+        "Category": "Phone",
+        "Quantity": 1,
+        "Price": 999
+      },
+      "Reason": "Defective",
+      "ReturnDate": "2024-10-26T00:00:00",
+      "Status": "Pending"
+    },
+    {
+      "ReturnOrderId": "R5",
+      "Product": {
+        "$type": "Headphone",
+        "ProductId": "P15",
+        "Name": "Sony WH-1000XM4",
+        "Category": "Headphone",
+        "Quantity": 1,
+        "Price": 400
+      },
+      "Reason": "Not as Described",
+      "ReturnDate": "2024-10-27T00:00:00",
+      "Status": "Pending"
+    },
+    {
+      "ReturnOrderId": "R6",
+      "Product": {
+        "$type": "Tablet",
+        "ProductId": "P12",
+        "Name": "Microsoft Surface Pro",
+        "Category": "Tablet",
+        "Quantity": 1,
+        "Price": 799
+      },
+      "Reason": "Damaged",
+      "ReturnDate": "2024-10-28T00:00:00",
+      "Status": "Pending"
+    },
+    {
+      "ReturnOrderId": "R7",
+      "Product": {
+        "$type": "Mouse",
+        "ProductId": "P13",
+        "Name": "Logitech MX Master 3",
+        "Category": "Mouse",
+        "Quantity": 1,
+        "Price": 1200
+      },
+      "Reason": "Wrong Item Sent",
+      "ReturnDate": "2024-10-29T00:00:00",
+      "Status": "Pending"
+    },
+    {
+      "ReturnOrderId": "R8",
+      "Product": {
+        "$type": "Keyboard",
+        "ProductId": "P19",
+        "Name": "Corsair K70",
+        "Category": "Keyboard",
+        "Quantity": 1,
+        "Price": 2500
+      },
+      "Reason": "Broken During Transportation",
+      "ReturnDate": "2024-10-30T00:00:00",
+      "Status": "Pending"
+    }
+  ],
+  "OrderManager": {
+    "Orders": [
+      {
+        "OrderId": "PD1",
+        "Supplier": {
+          "SupplierId": "S1",
+          "Name": "Cellphones",
+          "ContactInfo": "0912345671",
+          "SuppliedProducts": [
+            {
+              "$type": "Phone",
+              "ProductId": "P1",
+              "Name": "Iphone 16 Pro",
+              "Category": "Phone",
+              "Quantity": 1,
+              "Price": 199
+            },
+            {
+              "$type": "Phone",
+              "ProductId": "P2",
+              "Name": "One Plus Ace 3v",
+              "Category": "Phone",
+              "Quantity": 1,
+              "Price": 299
+            },
+            {
+              "$type": "Phone",
+              "ProductId": "P7",
+              "Name": "Iphone 16 Pro Plus",
+              "Category": "Phone",
+              "Quantity": 1,
+              "Price": 399
+            },
+            {
+              "$type": "Keyboard",
+              "ProductId": "P4",
+              "Name": "Cidoo",
+              "Category": "Keyboard",
+              "Quantity": 1,
+              "Price": 890
+            },
+            {
+              "$type": "Mouse",
+              "ProductId": "P6",
+              "Name": "G304",
+              "Category": "Mouse",
+              "Quantity": 1,
+              "Price": 490
+            },
+            {
+              "$type": "Tablet",
+              "ProductId": "P8",
+              "Name": "Ipad Gen 6",
+              "Category": "Tablet",
+              "Quantity": 1,
+              "Price": 149
+            },
+            {
+              "$type": "Keyboard",
+              "ProductId": "P9",
+              "Name": "Logitech K102",
+              "Category": "Keyboard",
+              "Quantity": 1,
+              "Price": 690
+            },
+            {
+              "$type": "Phone",
+              "ProductId": "P11",
+              "Name": "Samsung Galaxy S23",
+              "Category": "Phone",
+              "Quantity": 1,
+              "Price": 999
+            }
+          ]
+        },
+        "Status": "Pending",
+        "OrderedProducts": [
+          {
+            "$type": "Phone",
+            "ProductId": "P1",
+            "Name": "Iphone 16 Pro",
+            "Category": "Phone",
+            "Quantity": 40,
+            "Price": 7960
+          },
+          {
+            "$type": "Tablet",
+            "ProductId": "P8",
+            "Name": "Ipad Gen 6",
+            "Category": "Tablet",
+            "Quantity": 5,
+            "Price": 745
+          },
+          {
+            "$type": "Keyboard",
+            "ProductId": "P9",
+            "Name": "Logitech K102",
+            "Category": "Keyboard",
+            "Quantity": 100,
+            "Price": 69000
+          }
+        ]
+      },
+      {
+        "OrderId": "PD2",
+        "Supplier": {
+          "SupplierId": "S2",
+          "Name": "Xiaomi",
+          "ContactInfo": "0987655555",
+          "SuppliedProducts": [
+            {
+              "$type": "Tablet",
+              "ProductId": "P3",
+              "Name": "Xiaomi pad 6",
+              "Category": "Tablet",
+              "Quantity": 1,
+              "Price": 399
+            },
+            {
+              "$type": "Tablet",
+              "ProductId": "P17",
+              "Name": "Lenovo Tab P11",
+              "Category": "Tablet",
+              "Quantity": 1,
+              "Price": 499
+            }
+          ]
+        },
+        "Status": "Pending",
+        "OrderedProducts": [
+          {
+            "$type": "Tablet",
+            "ProductId": "P3",
+            "Name": "Xiaomi pad 6",
+            "Category": "Tablet",
+            "Quantity": 10,
+            "Price": 3990
+          }
+        ]
+      },
+      {
+        "OrderId": "PD3",
+        "Supplier": {
+          "SupplierId": "S3",
+          "Name": "XuanVuAudio",
+          "ContactInfo": "1230098006",
+          "SuppliedProducts": [
+            {
+              "$type": "Headphone",
+              "ProductId": "P5",
+              "Name": "Tanjim Zero",
+              "Category": "Headphone",
+              "Quantity": 1,
+              "Price": 199
+            },
+            {
+              "$type": "Headphone",
+              "ProductId": "P10",
+              "Name": "Moondrop Jiu",
+              "Category": "Headphone",
+              "Quantity": 1,
+              "Price": 299
+            }
+          ]
+        },
+        "Status": "Pending",
+        "OrderedProducts": [
+          {
+            "$type": "Headphone",
+            "ProductId": "P5",
+            "Name": "Tanjim Zero",
+            "Category": "Headphone",
+            "Quantity": 10,
+            "Price": 1990
+          },
+          {
+            "$type": "Headphone",
+            "ProductId": "P10",
+            "Name": "Moondrop Jiu",
+            "Category": "Headphone",
+            "Quantity": 5,
+            "Price": 1495
+          }
+        ]
+      },
+      {
+        "OrderId": "PD4",
+        "Supplier": {
+          "SupplierId": "S4",
+          "Name": "Samsung",
+          "ContactInfo": "0981234567",
+          "SuppliedProducts": [
+            {
+              "$type": "Phone",
+              "ProductId": "P11",
+              "Name": "Samsung Galaxy S23",
+              "Category": "Phone",
+              "Quantity": 1,
+              "Price": 999
+            },
+            {
+              "$type": "Phone",
+              "ProductId": "P16",
+              "Name": "Google Pixel 8",
+              "Category": "Phone",
+              "Quantity": 1,
+              "Price": 899
+            },
+            {
+              "$type": "Headphone",
+              "ProductId": "P20",
+              "Name": "Bose 700",
+              "Category": "Headphone",
+              "Quantity": 1,
+              "Price": 450
+            }
+          ]
+        },
+        "Status": "Pending",
+        "OrderedProducts": [
+          {
+            "$type": "Phone",
+            "ProductId": "P11",
+            "Name": "Samsung Galaxy S23",
+            "Category": "Phone",
+            "Quantity": 20,
+            "Price": 19980
+          },
+          {
+            "$type": "Phone",
+            "ProductId": "P16",
+            "Name": "Google Pixel 8",
+            "Category": "Phone",
+            "Quantity": 15,
+            "Price": 13485
+          }
+        ]
+      },
+      {
+        "OrderId": "PD5",
+        "Supplier": {
+          "SupplierId": "S5",
+          "Name": "Sony",
+          "ContactInfo": "0987654321",
+          "SuppliedProducts": [
+            {
+              "$type": "Headphone",
+              "ProductId": "P15",
+              "Name": "Sony WH-1000XM4",
+              "Category": "Headphone",
+              "Quantity": 1,
+              "Price": 400
+            }
+          ]
+        },
+        "Status": "Pending",
+        "OrderedProducts": [
+          {
+            "$type": "Headphone",
+            "ProductId": "P15",
+            "Name": "Sony WH-1000XM4",
+            "Category": "Headphone",
+            "Quantity": 5,
+            "Price": 2000
+          }
+        ]
+      },
+      {
+        "OrderId": "PD6",
+        "Supplier": {
+          "SupplierId": "S6",
+          "Name": "Microsoft",
+          "ContactInfo": "1234567890",
+          "SuppliedProducts": [
+            {
+              "$type": "Tablet",
+              "ProductId": "P12",
+              "Name": "Microsoft Surface Pro",
+              "Category": "Tablet",
+              "Quantity": 1,
+              "Price": 799
+            }
+          ]
+        },
+        "Status": "Pending",
+        "OrderedProducts": [
+          {
+            "$type": "Tablet",
+            "ProductId": "P12",
+            "Name": "Microsoft Surface Pro",
+            "Category": "Tablet",
+            "Quantity": 10,
+            "Price": 7990
+          }
+        ]
+      },
+      {
+        "OrderId": "PD7",
+        "Supplier": {
+          "SupplierId": "S7",
+          "Name": "Logitech",
+          "ContactInfo": "9876543210",
+          "SuppliedProducts": [
+            {
+              "$type": "Mouse",
+              "ProductId": "P13",
+              "Name": "Logitech MX Master 3",
+              "Category": "Mouse",
+              "Quantity": 1,
+              "Price": 1200
+            },
+            {
+              "$type": "Keyboard",
+              "ProductId": "P14",
+              "Name": "Razer BlackWidow",
+              "Category": "Keyboard",
+              "Quantity": 1,
+              "Price": 2200
+            }
+          ]
+        },
+        "Status": "Pending",
+        "OrderedProducts": [
+          {
+            "$type": "Mouse",
+            "ProductId": "P13",
+            "Name": "Logitech MX Master 3",
+            "Category": "Mouse",
+            "Quantity": 50,
+            "Price": 60000
+          }
+        ]
+      },
+      {
+        "OrderId": "PD8",
+        "Supplier": {
+          "SupplierId": "S8",
+          "Name": "Razer",
+          "ContactInfo": "0123456789",
+          "SuppliedProducts": [
+            {
+              "$type": "Mouse",
+              "ProductId": "P18",
+              "Name": "Razer DeathAdder",
+              "Category": "Mouse",
+              "Quantity": 1,
+              "Price": 800
+            },
+            {
+              "$type": "Keyboard",
+              "ProductId": "P19",
+              "Name": "Corsair K70",
+              "Category": "Keyboard",
+              "Quantity": 1,
+              "Price": 2500
+            }
+          ]
+        },
+        "Status": "Pending",
+        "OrderedProducts": [
+          {
+            "$type": "Mouse",
+            "ProductId": "P18",
+            "Name": "Razer DeathAdder",
+            "Category": "Mouse",
+            "Quantity": 30,
+            "Price": 24000
+          },
+          {
+            "$type": "Keyboard",
+            "ProductId": "P19",
+            "Name": "Corsair K70",
+            "Category": "Keyboard",
+            "Quantity": 20,
+            "Price": 50000
+          }
+        ]
+      },
+      {
+        "OrderId": "PD9",
+        "Supplier": {
+          "SupplierId": "S4",
+          "Name": "Samsung",
+          "ContactInfo": "0981234567",
+          "SuppliedProducts": [
+            {
+              "$type": "Phone",
+              "ProductId": "P11",
+              "Name": "Samsung Galaxy S23",
+              "Category": "Phone",
+              "Quantity": 1,
+              "Price": 999
+            },
+            {
+              "$type": "Phone",
+              "ProductId": "P16",
+              "Name": "Google Pixel 8",
+              "Category": "Phone",
+              "Quantity": 1,
+              "Price": 899
+            },
+            {
+              "$type": "Headphone",
+              "ProductId": "P20",
+              "Name": "Bose 700",
+              "Category": "Headphone",
+              "Quantity": 1,
+              "Price": 450
+            }
+          ]
+        },
+        "Status": "Pending",
+        "OrderedProducts": [
+          {
+            "$type": "Phone",
+            "ProductId": "P11",
+            "Name": "Samsung Galaxy S23",
+            "Category": "Phone",
+            "Quantity": 3,
+            "Price": 2997
+          },
+          {
+            "$type": "Phone",
+            "ProductId": "P16",
+            "Name": "Google Pixel 8",
+            "Category": "Phone",
+            "Quantity": 12,
+            "Price": 10788
+          }
+        ]
+      }
+    ]
+  }
+}

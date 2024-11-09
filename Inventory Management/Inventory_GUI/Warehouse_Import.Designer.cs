@@ -32,7 +32,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.idproductcombobox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.idproductcombobox);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.label5);
@@ -98,17 +98,17 @@
             this.panel1.Size = new System.Drawing.Size(704, 360);
             this.panel1.TabIndex = 4;
             // 
-            // comboBox1
+            // idproductcombobox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(8, 80);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(680, 28);
-            this.comboBox1.TabIndex = 23;
-            this.comboBox1.TabStop = false;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.idproductcombobox.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idproductcombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(101)))));
+            this.idproductcombobox.FormattingEnabled = true;
+            this.idproductcombobox.Location = new System.Drawing.Point(8, 80);
+            this.idproductcombobox.Name = "idproductcombobox";
+            this.idproductcombobox.Size = new System.Drawing.Size(680, 28);
+            this.idproductcombobox.TabIndex = 23;
+            this.idproductcombobox.TabStop = false;
+            this.idproductcombobox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -402,7 +402,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox idproductcombobox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
     }

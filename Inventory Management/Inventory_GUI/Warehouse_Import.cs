@@ -55,7 +55,7 @@ namespace Inventory_Management
             SalesInvoice = salesInvoice;
             Report = report;
             ShowCombobox();
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            idproductcombobox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             textBox3.TextChanged += textBox1_TextChanged;
 
         }
@@ -69,7 +69,7 @@ namespace Inventory_Management
             {
                 productsId.Add(product.ProductId);
             }
-            comboBox1.DataSource = productsId;
+            idproductcombobox.DataSource = productsId;
         }
         public void ShowInfo()
         {
@@ -77,13 +77,13 @@ namespace Inventory_Management
             List<Inventory> inventory = Warehouse.Inventory;
             List<Supplier> suppliers = Supplier;
 
-            string selectedProductId = comboBox1.SelectedItem?.ToString();
+            string selectedProductId = idproductcombobox.SelectedItem.ToString();
 
             if (selectedProductId != null)
             {
                 foreach (Product product in products)
                 {
-                    if (product.ProductId == selectedProductId)
+                    if (product.ProductId.ToLower() == selectedProductId.ToLower())
                     {
                         textBox2.Text = product.Name;
                         textBox6.Text = product.Category;
@@ -131,11 +131,11 @@ namespace Inventory_Management
                 quantity_Import = quantity;
             }
 
-            string selectedProductId = comboBox1.SelectedItem?.ToString();
+            string selectedProductId = idproductcombobox.SelectedItem?.ToString();
 
             foreach (Product product in products)
             {
-                if (Warehouse.CheckProductId(selectedProductId))
+                if (product.ProductId.ToLower() == selectedProductId.ToLower())
                 {
                     if (quantity_Import > 0)
                     {
@@ -158,7 +158,7 @@ namespace Inventory_Management
 
             Dictionary<string, int> productStock = inventory[0].ProductStock;
 
-            string selectedProductId = comboBox1.SelectedItem?.ToString();
+            string selectedProductId = idproductcombobox.SelectedItem?.ToString();
 
             DialogResult dialogResult = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
 

@@ -1,0 +1,312 @@
+{
+  "SalesInvoices": [
+    {
+      "InvoiceId": "SI01",
+      "Customer": {
+        "CustomerId": "C1",
+        "Name": "Viet",
+        "ContactInfo": "00000012345"
+      },
+      "SoldProducts": [
+        {
+          "$type": "Phone",
+          "ProductId": "P1",
+          "Name": "Iphone 16 Pro",
+          "Category": "Phone",
+          "Quantity": 4,
+          "Price": 199
+        }
+      ],
+      "PaymentStatus": "Paid"
+    },
+    {
+      "InvoiceId": "SI02",
+      "Customer": {
+        "CustomerId": "C2",
+        "Name": "Huy",
+        "ContactInfo": "00234981233"
+      },
+      "SoldProducts": [
+        {
+          "$type": "Tablet",
+          "ProductId": "P8",
+          "Name": "Ipad Gen 6",
+          "Category": "Tablet",
+          "Quantity": 2,
+          "Price": 298
+        }
+      ],
+      "PaymentStatus": "Unpaid"
+    },
+    {
+      "InvoiceId": "SI03",
+      "Customer": {
+        "CustomerId": "C3",
+        "Name": "Cuong",
+        "ContactInfo": "0334901239"
+      },
+      "SoldProducts": [
+        {
+          "$type": "Phone",
+          "ProductId": "P11",
+          "Name": "Samsung Galaxy S23",
+          "Category": "Phone",
+          "Quantity": 2,
+          "Price": 999
+        }
+      ],
+      "PaymentStatus": "Paid"
+    },
+    {
+      "InvoiceId": "SI04",
+      "Customer": {
+        "CustomerId": "C4",
+        "Name": "Huong",
+        "ContactInfo": "12345678901"
+      },
+      "SoldProducts": [
+        {
+          "$type": "Headphone",
+          "ProductId": "P15",
+          "Name": "Sony WH-1000XM4",
+          "Category": "Headphone",
+          "Quantity": 1,
+          "Price": 400
+        }
+      ],
+      "PaymentStatus": "Paid"
+    },
+    {
+      "InvoiceId": "SI05",
+      "Customer": {
+        "CustomerId": "C5",
+        "Name": "Binh",
+        "ContactInfo": "23456789012"
+      },
+      "SoldProducts": [
+        {
+          "$type": "Tablet",
+          "ProductId": "P12",
+          "Name": "Microsoft Surface Pro",
+          "Category": "Tablet",
+          "Quantity": 1,
+          "Price": 799
+        }
+      ],
+      "PaymentStatus": "Paid"
+    },
+    {
+      "InvoiceId": "SI06",
+      "Customer": {
+        "CustomerId": "C6",
+        "Name": "Tam",
+        "ContactInfo": "34567890123"
+      },
+      "SoldProducts": [
+        {
+          "$type": "Mouse",
+          "ProductId": "P13",
+          "Name": "Logitech MX Master 3",
+          "Category": "Mouse",
+          "Quantity": 5,
+          "Price": 1200
+        }
+      ],
+      "PaymentStatus": "Paid"
+    },
+    {
+      "InvoiceId": "SI07",
+      "Customer": {
+        "CustomerId": "C7",
+        "Name": "Khanh",
+        "ContactInfo": "45678901234"
+      },
+      "SoldProducts": [
+        {
+          "$type": "Mouse",
+          "ProductId": "P18",
+          "Name": "Razer DeathAdder",
+          "Category": "Mouse",
+          "Quantity": 1,
+          "Price": 800
+        }
+      ],
+      "PaymentStatus": "Paid"
+    },
+    {
+      "InvoiceId": "SI08",
+      "Customer": {
+        "CustomerId": "C8",
+        "Name": "An",
+        "ContactInfo": "56789012345"
+      },
+      "SoldProducts": [
+        {
+          "$type": "Keyboard",
+          "ProductId": "P19",
+          "Name": "Corsair K70",
+          "Category": "Keyboard",
+          "Quantity": 2,
+          "Price": 2500
+        }
+      ],
+      "PaymentStatus": "Unpaid"
+    }
+  ],
+  "Report": {
+    "Invoices": [
+      {
+        "InvoiceId": "SI01",
+        "Customer": {
+          "CustomerId": "C1",
+          "Name": "Viet",
+          "ContactInfo": "00000012345"
+        },
+        "SoldProducts": [
+          {
+            "$type": "Phone",
+            "ProductId": "P1",
+            "Name": "Iphone 16 Pro",
+            "Category": "Phone",
+            "Quantity": 4,
+            "Price": 199
+          }
+        ],
+        "PaymentStatus": "Paid"
+      },
+      {
+        "InvoiceId": "SI02",
+        "Customer": {
+          "CustomerId": "C2",
+          "Name": "Huy",
+          "ContactInfo": "00234981233"
+        },
+        "SoldProducts": [
+          {
+            "$type": "Tablet",
+            "ProductId": "P8",
+            "Name": "Ipad Gen 6",
+            "Category": "Tablet",
+            "Quantity": 2,
+            "Price": 298
+          }
+        ],
+        "PaymentStatus": "Unpaid"
+      },
+      {
+        "InvoiceId": "SI03",
+        "Customer": {
+          "CustomerId": "C3",
+          "Name": "Cuong",
+          "ContactInfo": "0334901239"
+        },
+        "SoldProducts": [
+          {
+            "$type": "Phone",
+            "ProductId": "P11",
+            "Name": "Samsung Galaxy S23",
+            "Category": "Phone",
+            "Quantity": 2,
+            "Price": 999
+          }
+        ],
+        "PaymentStatus": "Paid"
+      },
+      {
+        "InvoiceId": "SI04",
+        "Customer": {
+          "CustomerId": "C4",
+          "Name": "Huong",
+          "ContactInfo": "12345678901"
+        },
+        "SoldProducts": [
+          {
+            "$type": "Headphone",
+            "ProductId": "P15",
+            "Name": "Sony WH-1000XM4",
+            "Category": "Headphone",
+            "Quantity": 1,
+            "Price": 400
+          }
+        ],
+        "PaymentStatus": "Paid"
+      },
+      {
+        "InvoiceId": "SI05",
+        "Customer": {
+          "CustomerId": "C5",
+          "Name": "Binh",
+          "ContactInfo": "23456789012"
+        },
+        "SoldProducts": [
+          {
+            "$type": "Tablet",
+            "ProductId": "P12",
+            "Name": "Microsoft Surface Pro",
+            "Category": "Tablet",
+            "Quantity": 1,
+            "Price": 799
+          }
+        ],
+        "PaymentStatus": "Paid"
+      },
+      {
+        "InvoiceId": "SI06",
+        "Customer": {
+          "CustomerId": "C6",
+          "Name": "Tam",
+          "ContactInfo": "34567890123"
+        },
+        "SoldProducts": [
+          {
+            "$type": "Mouse",
+            "ProductId": "P13",
+            "Name": "Logitech MX Master 3",
+            "Category": "Mouse",
+            "Quantity": 5,
+            "Price": 1200
+          }
+        ],
+        "PaymentStatus": "Paid"
+      },
+      {
+        "InvoiceId": "SI07",
+        "Customer": {
+          "CustomerId": "C7",
+          "Name": "Khanh",
+          "ContactInfo": "45678901234"
+        },
+        "SoldProducts": [
+          {
+            "$type": "Mouse",
+            "ProductId": "P18",
+            "Name": "Razer DeathAdder",
+            "Category": "Mouse",
+            "Quantity": 1,
+            "Price": 800
+          }
+        ],
+        "PaymentStatus": "Paid"
+      },
+      {
+        "InvoiceId": "SI08",
+        "Customer": {
+          "CustomerId": "C8",
+          "Name": "An",
+          "ContactInfo": "56789012345"
+        },
+        "SoldProducts": [
+          {
+            "$type": "Keyboard",
+            "ProductId": "P19",
+            "Name": "Corsair K70",
+            "Category": "Keyboard",
+            "Quantity": 2,
+            "Price": 2500
+          }
+        ],
+        "PaymentStatus": "Unpaid"
+      }
+    ]
+  }
+}
