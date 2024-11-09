@@ -19,7 +19,7 @@ Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng m
 ## Installation Guide
 
 **Cách 1: Bản cài đặt app**
-- Để tải về bản cài đặt, nhấp vào liên kết: <a href="https://mega.nz/file/ozVySBAZ#1fn7IGfycKjOdMxo6an--StMTWPEPIS_EmtMl8cqMt4" target="_blank" title="Inventory-Management">Mega</a>
+- Để tải về bản cài đặt, nhấp vào liên kết: <a href="https://mega.nz/file/lnsgnLrS#B1puLVMAxGFJNPBWM06dBbW0bb4k9ZzIBO0ePmwJ3Sc" target="_blank" title="Inventory-Management">Mega</a>
 - Tải file ```Inventory Management.rar``` về giải nén file ta được thư mục Inventory Management.
 - Nhấn vào tệp ```Inventory_Management_Install.msi``` để cài đặt.
 
