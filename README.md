@@ -23,7 +23,7 @@ Dự án này nhằm đơn giản hóa các nhiệm vụ quản lý kho bằng m
 - Tải file ```Inventory Management.rar``` về giải nén file ta được thư mục Inventory Management.
 - Nhấn vào tệp ```Inventory_Management_Install.msi``` để cài đặt.
 
-**Cách 2: Clone**
+**Cách 2:  Clone Repository**
 - Yêu cầu có sẵn Visual studio bản community.
 - Cài đặt git bash sẵn trên máy.
 - mở git bash gõ lệnh ```git clone https://github.com/Avcuongy/Inventory-Management.git```
